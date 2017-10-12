@@ -32,10 +32,44 @@ Page({
       '/imgs/discountIcon/shou.png',
       '/imgs/discountIcon/te.png',
     ],
-    shopInfo:[],
+    shopInfo: [],
+    page: 1,
     wrap:true,
     likeLayout:true,
     likeData:[]
+  },
+
+  //封装获取商家信息及筛选请求函数
+  loadMore: function (that) {
+    wx.showToast({
+      title: '正在为您拼命加载。。。',
+      icon: 'loading',
+      duration: 2000,
+      mask: true
+    })
+    var requestData = {
+      ac: 'homepage',
+      op: 'store',
+      page: that.data.page
+    }
+    app.getPostData(function (post_data) {//请求轮播图
+      app.getApiData(function (res) {
+        that.setData({
+          shopInfo: that.data.shopInfo.concat(res.data.data),
+          page: that.data.page + 1
+        });
+        if (res.data.code == 0) {
+          wx.hideToast();
+        } else if(res.data.data.length<10){
+          wx.showToast({
+            title: '没有更多数据',
+            icon: 'loading',
+            duration: 500,
+            mask: true
+          })
+        }
+      }, 'GET', post_data)
+    }, requestData);
   },
   onLoad: function (ops) {
     var that = this;
@@ -48,7 +82,6 @@ Page({
     }, {ac: 'homepage',op: 'carousel'});
     app.getPostData(function (post_data) {//请求分类选择图标
       app.getApiData(function (res) {
-        console.log(res.data.data);
         that.setData({
           sortSels: res.data.data
         })
@@ -81,14 +114,7 @@ Page({
         });
       }, 'GET', post_data)
     }, { ac: 'homepage', op: 'get_condition' });
-    app.getPostData(function (post_data) {///获取商家信息及筛选
-      app.getApiData(function (res) {
-        that.setData({
-          shopInfo: res.data.data
-        });
-        console.log(res.data.data)
-      }, 'GET', post_data)
-    }, { ac: 'homepage', op: 'store' });
+    that.loadMore(that);
     wx.request({
       url: 'http://xcx.szhuanya.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
       data: {
@@ -100,8 +126,22 @@ Page({
       }
     })
   },
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    var that = this;
+    that.loadMore(that);
+    console.log(that.data.page)
+  },
+  /**
+  * 页面下拉触顶事件的处理函数
+  */
+  onPullDownRefresh: function () {
+    var that = this;
+    that.loadMore(that);
+  },
   bindRegionChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       region: e.detail.value
     })
@@ -153,14 +193,12 @@ Page({
     that.setData({
       wrap:!that.data.wrap
     })
-    console.log(that.data.wrap)
   },
   layoutSwith:function(){
    var that=this;
    that.setData({
      likeLayout:!that.data.likeLayout
    })
-   console.log(that.data.likeLayout)
   }
   // ***********************************************请求函数
 

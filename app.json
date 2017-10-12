@@ -32,8 +32,7 @@
         "pages/index/shopMap1/shopMap1",
         "pages/index/fastFood/fastFood",
         "pages/index/search/search",
-        "pages/index/submitOrder/submitOrder",
-        "pages/nearby/shopDetail/shopDetail"
+        "pages/index/submitOrder/submitOrder"
     ],
     "window": {
         "backgroundTextStyle": "light",
