@@ -358,6 +358,10 @@ Page({
           }
       }
       totalPrice = parseFloat(totalPrice.toFixed(2));
+
+      wx.setStorageSync('token', dataList.store.push_token);
+      wx.setStorageSync('cartsData', dataList.commodity);
+
       that.setData({
           dataList: dataList,
           content: content,

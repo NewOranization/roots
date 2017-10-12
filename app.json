@@ -33,7 +33,6 @@
         "pages/index/fastFood/fastFood",
         "pages/index/search/search",
         
-        "pages/nearby/shopDetail/shopDetail"
     ],
     "window": {
         "backgroundTextStyle": "light",
