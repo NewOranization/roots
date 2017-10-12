@@ -1,6 +1,6 @@
 {
     "pages": [
-        
+        "pages/index/submitOrder/submitOrder",
         "pages/index/index",
         "pages/runleg/index",
         "pages/form/index",
@@ -32,7 +32,7 @@
         "pages/index/shopMap1/shopMap1",
         "pages/index/fastFood/fastFood",
         "pages/index/search/search",
-        "pages/index/submitOrder/submitOrder",
+        
         "pages/nearby/shopDetail/shopDetail"
     ],
     "window": {

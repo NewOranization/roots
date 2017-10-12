@@ -16,12 +16,11 @@ Page({
     notCollar: true,
     totalNum: 0,
     totalPrice: 0,
-    cartsMain: [],
     current:0,
     evaluate:{},
     //提交订单页面请求需要数据
-    originGoodsInfo: [],
-    goodsInfo: [],
+    // originGoodsInfo: [],
+    //goodsInfo: [],
     price: 0,
   },
 
@@ -250,8 +249,9 @@ Page({
       var index = parseInt(e.currentTarget.dataset.index);
       var totalNum = that.data.totalNum;
       var totalPrice = that.data.totalPrice;
-      var originGoodsInfo = that.data.originGoodsInfo;
+    //   var originGoodsInfo = that.data.originGoodsInfo;
       
+      var cartsData = [];
       
       for(var i = 0; i < content.length; i++){  
 
@@ -266,35 +266,35 @@ Page({
                  for (var k = 0; k < dataList.commodity.length; k++) {
                      if (dataList.commodity[k].id == id) {
                          dataList.commodity[k].cartNum++;
-                         dataList.commodity[k].totalPrice += parseFloat(dataList.commodity[k].price) 
+                         dataList.commodity[k].totalPrice += parseFloat(dataList.commodity[k].price); 
                      }
                  }
                  // 巧红
-                 originGoodsInfo.push({
-                    gid: content[i].commodity[index].id,
-                    num: content[i].commodity[index].cartNum
-                  })
+                //  originGoodsInfo.push({
+                //     gid: content[i].commodity[index].id,
+                //     num: content[i].commodity[index].cartNum
+                //   })
               
-                  var b={};
-                  var haha=[];
-                  for (var j = 0; j < originGoodsInfo.length; j++){
-                      var gid = originGoodsInfo[j].gid;
-                    if (b[gid]==undefined){
-                      b[gid]=1;
-                    }else{
-                      b[gid] += 1;
-                    }
-                  }
-                  for (var key in b) {
-                    haha.push({
-                      gid:key,
-                      num:b[key]
-                    })
-                  }
+                //   var b={};
+                //   var haha=[];
+                //   for (var j = 0; j < originGoodsInfo.length; j++){
+                //       var gid = originGoodsInfo[j].gid;
+                //     if (b[gid]==undefined){
+                //       b[gid]=1;
+                //     }else{
+                //       b[gid] += 1;
+                //     }
+                //   }
+                //   for (var key in b) {
+                //     haha.push({
+                //       gid:key,
+                //       num:b[key]
+                //     })
+                //   }
         
-                  that.setData({
-                      goodsInfo:haha
-                  })
+                //   that.setData({
+                //       goodsInfo:haha
+                //   })
                   // 巧红
              } 
              if (click == 'reduce' && content[i].commodity[index].cartNum >= 1) {
@@ -358,6 +358,9 @@ Page({
           }
       }
       totalPrice = parseFloat(totalPrice.toFixed(2));
+      wx.setStorageSync('cartsData', dataList.commodity);
+      wx.setStorageSync('token', dataList.store.push_token);
+      wx.setStorageSync('totalPrice', totalPrice);
       that.setData({
           dataList: dataList,
           content: content,
