@@ -2,7 +2,7 @@
   <swiper indicator-dots="true"
     class='sortSel'>
       <swiper-item>
-        <view wx:for="{{sortSels}}">
+        <view wx:for="{{sortSels}}" wx:key="*this">
           <image src="{{item.thumb}}"></image>
           <text>{{item.title}}</text>
         </view>

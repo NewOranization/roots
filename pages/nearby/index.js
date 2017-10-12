@@ -27,23 +27,54 @@ Page({
       '/imgs/discountIcon/te.png',
     ],
     shopInfo: [],
-    page:1,
-    count:10
+    page:1
+  },
+  //下拉刷新
+  refresh:function(that){
+    var requestData = {
+      ac: 'homepage',
+      op: 'store',
+    }
+    app.getPostData(function (post_data) {//
+      app.getApiData(function (res) {
+        that.setData({
+          shopInfo:res.data.data
+        });
+        if (res.data.code == 0) {
+          wx.hideToast();
+        } 
+      }, 'GET', post_data)
+    }, requestData);
   },
   //封装获取商家信息及筛选请求函数
   loadMore:function(that){
+    wx.showToast({
+      title: '正在为您拼命加载。。。',
+      icon: 'loading',
+      duration: 2000,
+      mask: true
+    })
     var requestData ={
         ac: 'homepage',
         op: 'store',
-        page:that.data.page,
-        count:that.data.count
+        page:that.data.page
     }
-    app.getPostData(function (post_data) {//请求轮播图
+    app.getPostData(function (post_data) {//
       app.getApiData(function (res) {
         that.setData({
           shopInfo: that.data.shopInfo.concat(res.data.data),
           page:that.data.page+1
         });
+        if (res.data.code == 0) {
+          wx.hideToast();
+        }else{
+          wx.showToast({
+            title: '没有更多数据',
+            icon: 'loading',
+            duration: 1000,
+            mask: true
+          })
+        }
       }, 'GET', post_data)
     }, requestData);
   },
@@ -73,6 +104,19 @@ Page({
     var that=this;
     that.loadMore(that);
     console.log(that.data.page)
+  },
+  /**
+   * 页面下拉触顶事件的处理函数
+   */
+  onPullDownRefresh:function(){
+    var that = this;
+    wx.showToast({
+      title: '正在刷新',
+      icon: 'loading',
+      duration: 1000,
+      mask: true
+    })
+    that.refresh(that);
   },
   // **********************************************页面跳转函数
   goSearchPage: function () {

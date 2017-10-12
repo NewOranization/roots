@@ -39,7 +39,7 @@
       </view>
     </view>
     <!--****************************************************  -->
-    <view class='shop' wx:for="{{shopInfo}}">
+    <view class='shop' wx:for="{{shopInfo}}" wx:key="*this">
       <view class='wrap' bindtap='toShopMenuList' data-token="{{item.push_token}}">
         <view class='wrap-left'>
           <image src='{{item.logo}}'></image>
@@ -50,7 +50,7 @@
             <image src='/imgs/pay.png'></image>
           </view>
           <view class='wrap-right-center'>
-            <block wx:for="{{stars}}">
+            <block wx:for="{{stars}}" wx:key="*this">
               <image src='/imgs/star.png'></image>
             </block>
             <text>已售 {{item.sailed}} 份</text>
@@ -74,7 +74,7 @@
 
         <view class='wrapSort-top' wx:if='{{item.activity.length>0}}'>
           <view class='left'>
-            <block wx:for='{{item.activity}}' wx:for-item="activityItem">
+            <block wx:for='{{item.activity}}' wx:for-item="activityItem" wx:key="*this">
               <view>
                 <image src="/imgs/hot-sale.png"></image>{{activityItem.title}}</view>
             </block>

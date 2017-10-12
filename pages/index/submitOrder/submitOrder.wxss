@@ -60,6 +60,16 @@ page{
     font-weight: bold;
 }
 
+.receiveInfo .info .choose-address{
+    line-height: 80rpx;
+    overflow: hidden;
+    margin: 0 30rpx;
+}
+
+image.more{
+    
+}
+
 
 
 

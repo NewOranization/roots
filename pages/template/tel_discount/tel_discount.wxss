@@ -1,79 +1,165 @@
+
+/************************后台传过来1个数据的布局  */
 .discount{
   width:100%;
-  height:350rpx;
   background: #fff;
   text-align: center;
   margin-top:18rpx;
   margin-bottom:20rpx;
   line-height:72rpx;
-  
+}
+.discount .num1{
+  height:300rpx;
+  display: flex;
+  padding:20rpx;
+}
+.discount .num1{
+  padding:20rpx;
+}
+.discount .num1 image{
+  width:50%;
+  height:300rpx;
+  }
+  .discount .num1 view{
+    width:50%;
+    text-align: center;
+    display: flex;
+    flex-direction:column;
+    justify-content:center
+  }
+  .discount .num1 text{
+    display: block;
+  }
+  .discount .num1 .title{
+    font-size: 40rpx;
+    font-weight: bold
+  }
+  .discount .num1 .discrip{
+    color:#94db71;
+    font-size: 30rpx;
+  }
+
+/************************后台传过来2个数据的布局  */
+.discount .num2{
+  height:340rpx;
   display: flex;
 }
-.discount .leftDiscount text{
-  display: block
+.discount .num2{
+  display: none;
 }
-.discount .leftDiscount text:nth-child(1){
-  font-size: 50rpx;
-  font-weight: bold;
-  margin-top:25rpx;
+.discount .num2 view{
+  flex: 1;
+  line-height: 75rpx;
 }
-.discount .leftDiscount text:nth-child(2){
-  font-size: 30rpx;
-  font-weight: bold;
-  color:#94db4a;
+.discount .num2 view:nth-child(1){
+  border-right:1rpx solid #eee;
 }
-.discount .leftDiscount image{
-  width:100rpx;
-  height:100rpx;
-  margin-top:25rpx;
-}
-.discount>view{
-   width:50%;
-   flex-direction: row;
-}
-.discount .rightDiscount{
-   display: flex;
-   flex-flow: row wrap;
-   align-content: flex-start;
-}
-.discount .rightDiscount view{
-  height:173rpx;
-  line-height: 40rpx;
-  border-left:1rpx solid #eee;
-  border-bottom:1rpx solid #eee;
-  flex: 0 0 49%;
-}
-.discount .rightDiscount view:nth-child(3){
-  border-bottom: none;
-}
-.discount .rightDiscount view:nth-child(4){
-  border-bottom: none;
-}
-
-.discount .rightDiscount view text{
+.discount .num2 view text{
   display: block;
 }
-.discount .rightDiscount view text:nth-child(1){
+.discount .num2 view .title{
+  font-size: 40rpx;
+  font-weight: bold
+}
+.discount .num2 view .discrip{
+  color:#94db71;
   font-size: 30rpx;
-  margin-top:15rpx;
 }
-.discount .rightDiscount view text:nth-child(2){
-  font-size: 20rpx;
+.discount .num2 image{
+  width:180rpx;
+  height:180rpx;
 }
-.discount .rightDiscount view:nth-child(1) text:nth-child(2){
-  color: #ff7d08;
+
+/************************后台传过来3个数据的布局  */
+
+ .discount .num3{
+  height:400rpx;
+  display: flex;
+  display: none;
+}  
+
+.discount .num3 .left{
+  flex: 0 0 50%;
+  border-right:1rpx solid #eee;
+  line-height: 90rpx;
 }
-.discount .rightDiscount view:nth-child(2) text:nth-child(2){
-  color: #ffcb52;
+.discount .num3 .left text{
+  display: block;
 }
-.discount .rightDiscount view:nth-child(3) text:nth-child(2){
-  color: #ff55ad;
+.discount .num3 .left .title{
+  font-size: 40rpx;
+  font-weight: bold;
 }
-.discount .rightDiscount view:nth-child(4) text:nth-child(2){
-  color: #31cbef;
+.discount .num3 .left .discrip{
+  color:#94db71;
+  font-size: 30rpx;
 }
-.discount .rightDiscount view image{
-   width:50rpx;
-  height:50rpx;
-  margin-top:15rpx;
+.discount .num3 .left image{
+  width:180rpx;
+  height:180rpx;
+}
+.discount .num3 .right{
+  width:50%;
+}
+.discount .num3 .right>view{
+  display: flex;
+  align-items: center;
+  height:50%;
+  padding-left:20rpx;
+}
+.discount .num3 .right>view:nth-child(1){
+  border-bottom: 1rpx solid #eee;
+}
+.discount .num3 .right text{
+  display: block;
+}
+.discount .num3 .right>view view{
+  width:60%;
+}
+.discount .num3 .right .title{
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.discount .num3 .right .discrip{
+  font-size: 24rpx;
+  color:#94db71;
+}
+.discount .num3 .right image{
+  width:40%;
+  height:130rpx;
+}
+/************************后台传过来4个数据的布局  */
+.discount .num4 {
+  height:400rpx;
+  display: none
+}
+.discount .num4 view{
+  float: left;
+  width:49%;
+  height:199rpx;
+  line-height: 45rpx;
+  text-align: center;
+}
+.discount .num4 view:nth-child(2){
+  border-left:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+}
+.discount .num4 view:nth-child(3){
+  border-right:1rpx solid #eee;
+  border-top:1rpx solid #eee;
+}
+.discount .num4 view text{
+  display: block;
+}
+.discount .num4 view .title{
+  font-size: 34rpx;
+  font-weight: bold
+}
+.discount .num4 view .discrip{
+  color:#94db71;
+  font-size: 24rpx;
+}
+.discount .num4 view image{
+  width:100rpx;
+  height:100rpx;
 }

@@ -2,7 +2,7 @@
   <view class="msg">
     <text class='wm'>外卖头条</text>
     <swiper indicator-dots="true" indicator-color="rgba(0, 0, 0, 0)" indicator-active-color="rgba(0, 0, 0, 0)" circular="true" autoplay="true" interval="2000" duration="1000" vertical="true">
-      <block wx:for="{{info}}">
+      <block wx:for="{{info}}" wx:key="*this">
         <swiper-item>
           {{item.title}}
         </swiper-item>
