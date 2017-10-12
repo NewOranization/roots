@@ -1,0 +1,27 @@
+<import src="../template/tel_search/tel_search.wxml" />
+<import src="../template/tel_swiper/tel_swiper.wxml" />
+<import src="../template/tel_sortSel/tel_sortSel.wxml" />
+<import src="../template/tel_info/tel_info.wxml" />
+<import src="../template/tel_discount/tel_discount.wxml" />
+<import src="../template/tel_tab/tel_tab.wxml" />
+<import src="../template/tel_like1/tel_like1.wxml" />
+<import src="../template/tel_like2/tel_like2.wxml" />
+
+<!--搜索-->
+<template is="search" data="{{region}}" />
+<!--图片轮播  -->
+<template is="swiper" data="{{imgUrls}}" />
+<!--分类选择轮播-->
+<template is="sortSel" data="{{sortSels}}" />
+<!--资讯  -->
+<template is="msg" data="{{info}}"/>
+<!--优惠  -->
+<template is="discount" data="{{discount,leftDiscount:leftDiscount}}" />
+
+<!--标签切换  -->
+<template is="tab" data="{{...item,top1: top1, top2: top2, top3: top3,industry,sort,discountActive,stars,sortIcon,discountIcon,shopInfo,nav}}"/>
+
+<!--猜你喜欢  -->
+<template is="like1" data="{{ls}}" />
+<template is="like2" data="{{ls}}" />
+

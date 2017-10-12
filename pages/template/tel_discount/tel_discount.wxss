@@ -1,0 +1,79 @@
+.discount{
+  width:100%;
+  height:350rpx;
+  background: #fff;
+  text-align: center;
+  margin-top:18rpx;
+  margin-bottom:20rpx;
+  line-height:72rpx;
+  
+  display: flex;
+}
+.discount .leftDiscount text{
+  display: block
+}
+.discount .leftDiscount text:nth-child(1){
+  font-size: 50rpx;
+  font-weight: bold;
+  margin-top:25rpx;
+}
+.discount .leftDiscount text:nth-child(2){
+  font-size: 30rpx;
+  font-weight: bold;
+  color:#94db4a;
+}
+.discount .leftDiscount image{
+  width:100rpx;
+  height:100rpx;
+  margin-top:25rpx;
+}
+.discount>view{
+   width:50%;
+   flex-direction: row;
+}
+.discount .rightDiscount{
+   display: flex;
+   flex-flow: row wrap;
+   align-content: flex-start;
+}
+.discount .rightDiscount view{
+  height:173rpx;
+  line-height: 40rpx;
+  border-left:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+  flex: 0 0 49%;
+}
+.discount .rightDiscount view:nth-child(3){
+  border-bottom: none;
+}
+.discount .rightDiscount view:nth-child(4){
+  border-bottom: none;
+}
+
+.discount .rightDiscount view text{
+  display: block;
+}
+.discount .rightDiscount view text:nth-child(1){
+  font-size: 30rpx;
+  margin-top:15rpx;
+}
+.discount .rightDiscount view text:nth-child(2){
+  font-size: 20rpx;
+}
+.discount .rightDiscount view:nth-child(1) text:nth-child(2){
+  color: #ff7d08;
+}
+.discount .rightDiscount view:nth-child(2) text:nth-child(2){
+  color: #ffcb52;
+}
+.discount .rightDiscount view:nth-child(3) text:nth-child(2){
+  color: #ff55ad;
+}
+.discount .rightDiscount view:nth-child(4) text:nth-child(2){
+  color: #31cbef;
+}
+.discount .rightDiscount view image{
+   width:50rpx;
+  height:50rpx;
+  margin-top:15rpx;
+}

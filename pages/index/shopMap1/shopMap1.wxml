@@ -1,0 +1,10 @@
+<view class="head"> <image src="/imgs/back.png"></image>杭州市-上城区-惠民路55号</view>
+<map id="map" longitude="120.169329" latitude="30.242312" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height:500px;"></map>
+<view class='location'>
+  <view>1.杭州市-上城区-惠民路55号</view>
+  <view>
+    <view><image src="/imgs/location_gray.png"></image> 搜周边</view>
+    <view><image src="/imgs/Route.png"></image>去这里</view>
+  </view>
+</view>
+

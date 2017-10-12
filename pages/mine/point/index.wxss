@@ -1,0 +1,118 @@
+/* pages/mine/point/index.wxss */
+page{
+    background: #eee;
+    font-size: 30rpx;
+}
+
+.box .point{
+    background: #fff;
+    padding: 30rpx 20rpx;
+}
+
+.box .point text.txt{
+    display: block;
+    color: #999;
+}
+
+.box .point view{
+    margin-top: 30rpx;
+    font-size: 60rpx;
+    font-weight: bold;
+    color: #00d762;
+}
+
+.box .point view text{
+    font-size: 30rpx;
+}
+
+.box .point .exchange{
+    display: block;
+    text-align: center;
+    background: #ff5339;
+    width: 95%;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 34rpx;
+    margin: 40rpx auto 15rpx;
+    border-radius: 10rpx;
+    color: #fff;
+} 
+
+.box .wrap{
+    margin-top: 20rpx;
+}
+
+.box .wrap .title{
+    padding: 0 20rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #666;
+}
+
+.box .wrap .content{
+    padding: 0 20rpx;
+    background: #fff;
+    height: 150rpx;
+    border-bottom: 1px solid #eee;
+}
+
+.box .wrap .content::after{
+    content:"."; 
+    display:block; 
+    clear:both; 
+    height:0; 
+}
+
+.box .wrap .content .content-left{
+    float: left;
+    margin-top: 30rpx;
+}
+
+.box .wrap .content .content-left text{
+    display: block;
+}
+
+.box .wrap .content .content-left text:first-child{
+    color: #000;
+    font-size: 32rpx;
+    font-weight: bold;
+    line-height: 70rpx;
+}
+
+.box .wrap .content .content-left text:last-child{
+    color: #999;
+   line-height: 36rpx;
+}
+
+.box .wrap .content .content-right{
+    float: right;
+    color: #00d762;
+    font-size: 34rpx;
+    font-weight: bold;
+    line-height: 150rpx;
+}
+
+.empty{
+    text-align: center;
+    line-height: 200rpx;
+    color: #768491;
+    margin-top: 200rpx;
+}
+
+.empty .img{
+    width: 300rpx;
+    height: 300rpx;
+    background: #fff;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 50%;
+}
+
+.empty .img image{
+    width: 180rpx;
+    height: 180rpx;
+    display: block;
+    position: absolute;
+    top: 60rpx;
+    left: 60rpx;
+}

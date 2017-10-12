@@ -1,0 +1,20 @@
+/* pages/mine/problem/index.wxss */
+page{
+    background: #eee;
+}
+
+.box{
+    font-size: 30rpx;
+}
+
+.box .title{
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    color: #000;
+    background: #fff;
+}
+
+.box .title text{
+    display: block;
+}

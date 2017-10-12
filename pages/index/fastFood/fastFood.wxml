@@ -1,0 +1,61 @@
+ <view class='nav'>
+      <image src="../../../imgs/back_white.png"></image>
+      <text>快餐</text>
+      <icon type="search" size="15" color="#fff"/>
+  </view>
+<!------------------------------------------------- 标签 -->
+  <view class='tab'>
+    <view class="page">
+      <view class="nav">
+        <view class="nav-son {{shownavindex == 1? 'active' : ''}}" bindtap="listqy" data-nav="1">
+          <view class="content">商家分类</view>
+          <image src="/imgs/more_unfold1.png"></image>
+        </view>
+        <view class="nav-son borders {{shownavindex == 2? 'active' : ''}}" bindtap="list" data-nav="2">
+            <view class="content">智能排序</view>
+            <image src="/imgs/more_unfold1.png"></image>
+        </view>
+        <view class="nav-son {{shownavindex == 3? 'active' : ''}}" bindtap="listpx" data-nav="3">
+            <view class="content">优惠活动</view>
+            <image src="/imgs/more_unfold1.png"></image>
+        </view>
+      </view> 
+      <!--区域  -->
+      <view class="temp temp0 {{qyopen ? 'slidown' : 'slidup'}} {{qyshow ? 'disappear':''}}">
+        <view wx:for="{{content}}">
+          {{item}}
+        </view>
+      </view>
+      <!--女装  -->
+      <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
+        <view wx:for="{{content}}">
+          {{item}}
+        </view>
+      </view>
+      <!--排序  -->
+      <view class="temp temp2 {{pxopen ? 'slidown' : 'slidup'}} {{pxshow ? 'disappear':''}}">
+        <view wx:for="{{content}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+<!------------------------------------------------ 列表 -->
+    <view  class="menu">
+      <view class='menuList'>
+        <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=764589726,4128176499&fm=27&gp=0.jpg"></image>
+        <view class='rightInfo'>
+          <text>佰家旺</text>
+          <image src='../../../imgs/pay.png' class='pay'></image>
+          <text class='shopState'>店家休息中</text>
+          <text>起送</text>
+          <text class='startGive'>￥0</text>
+          <text>配送</text>
+          <text class='freight'>￥0</text>
+          <text>约</text>
+          <text class='time'>0分钟</text>
+          <image src="../../../imgs/position.png" class='position'></image>
+          <text>12887.39km</text>
+        </view>
+      </view>
+    </view>
+  </view>

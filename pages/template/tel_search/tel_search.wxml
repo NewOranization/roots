@@ -1,0 +1,14 @@
+<template name="search">
+  <view class='searchInfo'>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker-view">
+        <text>{{region[2]}}</text>
+        <image src="/imgs/more_white.png" class='Icon-img'></image>
+      </view>
+    </picker>
+    <input type='text' placeholder='输入关键字...' placeholder-class="" bindtap='search' disabled='true'></input>
+    <icon type="search" size="15" color="#00c3ad" class="search" />
+    <image src="/imgs/scan.png" class='Icon-img'></image>
+    <image src="/imgs/alarm.png" class='Icon-img'></image>
+  </view>
+</template>

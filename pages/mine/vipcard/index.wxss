@@ -1,0 +1,6 @@
+/* pages/mine/vipcard/index.wxss */
+@import "../../template/title/index.wxss";
+@import "../../template/comesoon/index.wxss";
+page{
+    background: #eee;
+}

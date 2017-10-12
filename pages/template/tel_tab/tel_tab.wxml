@@ -1,0 +1,96 @@
+<template name="tab">
+  <!--标签切换  -->
+  <view class="box">
+    <view class='nav'>
+      <view class='navbar' bindtap='navBarSwitch' data-nav='1'>
+        <text class="{{top1 ? 'active' : ''}}">商家分类</text>
+        <image wx:if="{{top1}}" src="/imgs/less.png"></image>
+        <image wx:else src="/imgs/more_bottom.png"></image>
+      </view>
+      <view class='navbar' bindtap='navBarSwitch' data-nav='2'>
+        <text class="{{top2 ? 'active' : ''}}">智能排序</text>
+        <image wx:if="{{top2}}" src="/imgs/less.png"></image>
+        <image wx:else src="/imgs/more_bottom.png"></image>
+      </view>
+      <view class='navbar' bindtap='navBarSwitch' data-nav='3'>
+        <text class="{{top3 ? 'active' : ''}}">优惠活动</text>
+        <image wx:if="{{top3}}" src="/imgs/less.png"></image>
+        <image wx:else src="/imgs/more_bottom.png"></image>
+      </view>
+    </view>
+
+    <view class='list' wx:if="{{top1 || top2 || top3}}">
+      <text>全部</text>
+      <!--商家分类  -->
+      <text wx:if="{{top1}}" wx:for="{{industry}}">{{item.title}}</text>
+      <!--智能排序  -->
+      <view class='item' wx:if="{{top2}}" wx:for="{{sort}}" wx:for-item="sortItem">
+        <block wx:for="{{sortIcon}}" wx:for-item="iconItem">
+          <image src='{{iconItem}}' wx:if="{{top2}}"></image>
+          <text wx:if="{{top2}}">{{sortItem}}</text>
+        </block>
+      </view>
+      <!--优惠活动  -->
+      <view class='item' wx:if="{{top3}}" wx:for="{{discountActive}}" wx:for-item="discountItem">
+        <block wx:for="{{discountIcon}}" wx:for-item="iconItem">
+          <image src='{{iconItem}}' wx:if="{{top3}}"></image>
+          <text wx:if="{{top3}}">{{discountItem}}</text>
+        </block>
+      </view>
+    </view>
+    <!--****************************************************  -->
+    <view class='shop' wx:for="{{shopInfo}}">
+      <view class='wrap' bindtap='toShopMenuList' data-token="{{item.push_token}}">
+        <view class='wrap-left'>
+          <image src='{{item.logo}}'></image>
+        </view>
+        <view class='wrap-right'>
+          <view class='wrap-right-top'>
+            <text>{{item.title}}</text>
+            <image src='/imgs/pay.png'></image>
+          </view>
+          <view class='wrap-right-center'>
+            <block wx:for="{{stars}}">
+              <image src='/imgs/star.png'></image>
+            </block>
+            <text>已售 {{item.sailed}} 份</text>
+          </view>
+          <view class='wrap-right-bottom'>
+            <view>
+              起送
+              <text>￥{{item.send_price}}</text>配送
+              <text>￥{{item.delivery_price
+}}</text> 约
+              <text>{{item.delivery_time}}分钟</text>
+            </view>
+            <view>
+              <image src='/imgs/position.png'></image>
+              <text>{{item.distance}}km</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='wrapSort'>
+
+        <view class='wrapSort-top' wx:if='{{item.activity.length>0}}'>
+          <view class='left'>
+            <block wx:for='{{item.activity}}' wx:for-item="activityItem">
+              <view>
+                <image src="/imgs/hot-sale.png"></image>{{activityItem.title}}</view>
+            </block>
+          </view>
+          <view class='right' bindtap='moreWrap'>8个活动
+            <image src="/imgs/more.png"></image>
+          </view>
+        </view>
+        <view class='wrapSort-bottom' wx:if='{{item.selling}}'>
+          <image src="/imgs/hot-sale.png"></image> 热销:{{item.selling}}
+        </view>
+      </view>
+    </view>
+
+
+
+
+  </view>
+</template>

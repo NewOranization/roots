@@ -1,0 +1,42 @@
+.head{
+  padding:30rpx;
+  background: #f9f9f9;
+  border-bottom:1px solid #cacaca;
+}
+.head image{
+  width:56rpx;
+  height:55rpx;
+  vertical-align: top;
+  margin-right:80rpx;
+}
+.location{
+  width:80%;
+  padding:0 20rpx;
+  margin:0 auto;
+  border-radius: 10rpx;
+  background: #fff;
+  box-shadow: 0 2px 20px 0 rgba(0,0,0,0.40);
+  z-index:100;
+  position: fixed;
+  bottom:40rpx;
+  left:7.5%;
+}
+.location>view:nth-child(1){
+  border-bottom: 1rpx solid #e7e3e7; 
+  padding-top:50rpx;
+  padding-bottom: 50rpx;
+}
+.location>view:nth-child(2){
+  display: flex;
+}
+.location>view:nth-child(2) view{
+  flex: 0 0 50%;
+  text-align: center;
+  padding-top:30rpx;
+  padding-bottom: 30rpx;
+  font-size: 36rpx;
+}
+.location>view:nth-child(2) view image{
+  width:36rpx;
+  height:35rpx;
+}

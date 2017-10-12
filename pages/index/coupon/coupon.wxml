@@ -1,0 +1,16 @@
+<view class="head">
+  <image src="/imgs/back_white.png"></image>选择代金券
+</view>
+<button>不使用代金券</button>
+<view class='coupon'>
+  <view>
+    <view>
+      ￥ <text>1</text>
+    </view>
+    满25元可用
+  </view>
+  <view>
+    <view>川菜坊 <text>有效期至2017-10-03</text></view>
+    <radio/>
+  </view>
+</view>

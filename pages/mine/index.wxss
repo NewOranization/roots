@@ -1,0 +1,147 @@
+@import "../template/user_menu/index.wxss";
+
+page{
+  background: #eaeeef;
+  color: #000;
+}
+
+/* 头部会员信息样式*/
+.userInfo{ 
+  width: 100%;
+  background: #43CD80;
+}
+
+/*绿色头像部分*/
+.userInfo .userHead{
+  font-size: 16px;
+  font-weight: bold;
+  padding: 50rpx;
+  color: #fff;
+  overflow: hidden;
+}
+
+.userInfo .userHead .user_img{
+  float: left;
+  overflow: hidden;
+}
+
+.userInfo .userHead .user_img image{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: block;
+}
+
+.userInfo .userHead .user_name{
+  float: left;
+  margin-left: 30rpx;
+}
+
+.userInfo .userHead .user_name text{
+  display: block;
+}
+
+.userInfo .userHead .user_name text:first-child{
+   margin-top: 25rpx;
+}
+
+.userInfo .userHead .user_name text:last-child{
+  font-size: 14px;
+  font-weight: none;
+  margin-top: 10rpx;
+}
+
+/*余额，积分，收藏*/
+.userInfo .userMessage{
+  background: #fff;
+  overflow: hidden;
+  text-align: center;
+  font-size: 14px;
+}
+
+.userInfo .userMessage .balance{
+  float: left;
+  width: 24.5%;
+  margin: 15rpx 0;
+  border-right: 1px solid #ddd;
+}
+
+.userInfo .userMessage .balance:last-child{
+  border: none;
+}
+
+.userInfo .userMessage .balance .number{
+  color: #aaa;
+}
+
+.userInfo .userMessage .balance .number text{
+  font-size: 44rpx;
+  font-weight: 500;
+  color: #ff4400; 
+}
+
+.userInfo .userMessage .balance .item{
+  overflow: hidden;
+}
+
+.userInfo .userMessage .balance .item image{
+  width: 35rpx;
+  height: 35rpx;
+  float: left;
+  margin-top: 5rpx;
+  margin-left: 40rpx;
+}
+
+.userInfo .userMessage .balance .item text{
+  font-size: 30rpx;
+  margin-left: 10rpx;
+  float: left;
+  
+}
+
+.content{
+    margin-top: 30rpx;
+}
+
+.serviceBox{
+    margin-top: 30rpx;
+    background: #fff;
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 32rpx;
+    color: red;
+    text-align: center;
+}
+
+.footer{
+    width: 100%;
+    height: 120rpx;
+    line-height: 120rpx;
+    text-align: center;
+    font-size: 30rpx;
+    background: #ededed;
+    color: #8b8b8d;
+    position: relative;
+}
+
+.footer .line{
+    width: 240rpx;
+    height: 1px;
+    background: #d8dcda;
+    display: inline-block;
+    position: absolute;
+    left: 20rpx;
+    top: 59rpx;
+}
+.footer .line_r{
+    width: 240rpx;
+    height: 1px;
+    background: #d8dcda;
+    display: inline-block;
+    position: absolute;
+    right: 20rpx;
+    top: 59rpx;
+}
+

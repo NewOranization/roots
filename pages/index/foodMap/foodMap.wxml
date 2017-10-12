@@ -1,0 +1,57 @@
+<view class="body">
+  <view class='head'>
+    <image src="/imgs/back.png"></image>
+    <text>美食</text>
+    <view>
+      <image src="/imgs/location.png"></image>地图</view>
+  </view>
+  <view class='foodList'>
+    <view>
+      1.海底捞火锅(西湖店)
+      <text>团</text>
+    </view>
+    <view>
+      <image src='/imgs/star.png'></image>
+      <image src='/imgs/star.png'></image>
+      <image src='/imgs/star.png'></image>
+      <image src='/imgs/star.png'></image>
+      <image src='/imgs/star.png'></image>
+      人均:
+      <text>￥122</text>
+    </view>
+    <view>延安路135号金涌广场5层</view>
+    <view>最低折扣
+      <text>8.9折</text> ，共
+      <text>3条</text> 超值团购</view>
+    <view>
+      <view> <image src="/imgs/Route.png"></image>去这里</view>
+      <view> <image src="/imgs/Route.png"></image>电话</view>
+    </view>
+  </view> 
+  <!--为您推荐  -->
+  <view class='recommend'>
+      <text></text>为您推荐 <text></text>
+      <view>
+          <view>中餐副书</view>
+          <view>快餐</view>
+          <view>火锅</view>
+          <view>川菜</view>
+          <view>粤菜</view>
+          <view>中餐</view>
+          <view>快餐</view>
+          <view>火锅</view>
+          <view>川菜</view>
+          <view>粤菜</view>
+      </view>
+  </view>
+  <!--底部按钮  -->
+  <view class='footer'>
+    <view>上一页</view>
+    <view>下一页</view>
+  </view>
+
+ 
+
+
+
+</view>

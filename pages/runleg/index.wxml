@@ -1,0 +1,23 @@
+<!--pages/city/index.wxml-->
+<view class='box'>
+    <view class='clearfix'>
+        <view class='title'>
+            <image class='img_l' src='/imgs/arrow_left_white.png' bindtap='navTo' data-click='back'></image>
+            <text>随意购</text>
+            <text class='txt' bindtap='navTo'>订单</text>
+        </view>
+    </view>
+    <map 
+        id="map" 
+        longitude="{{longitude}}" 
+        latitude="{{latitude}}" 
+        markers="{{markers}}"  
+        scale="18"  
+        style="width: 100%; height: 100%;"
+        bindtap="getMap"> 
+        
+    </map>
+    <view class='wrap'>
+        <text>平台共有0位骑士为您服务</text>
+    </view>
+</view>

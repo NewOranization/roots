@@ -1,0 +1,109 @@
+<template name="user_menu">
+    <view class='box'>
+        <!-- 余额充值 -->
+        <view class='wrap' bindtap='navTo' data-click='balance'>
+            <view class='wrap_item'>
+                <image src='/imgs/rechare.png'></image>
+                <text>余额充值</text>
+            </view>
+            <view class='wrap_entry'>
+                <image src='/imgs/arrow_down.png'></image>
+                <text></text>
+            </view>
+        </view>
+        <!-- 我的代金券 -->
+        <view class='wrap' bindtap='navTo' data-click='coupon'>
+            <view class='wrap_item'>
+                <image src='/imgs/daijinquan.png'></image>
+                <text>我的代金券</text>
+            </view>
+            <view class='wrap_entry'>
+                <image src='/imgs/arrow_down.png'></image>
+                <text>{{userInfo.code == null ? '0' : userInfo.code}}张</text>
+            </view>
+        </view>
+        <!-- 我的红包 -->
+        <view class='wrap' bindtap='navTo' data-click='redpackage'>
+            <view class='wrap_item'>
+                <image src='/imgs/hongbao.png'></image>
+                <text>我的红包</text>
+            </view>
+            <view class='wrap_entry'>
+                <image src='/imgs/arrow_down.png'></image>
+                <text>{{userInfo.title == null ? '0' : userInfo.title}}个</text>
+            </view>
+        </view>
+        <!-- 配送会员卡 -->
+        <view class='wrap' bindtap='navTo' data-click='vipcard'>
+            <view class='wrap_item'>
+                <image src='/imgs/vip_card.png'></image>
+                <text>配送会员卡</text>
+            </view>
+            <view class='wrap_entry'>
+                <image src='/imgs/arrow_down.png'></image>
+                <text></text>
+            </view>
+        </view>
+    </view>
+    <view class='box'>
+        <!-- 我的地址 -->
+        <view class='wrap' bindtap='navTo'  data-click='address'>
+            <view class='wrap_item'>
+                <image src='/imgs/myaddress.png'></image>
+                <text>我的地址</text>
+            </view>
+            <view class='wrap_entry'>
+                <image src='/imgs/arrow_down.png'></image>
+                <text></text>
+            </view>
+        </view>
+        <!-- 我的收藏 -->
+        <view class='wrap' bindtap='navTo'  data-click='collection'>
+            <view class='wrap_item'>
+                <image src='/imgs/star.png'></image>
+                <text>我的收藏</text>
+            </view>
+            <view class='wrap_entry'>
+                <image src='/imgs/arrow_down.png'></image>
+                <text></text>
+            </view>
+        </view>
+        <!-- 我的评价 -->
+        <view class='wrap' bindtap='navTo'  data-click='assess'>
+            <view class='wrap_item'>
+                <image src='/imgs/pingjia.png'></image>
+                <text>我的评价</text>
+            </view>
+            <view class='wrap_entry'>
+                <image src='/imgs/arrow_down.png'></image>
+                <text></text>
+            </view>
+        </view>
+        
+        <!-- 常见问题 -->
+        <view class='wrap' bindtap='navTo'  data-click='problem'>
+            <view class='wrap_item'>
+                <image src='/imgs/problem.png'></image>
+                <text>常见问题</text>
+            </view>
+            <view class='wrap_entry'>
+                <image src='/imgs/arrow_down.png'></image>
+                <text></text>
+            </view>
+        </view>
+        
+        
+        <!-- 分享有礼 -->
+        <view class='wrap' bindtap='navTo'  data-click='share'>
+            <view class='wrap_item'>
+                <image src='/imgs/share_box.png'></image>
+                <text>分享有礼</text>
+            </view>
+            <view class='wrap_entry'>
+                <image src='/imgs/arrow_down.png'></image>
+                <text></text>
+            </view>
+        </view>
+    </view>
+</template>
+

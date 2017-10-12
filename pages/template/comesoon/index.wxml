@@ -1,0 +1,9 @@
+<!--pages/template/comesoon/index.wxml-->
+<template name="comesoon">
+    <view class='comesoon'>
+        <view class='img'>
+            <image src='/imgs/respect.png'></image>
+        </view>
+        <view class='text'>功能暂未开放，敬请期待...</view>
+    </view>
+</template>

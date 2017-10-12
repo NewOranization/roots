@@ -1,0 +1,55 @@
+.head{
+  padding:30rpx;
+  background: #fff;
+  margin-bottom:20rpx;
+  display: flex;
+  align-items: center;
+  position:fixed;
+  top:0rpx;
+  z-index: 100;
+  width:100%;
+}
+.head image{
+  width:56rpx;
+  height:56rpx;
+  margin-right:160rpx;
+}
+.head text{
+  font-size: 28rpx;
+}
+/*********************  */
+.menu{
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  padding-top:20rpx;
+  margin-top:100rpx;
+}
+.menu .munuItem{
+  box-sizing: border-box;
+  background-color: white;
+  margin-bottom: 20rpx;
+  flex: 0 0 45%;
+  position: relative;
+}
+.menu .munuItem:nth-child(2n-1){
+  margin-left:2.5%;
+  margin-right:5%;
+}
+.menu .munuItem image{
+  width:100%;
+  height:250rpx;
+}
+.menu .munuItem>view{
+  width:94%;
+  font-size: 32rpx;
+  color:#fff;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom:10rpx;
+
+  display: flex;
+  justify-content:space-between;
+  padding-left: 10rpx;
+  padding-right:10rpx;
+}

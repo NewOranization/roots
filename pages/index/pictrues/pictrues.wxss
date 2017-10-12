@@ -1,0 +1,45 @@
+page{
+  background: #000;
+}
+.head{
+  padding:30rpx;
+  background: #fff;
+  text-align: center;
+  position: relative;
+}
+.head image{
+  width:56rpx;
+  height:56rpx;
+  position: absolute;
+  left:30rpx;
+}
+swiper{
+  height:426rpx;
+  margin:40% auto;
+}
+/*  */
+.footer{
+  display: flex;
+  justify-content:space-between;
+  width: 100%;
+  padding: 15rpx;
+  background: #3f3f3f;
+  position: fixed;
+  bottom: 0;
+}
+.footer image{
+  width:56rpx;
+  height:56rpx;
+}
+.footer view:nth-child(1){
+  display: flex;
+  align-items:center;
+  color:#484848;
+}
+.footer view:nth-child(1) text{
+  color:#fff;
+}
+.footer image:nth-child(2){
+  margin-right:30rpx;
+}
+

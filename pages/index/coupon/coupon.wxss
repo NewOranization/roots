@@ -1,0 +1,57 @@
+.head{
+  padding:30rpx;
+  background: #fe2d4a;
+  color:#fff;
+  text-align: center;
+  position: relative;
+}
+.head image{
+  width:56rpx;
+  height:56rpx;
+  position: absolute;
+  left:30rpx;
+}
+button{
+  width:95%;
+  margin-top:20rpx;
+  margin-bottom:20rpx;
+  font-size:36rpx;
+}
+
+.coupon{
+  display: flex;
+  margin:0 20rpx;
+  background: #fff;
+  height:200rpx;
+  align-items: center;
+}
+.coupon>view:nth-child(1){
+  flex: 0 0 40%;
+  border-right:1rpx dashed #eee;
+  color:#7d7d7d;
+}
+.coupon>view:nth-child(1) view{
+  color:#ff2c4a;
+}
+.coupon>view:nth-child(1) view text{
+  font-size: 60rpx;
+}
+.coupon>view{
+  text-align: center;
+}
+.coupon>view:nth-child(2){
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  padding-left:30rpx;
+}
+.coupon>view:nth-child(2) text{
+  display: block;
+  color: #7d7d7d;
+  margin-top:30rpx;
+  font-size: 24rpx;
+}
+.coupon>view:nth-child(2) radio{
+  margin-left:70rpx;
+  margin-top:20rpx;
+}

@@ -1,0 +1,149 @@
+.head{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding:20rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.head>image{
+  width:66rpx;
+  height:66rpx;
+}
+.head>view image{
+  width:46rpx;
+  height:46rpx;
+}
+.head>view{
+  padding:10rpx 20rpx;
+  color:#0092ff;
+  border:1rpx solid #0092ff;
+  border-radius: 10rpx;
+}
+/* foodList */
+.foodList{
+  background: #fff;
+  padding:30rpx 20rpx 20rpx 20rpx;
+  font-size: 38rpx;
+  margin-bottom: 10rpx;
+}
+.foodList>view:nth-child(1) text{
+  padding:0 3rpx;
+  margin-left:20rpx;
+  text-align: center;
+  background: #f77542;
+  color:#fff;
+  font-size: 34rpx;
+  border-radius: 5rpx;
+}
+
+.foodList>view:nth-child(2){
+  margin-top:20rpx;
+  margin-bottom: 20rpx;
+  color:#dedbde;
+  font-size: 32rpx;
+}
+.foodList>view:nth-child(2) image {
+  width:36rpx;
+  height:36rpx;
+}
+.foodList>view:nth-child(2) text {
+  color:#f73421;
+}
+.foodList>view:nth-child(3){
+  color:#dedbde;
+  font-size:30rpx;
+}
+
+.foodList>view:nth-child(4){
+  padding:10rpx 20rpx;
+  background: #f7fbff;
+  font-size: 30rpx;
+  margin-top:20rpx;
+}
+.foodList>view:nth-child(4) text{
+  color:#f73421;
+}
+.foodList>view:nth-child(5){
+  font-size: 36rpx;
+  padding-top:20rpx;
+  padding-bottom:10rpx;
+  display: flex;
+  justify-content:space-around;
+  text-align:center;
+}
+.foodList>view:nth-child(5) view{
+  flex: 0 0 50%;
+}
+.foodList>view:nth-child(5) view:nth-child(1){
+  border-right: 1rpx solid #d6dbde;
+}
+.foodList>view:nth-child(5) image{
+  width:36rpx;
+  height:36rpx;
+  margin-right:10rpx;
+}
+/*为您推荐  */
+.recommend{
+  font-size: 30rpx;
+  color:#636563;
+  text-align: center
+}
+.recommend>text{
+  display: inline-block;
+  width:35%;
+  height:10rpx;
+  border-top:1rpx solid #c6cbce;
+}
+.recommend>text:nth-child(1){
+  margin-right:30rpx;
+}
+.recommend>text:nth-child(2){
+  margin-left: 30rpx;
+}
+.recommend>view{
+  display: flex;
+  flex-flow: row wrap;
+  align-content:center;
+
+  
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  padding-left:50rpx;
+}
+.recommend>view view{
+  box-sizing: border-box;
+  background-color: white;
+  flex: 0 0 20%;
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+  border: 1px solid #cecfce;
+  border-radius: 10rpx;
+  text-align: center;
+   margin-right:30rpx;
+  margin-bottom:30rpx; 
+}
+
+
+
+
+
+
+
+
+
+.footer{
+  display: flex;
+  justify-content:space-around;
+  margin-top:50rpx;
+  margin-bottom: 80rpx;
+}
+.footer view{
+  width:42.5%;
+  padding-top:20rpx;
+  padding-bottom: 20rpx;
+  border:1rpx solid #cecbce; 
+  text-align: center;
+  background: #fff;
+  color:#add3ff;
+}

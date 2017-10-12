@@ -1,0 +1,24 @@
+@import "../template/tel_tab/tel_tab.wxss";
+
+.head{
+  height:100rpx;
+  line-height: 100rpx;
+  background:#fe2d4a;
+  color:#fff;
+  font-size: 38rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head image{
+  width:46rpx;
+  height:45rpx;
+  margin-left:30rpx;
+}
+.head icon{
+  margin-top:40rpx;
+  margin-right:30rpx;
+}
+.box {
+  margin:0;
+}

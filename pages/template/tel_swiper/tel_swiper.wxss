@@ -1,0 +1,5 @@
+/*图片轮播*/
+swiper .slide-image{
+  width:100%;
+  display: inline
+}

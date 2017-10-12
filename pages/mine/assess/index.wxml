@@ -1,0 +1,66 @@
+<!--pages/mine/assess/index.wxml-->
+<view class='box'>
+    <view class='section'>
+        <view class='content'>
+            <view class='user'>
+                <image src='/imgs/aixin.png'></image>
+                <text>金玉</text>
+                <text>2017-5-19</text>
+            </view>
+            <view class='assess'>
+                <view class='grade'>
+                    <text>打分：</text>
+                    <block wx:for="{{stars}}">
+                        <image src='/imgs/star.png'></image>
+                    </block>
+                </view>
+                <text class='txt'>味道很美味，菜的颜色香味都很好，老板给的量也很多，包装的很好，包装用的盒子还可以留下来泡面吃，还有，快递小哥的配送速度我很满意
+                </text>
+            </view>
+            <view class='goods'>
+                <image src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3798126124,2283897759&fm=27&gp=0.jpg'></image>
+                <view class='shopinfo'>
+                    <text>江南大道顺旺基餐厅</text>
+                    <text>肉末茄子+红烧猪蹄+米饭350克</text>
+                    <text>￥19</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class='section'>
+        <view class='content'>
+            <view class='user'>
+                <image src='/imgs/aixin.png'></image>
+                <text>金玉</text>
+                <text>2017-5-19</text>
+            </view>
+            <view class='assess'>
+                <view class='grade'>
+                    <text>打分：</text>
+                    <block wx:for="{{stars}}">
+                        <image src='/imgs/star.png'></image>
+                    </block>
+                </view>
+                <text class='txt'>味道很美味，菜的颜色香味都很好，老板给的量也很多，包装的很好，包装用的盒子还可以留下来泡面吃，还有，快递小哥的配送速度我很满意
+                </text>
+            </view>
+            <view class='goods'>
+                <image src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3798126124,2283897759&fm=27&gp=0.jpg'></image>
+                <view class='shopinfo'>
+                    <text>江南大道顺旺基餐厅</text>
+                    <text>肉末茄子+红烧猪蹄+米饭350克</text>
+                    <text>￥19</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    
+    <view class='empty' wx:if="{{isNone}}">
+        <view class='img'>
+            <image src='/imgs/pingjia.png'></image>
+        </view>
+        <view class='text'>您暂时还没有评价, 快去评价吧</view>
+    </view>
+</view>

@@ -1,0 +1,42 @@
+.head{
+  padding:30rpx;
+  background: #fe2d4a;
+  color:#fff;
+  text-align: center;
+  position: relative;
+}
+.head image{
+  width:56rpx;
+  height:56rpx;
+  position: absolute;
+  left:30rpx;
+}
+
+.quhao{
+  display: flex;
+  padding:40rpx 0rpx;
+  background: #fff;
+  margin-top:30rpx;
+}
+.quhao>view{
+  flex: 1;
+  text-align: center;
+  color:#6d6d6d;
+  font-size:34rpx;
+}
+.quhao>view view{
+  width:120rpx;
+  height:120rpx;
+  line-height: 170rpx;
+  background: #f7a700;
+  border-radius: 50%;
+  margin:0rpx auto;
+  margin-bottom:20rpx;
+}
+.quhao>view:nth-child(2) view{
+  background:#26a264;
+}
+.quhao image{
+  width:80rpx;
+  height:80rpx;
+}

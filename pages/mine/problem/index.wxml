@@ -1,0 +1,6 @@
+<!--pages/mine/problem/index.wxml-->
+<view class='box'>
+    <view class='title'>
+        <text>常见问题</text>
+    </view>
+</view>

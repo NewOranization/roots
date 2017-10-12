@@ -1,0 +1,14 @@
+<view class="head">
+    <image src="/imgs/back_white.png"></image>微信排号
+</view>
+<view class='quhao'>
+  <view>
+    <view> <image src='/imgs/refresh.png'></image></view>刷新状态
+  </view>
+  <view>
+    <view> <image src='/imgs/aircraft.png'></image></view>我要取号
+  </view>
+</view>
+<view class='foot'>
+  
+</view>

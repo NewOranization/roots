@@ -1,0 +1,4 @@
+<image src="/imgs/Sigh.png"></image> 
+<view>门店未添加排号队列，无法取号</view>
+<button>确定</button>
+<text>返回首页</text>

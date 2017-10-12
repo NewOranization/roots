@@ -1,0 +1,41 @@
+<template name="like2">
+  <!--猜你喜欢横排  -->
+  <view class='like' wx:if='{{likeLayout==false}}'>
+    <view class='switch'>
+      <text>猜你喜欢</text>
+      <image src='/imgs/lr.png' bindtap='layoutSwith'></image>
+    </view>
+    <view class='likeContent'>
+      <view class='likeItem'>
+        <image src='http://img0.imgtn.bdimg.com/it/u=2827070164,3731467866&fm=11&gp=0.jpg'></image>
+        <view class='itemText'>
+          <text class='proName'>雪媚娘</text>
+          <text class='saleNum'>月售1805份 好评率96%</text>
+          <view class='price'>￥13
+            <text>满30减25</text>
+          </view>
+          <view class='shop'>
+            <view>
+              <image src='/imgs/shop.png'></image>可莎蜜儿你好几个粉丝</view>
+            <view>...</view>
+          </view>
+        </view>
+      </view>
+      <view class='likeItem'>
+        <image src='http://img0.imgtn.bdimg.com/it/u=2827070164,3731467866&fm=11&gp=0.jpg'></image>
+        <view class='itemText'>
+          <text class='proName'>雪媚娘</text>
+          <text class='saleNum'>月售1805份 好评率96%</text>
+          <view class='price'>￥13
+            <text>满30减25</text>
+          </view>
+          <view class='shop'>
+            <view>
+              <image src='/imgs/shop.png'></image>可莎蜜儿</view>
+            <view>...</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

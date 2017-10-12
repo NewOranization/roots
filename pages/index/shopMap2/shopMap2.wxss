@@ -1,0 +1,88 @@
+.head{
+  padding-top:30rpx;
+  padding-bottom:20rpx;
+  position: relative;
+  background: #fff;
+}
+.head image{
+  width:56rpx;
+  height:55rpx;
+  margin-bottom: 15rpx;
+  margin-left:20rpx;
+  margin-right:20rpx;
+}
+.head input{
+  width:65%;
+  height:80rpx;
+  border:1rpx solid #bdbabd;
+  display: inline-block;
+}
+.head icon{
+  position: absolute;
+  left:100rpx;
+  top:50rpx;
+}
+.head text{
+  padding:19rpx 30rpx;
+  background: #0092ff;
+  position: absolute;
+  bottom:30rpx;
+}
+/**********  */
+.disport{
+  width:84%;
+  /* height: 150px; */
+   background-color:#fff; 
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  border-radius: 15rpx;
+  padding-left:10%;
+  margin:3%;
+  box-shadow: 0 2px 20px 0 rgba(0,0,0,0.20);
+  border: 1rpx solid #dedbde;
+  position:relative;
+}
+.disport:last-child{
+  margin-bottom: 0;
+}
+.disport>view{
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  height: 50px;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+.disport>view:not(:last-child){
+  border-bottom: 1px solid #e7e3e7;
+}
+.disport>view text{
+  box-sizing: border-box;
+  flex: 0 0 33.333%;
+  line-height: 100rpx;
+  text-align: center;
+  margin-top:10rpx;
+  margin-bottom:10rpx;
+}
+.disport>view text:not(:first-child){
+  border-left: 1rpx dashed #a5a6ad;
+}
+.disport>image{
+  width:76rpx;
+  height:76rpx;
+  position: absolute;
+  left:8rpx;
+}
+.disport>text{
+  width:76rpx;
+  height:76rpx;
+  line-height: 76rpx;
+  background: #a5d342;
+  color:#fff;
+  text-align: center;
+  position: absolute;
+  left:8rpx;
+}
+  

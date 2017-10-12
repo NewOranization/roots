@@ -1,0 +1,8 @@
+<!--pages/mine/redpackage/index.wxml-->
+<import src="../../template/title/index.wxml"/>
+<import src="../../template/comesoon/index.wxml"/>
+
+
+<template is="title" data="{{headTitle}}"/>
+<template is="comesoon" />
+

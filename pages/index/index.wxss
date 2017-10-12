@@ -1,0 +1,13 @@
+@import "../template/tel_search/tel_search.wxss";
+@import "../template/tel_swiper/tel_swiper.wxss";
+@import "../template/tel_sortSel/tel_sortSel.wxss";
+@import "../template/tel_info/tel_info.wxss";
+@import "../template/tel_discount/tel_discount.wxss";
+@import "../template/tel_tab/tel_tab.wxss";
+@import "../template/tel_like1/tel_like1.wxss";
+@import "../template/tel_like2/tel_like2.wxss";
+page{
+    background: #eee;
+}
+
+

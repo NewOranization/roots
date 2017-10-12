@@ -1,0 +1,10 @@
+<view class="head">
+  <image src="/imgs/back.png" bindtap='returnSubmit'></image>填写备注
+</view>
+ <textarea placeholder="给商家留言，可输入对商家的要求" class='areaClass' placeholder-style='color:#cacaca;' value='{{myValue}}' bindinput='saveText'/>
+ <view class='common'>
+  <text>不辣</text>
+  <text>微辣</text>
+  <text>中辣</text>
+  <text>特辣</text>
+ </view>

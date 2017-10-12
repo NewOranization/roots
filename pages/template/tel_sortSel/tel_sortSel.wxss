@@ -1,0 +1,22 @@
+/*分类选择轮播  */
+.sortSel{
+  background: #fff;
+  padding-top:28.8rpx;
+  font-size: 25rpx;
+}
+.sortSel image{
+  width:72rpx;
+  height:72rpx;
+  display: block;
+  margin:0 auto;
+  margin-bottom: 15rpx;
+}
+.sortSel swiper-item{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-between;
+}
+.sortSel swiper-item view{
+  flex: 0 0 25%;
+  text-align: center
+}

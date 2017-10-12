@@ -1,0 +1,59 @@
+.head{
+  padding:30rpx;
+  background: #fe2d4a;
+  color:#fff;
+  text-align: center;
+  position: relative;
+}
+.head image{
+  width:56rpx;
+  height:56rpx;
+  position: absolute;
+  left:30rpx;
+}
+button{
+  width:95%;
+  margin-top:20rpx;
+  margin-bottom:20rpx;
+  font-size:36rpx;
+}
+.hongbao{
+  display: flex;
+  margin:0 20rpx;
+  background: #fff;
+  line-height: 100rpx;
+  padding-left:20rpx;
+  padding-right:20rpx;
+  font-size: 24rpx;
+  color:#7e7e7e;
+  position: relative;
+}
+.hongbao text{
+  display: block;
+  color:#ff2d4b;
+  font-size: 30rpx;
+}
+
+.hongbao>view:nth-child(1){
+  flex: 0 0 60%;
+}
+.hongbao>view:nth-child(2){
+  flex: 0 0 40%;
+  text-align: right;
+}
+.semi-circle{
+  width:35rpx;
+  height:35rpx;
+  background: #eee;
+  border-radius: 50%;
+}
+.hongbao .semi-circle1{
+  position: absolute;
+  top:80rpx;
+  left:-20rpx;
+}
+.hongbao .semi-circle2{
+  position: absolute;
+  top:80rpx;
+  right:-20rpx;
+}

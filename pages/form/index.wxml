@@ -1,0 +1,46 @@
+<!--pages/mine/myform/form.wxml-->
+<import src="../template/tel_1/index.wxml"/>
+<view class='box'>
+    <view class='formHead'>
+        <view class='fixed-box'>
+            <view class="form_state {{status == 0? 'active' : ''}}" data-status='0' bindtap='tabSwitch'>
+                <text>全部</text>
+            </view>
+            <view class="form_state {{status == 1? 'active' : ''}}" data-status='1' bindtap='tabSwitch'>
+                <text>待付款</text>
+            </view>
+            <view class="form_state {{status == 2? 'active' : ''}}" data-status='2' bindtap='tabSwitch'>
+                <text>待使用</text>
+            </view>
+            <view class="form_state {{status == 3? 'active' : ''}}" data-status='3' bindtap='tabSwitch'>
+                <text>待评价</text>
+            </view>
+            <view class="form_state {{status == 4? 'active' : ''}}" data-status='4' bindtap='tabSwitch'>
+                <text>退款/售后</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='wrap'>
+        <block wx:for="{{formList}}" wx:for-item="formList" wx:key="formList">
+            <template is="tel_1" data="{{...formList}}" /> 
+        </block>
+    </view>
+
+</view>
+
+<view class='load-notice'>
+    <view class='loading'>
+        <text>正在加载，请稍后...</text>
+    </view>
+    <view class='endding'>
+        <text class='line'></text>
+        <text>我是有底线的</text>
+        <text class='line_r'></text>
+    </view>
+</view>
+
+<view class='formEmpty' wx:if="{{empty}}">
+    <image src='/imgs/emptyform.png'></image>
+    <text>您目前还没有订单，赶紧去逛逛</text>
+</view>

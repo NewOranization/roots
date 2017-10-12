@@ -1,0 +1,49 @@
+<!--pages/mine/collection/index.wxml-->
+<view class='box'>
+    <view class='nav'>
+        <text class="{{status == 0 ? 'active' : ''}}" bindtap='tabSwitch' data-status='0'>商家</text>
+        <text class="{{status == 1 ? 'active' : ''}}" bindtap='tabSwitch' data-status='1'>团购</text>
+        <text class="{{status == 2 ? 'active' : ''}}" bindtap='tabSwitch' data-status='2'>内容</text>
+    </view>
+
+    <view class='content' wx:if="{{status == 0}}">
+        <view class='wrap'>
+            <view class='wrapTop'>
+                <view class='wrap-img'>
+                    <image src='/imgs/hongbao.png'></image>
+                </view>
+                <view class='wrap-dtl'>
+                    <view class='wrap-dtl-name'>
+                        <!-- <image src='/imgs/share_box.png'></image> -->
+                        <text>杭州麦当劳江南大道中南餐厅</text>
+                    </view>
+                    <view class='wrap-dtl-sale'>
+                        <block wx:for="{{stars}}">
+                            <image src='/imgs/star.png'></image>
+                        </block>
+                        <text>4.6</text>
+                        <text>已售 90 份</text>
+                    </view>
+                    <view class='wrap-dtl-price'>
+                        <text>起送￥20</text>
+                        <text class='line'></text>
+                        <text>配送￥20</text>
+                        <text class='line'></text>
+                        <text>约20分钟</text>
+                    </view>                
+                </view>
+            </view>
+            <image class="mark_img" src='/imgs/star.png'></image>
+            <view class='wrap-hot'>
+                <image src='/imgs/hot-sale.png'></image>
+                <text>热销： 毛血旺 口水鸡</text>
+            </view>
+        </view>
+        
+    </view>
+
+    <view class='empty'  wx:else>
+        <image src='/imgs/empty_item.png'></image>
+        <text>您还没有此项收藏</text>
+    </view>
+</view>

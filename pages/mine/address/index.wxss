@@ -1,0 +1,113 @@
+/* pages/mine/address/index.wxss */
+page{
+    background: #eee;
+}
+
+.box{
+    color: #3d4245;
+    font-size: 32rpx;
+    width: 100%;
+    margin-bottom: 120rpx;  
+}
+/*地址列表样式*/
+.box .wrap{
+    width: 100%;
+}
+
+.box .wrap .address{
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.box .wrap .address .ads_detail{
+    padding: 0 40rpx 30rpx;
+    border-bottom: 1px solid #eee;
+}
+
+.box .wrap .address .ads_detail view.ads_detail_name{
+    line-height: 100rpx;
+}
+
+.box .wrap .address .ads_detail view.ads_detail_name text{
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+}
+
+.box .wrap .address .ads_detail view.ads_detail_name text:last-child{
+    text-align: right;
+}
+
+.box .wrap .address .ads_setting{
+    overflow: hidden;
+    padding-left: 40rpx;
+    padding-right: 40rpx;
+    line-height: 100rpx;
+}
+
+.box .wrap .address .ads_setting .default{
+    float: left;
+    overflow: hidden;
+}
+
+.box .wrap .address .ads_setting .default icon{
+    float: left;
+    display: block;
+    margin-top: 25rpx; 
+}
+
+.box .wrap .address .ads_setting .default text{
+    float: left;
+    display: block;
+    margin-left: 15rpx;
+}
+
+.box .wrap .address .ads_setting .edit{
+    float: right;
+    margin-left: 25rpx;
+}
+
+.box .wrap .address .ads_setting .edit image{
+    width: 40rpx;
+    height: 40rpx;
+    display: block;
+    float: left;
+    margin-top: 30rpx
+}
+
+.box .wrap .address .ads_setting .edit text{
+    display: block;
+    float: right;
+    margin-left: 15rpx;
+}
+
+/* 地址为空时样式*/
+.box .empty{
+    text-align: center;
+    padding-top: 250rpx;
+    color: #aaa;
+}
+
+.box .empty image{
+    width: 260rpx;
+    height: 260rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.box .empty text{
+    display: block;
+    margin-top: 40rpx;
+}
+
+.add_address{
+    display: block;
+    width: 100%;
+    height: 100rpx;
+    background: #ff5500;
+    text-align: center;
+    line-height: 100rpx;
+    position: fixed;
+    bottom: 0;
+
+}

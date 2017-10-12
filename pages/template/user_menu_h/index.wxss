@@ -1,0 +1,23 @@
+.box{
+    margin-top: 40rpx;
+    background: #fff;
+    font-size: 30rpx;
+    line-height: 100rpx;
+    color: #000;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.box .wrap{
+    width: 24.5%;
+    height: 230rpx;
+    text-align: center;
+}
+
+.box .wrap .wrap_item image{
+    width: 60rpx;
+    height: 60rpx;
+    display: block;
+    margin: 40rpx auto 0;
+}

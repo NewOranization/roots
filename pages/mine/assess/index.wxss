@@ -1,0 +1,130 @@
+/* pages/mine/assess/index.wxss */
+page{
+    background: #eee;
+    font-size: 30rpx;
+    color: #000;
+}
+
+.section .content{
+    background: #fff;
+    padding: 15rpx 20rpx;
+    overflow: hidden;
+    margin-bottom: 25rpx;
+}
+
+.section .content .user{
+    overflow: hidden;
+    line-height: 60rpx;
+}
+
+.section .content .user image{
+    width: 60rpx;
+    height: 60rpx;
+    display: block;
+    float: left;
+}
+
+.section .content .user text:nth-child(2){
+    display: block;
+    float: left;
+    margin-left: 10rpx;
+    font-weight: bold;
+}
+
+.section .content .user text:last-child{
+    display: block;
+    float: right;
+    color: #666;
+    font-size: 28rpx;
+}
+
+.section .content .assess{
+    margin-top: 10rpx;  
+}
+
+.section .content .assess .grade{
+    font-size: 28rpx;
+    color: #666;
+    overflow: hidden;
+}
+
+.section .content .assess .grade text{
+    display: block;
+    float: left;
+}
+
+.section .content .assess .grade image{
+    display: block;
+    float: left;
+    width: 28rpx;
+    height: 28rpx;
+    margin-top: 5rpx;
+}
+
+.section .content .assess .txt{
+    display: block;
+    margin-top: 5rpx;
+}
+
+.section .content .goods{
+    overflow: hidden;
+    margin-top: 20rpx;
+    background: #eee;
+
+}
+
+.section .content .goods image{
+    width: 180rpx;
+    height: 180rpx;
+    float: left;
+    display: block
+}
+
+.section .content .goods .shopinfo{
+    float: left;
+    margin-left: 15rpx;
+    white-space: wrap;
+}
+
+.section .content .goods .shopinfo text{
+    display: block;
+}
+
+.section .content .goods .shopinfo text:first-child{
+    font-weight: bold;
+    color: #000;
+    line-height: 80rpx;
+}
+
+.section .content .goods .shopinfo text:nth-child(2),
+.section .content .goods .shopinfo text:last-child{
+    line-height: 40rpx;
+    color: #666;
+}
+
+
+
+.empty{
+    text-align: center;
+    line-height: 200rpx;
+    color: #768491;
+    margin-top: 250rpx;
+}
+
+.empty .img{
+    width: 300rpx;
+    height: 300rpx;
+    background: #fff;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 50%;
+}
+
+.empty .img image{
+    width: 180rpx;
+    height: 180rpx;
+    display: block;
+    position: absolute;
+    top: 60rpx;
+    left: 60rpx;
+}

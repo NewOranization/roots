@@ -1,0 +1,46 @@
+<view class="search">
+  <image src="../../../imgs/back.png" bindtap='backImg'></image>
+  <input type='text' placeholder='{{inputData}}' placeholder-style="margin-left:50rpx;font-size:28rpx;color:#bbb;"></input>
+  <icon type="search" size="15" color="#000" />
+  <text class='searchSub'>搜索</text>
+</view>
+<view class='searchResult'>
+  <block wx:for="{{searchResult.result}}">
+    <view class='resultItem' bindtap='gotoBusiness' data-token="{{item.push_token}}">
+      <image src='{{item.logo}}'></image>
+      <view>
+        <view>{{item.title}}</view>
+        <text>起送 ￥{{item.send_price}}</text>
+        <text>配送 ￥{{item.delivery_price}}</text>
+      </view>
+      <text>{{item.delivery_time}}分钟</text>
+    </view>
+    <view class='result'>
+      <block wx:for="{{item.goods}}" wx:for-item="myGoods">
+        <view>
+          <text>{{myGoods.title}}</text>
+          <text>￥{{myGoods.price}}</text>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>
+<view class='Recommend'>
+  <view class='recomText'>
+    <text></text>
+    <view>
+      <image src='/imgs/aixin.png'></image>为您推荐</view>
+    <text></text>
+  </view>
+  <block wx:for="{{searchResult.recommend}}">
+    <view class='resultItem' bindtap='gotoBusiness' data-token="{{item.push_token}}">
+      <image src='{{item.logo}}'></image>
+      <view>
+        <view>{{item.title}}</view>
+        <text>起送 ￥{{item.send_price}}</text>
+        <text>配送 ￥{{item.delivery_price}}</text>
+      </view>
+      <text>{{item.delivery_time}}分钟</text>
+    </view>
+  </block>
+</view>

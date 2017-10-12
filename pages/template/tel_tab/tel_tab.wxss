@@ -1,0 +1,167 @@
+.box{
+    margin: 20rpx 0;
+    font-size: 30rpx;
+    position: relative;
+}
+
+.box .nav{
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+
+.box .nav .navbar{
+    width: 33%;
+    float: left;
+    position: relative;
+}
+
+.box .nav .navbar .active{
+    color: red;
+}
+
+.box .nav .navbar image{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 30rpx;
+}
+
+.box .list{
+    width: 100%;
+    text-align: left;
+    line-height: 90rpx;
+    
+    position: absolute;
+    top: 92rpx;
+    z-index: 100;
+    background: #fff;
+}
+
+.box .list text,.item{
+    display: block;
+    height: 90rpx;
+    border-bottom: 1px solid #eee;
+    padding-left: 30rpx;
+    overflow: hidden;
+}
+
+.box .list .item image{
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+    margin-top: 20rpx;
+    float: left;
+}
+
+.box .list .item text{
+    display: block;
+    margin-left: -5rpx;
+}
+.box .shop{
+  margin-bottom:20rpx;
+}
+.box .shop .wrap{
+    background: #fff;
+    padding:20rpx 20rpx 0 20rpx;
+    display: flex;
+    flex-direction: row;
+    line-height:60rpx;
+}
+
+.box .shop .wrap .wrap-left{
+    width: 25%;
+    margin-top: 10rpx;
+}
+
+.box .shop .wrap .wrap-left image{
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.box .shop .wrap .wrap-right{
+    width: 72%;
+    margin-top: 10rpx;
+    margin-left: 20rpx;
+}
+
+.box .shop .wrap .wrap-right .wrap-right-top{
+    font-size: 34rpx;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.box .shop .wrap .wrap-right .wrap-right-top text{
+    display: block;
+    float: left;
+}
+
+.box .shop .wrap .wrap-right .wrap-right-top image{
+    display: block;
+    float: right;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.box .shop .wrap .wrap-right .wrap-right-center{
+    overflow: hidden;
+}
+
+.box .shop .wrap .wrap-right .wrap-right-center image{
+    width: 35rpx;
+    height: 35rpx;
+    display: block;
+    float: left;
+    margin-top: 3rpx;
+}
+
+.box .shop .wrap .wrap-right .wrap-right-center text{
+    display: block;
+    margin-left: 20rpx;
+    float: left;
+}
+.box .shop .wrap .wrap-right .wrap-right-bottom{
+  display: flex;
+}
+.box .shop .wrap .wrap-right .wrap-right-bottom view:nth-child(1){
+  flex: 0 0 83%;
+}
+.box .shop .wrap .wrap-right .wrap-right-bottom view:nth-child(1) text{
+  color:#ff2c4a;
+}
+.box .shop .wrap .wrap-right .wrap-right-bottom view:nth-child(1) text:not(:last-child){
+  border-right:1rpx solid #dedfde;
+  padding-right:10rpx;
+  margin-right:10rpx;
+}
+.box .shop .wrap .wrap-right .wrap-right-bottom image{
+  width:26rpx;
+  height:26rpx;
+}
+.box .shop .wrapSort{
+  background: #fff;
+  color: #848284;
+  font-size: 24rpx;
+}
+.box .shop .wrapSort image{
+  width:30rpx;
+  height:30rpx;
+  vertical-align: middle
+}
+.box .shop .wrapSort .wrapSort-top{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+  border-top: 1rpx dashed #eee;
+}
+.box .shop .wrapSort .wrapSort-top .right image{
+  margin-left: 20rpx;
+}
+.box .shop .wrapSort .wrapSort-bottom{
+  padding: 10rpx;
+  border-top: 1rpx dashed #eee;
+}
+

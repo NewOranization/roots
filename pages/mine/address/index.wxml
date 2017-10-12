@@ -1,0 +1,40 @@
+<!--pages/mine/address/index.wxml-->
+<view class='box'>
+    <view class='empty' wx:if="{{isEmpty}}">
+        <image src='/imgs/dizhi.png'></image>
+        <text>您还没有收货地址，快去添加吧!</text>
+    </view>
+    <view class='wrap' wx:for="{{addressList}}" wx:key="addressList">
+        <view class='address' bindtap='navTo' data-index='{{index}}'>
+            <view class='ads_detail'>
+                <view class='ads_detail_name'>
+                    <text>{{item.userName}}</text>
+                    <text>{{item.mobile}}</text>
+                </view>
+                <view class='ads_detail_ads'>
+                    <text>{{item.address}} {{item.detailAddress}}</text>
+                </view>
+            </view>
+            <view class='ads_setting'>
+                <view class='default' bindtap='setDefaultAddress' data-id="{{item.id}}" data-is_default="{{item.is_default}}">
+                    <icon type='success' size='20' color="red" wx:if="{{item.is_default == '1'}}"></icon>
+                    <icon type='circle' size='20' wx:else></icon>
+                    <text>{{item.is_default == '1' ? '默认地址' : '设为默认'}}</text>
+                </view>
+                <view class='edit'>
+                    <image src='/imgs/edit.png'></image>
+                    <text bindtap='navTo' data-click='editAddress' data-id="{{item.id}}">编辑</text>
+                </view>
+                <view class='edit'>
+                    <image src='/imgs/delete.png'></image>
+                    <text bindtap='deleteAddress'  data-id="{{item.id}}">删除</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view>
+    <text class='add_address' bindtap='navTo' data-click='addAddress'>添加新地址</text>
+</view>
+

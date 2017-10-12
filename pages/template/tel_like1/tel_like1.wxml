@@ -1,0 +1,24 @@
+<template name="like1">
+  <view class='like' wx:if='{{likeLayout==true}}'>
+    <view class='switch'>
+      <text>猜你喜欢</text>
+      <image src='/imgs/tb.png'  bindtap='layoutSwith'></image>
+    </view>
+    <view class='contentItem'>
+      <view class='left'>
+        <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1268908151,2678868344&fm=27&gp=0.jpg"></image>
+        <view>
+          <view class='foodName'>{{ls.name}}(可莎蜜儿)</view>
+          <view class='midStar'>
+           月售1085份 好评率95%
+          </view>
+          <view class='priceDetail'>
+           ￥13 <text>满30减25</text>
+          </view>
+        </view>
+      </view>
+     
+    </view>
+  </view>
+
+</template>

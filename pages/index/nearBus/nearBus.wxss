@@ -1,0 +1,39 @@
+.head{
+  background: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #cacaca;
+  margin-bottom:20rpx;
+}
+.head image{
+  width:56rpx;
+  height:56rpx;
+}
+.head text{
+  flex: 1;
+}
+/*  */
+.busMetro{
+  background: #fff;
+  margin-bottom:30rpx;
+
+}
+.busMetro>text{
+  display: block;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.busMetro .bmInfo{
+  padding:30rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.busMetro .bmInfo text:nth-child(1){
+  color:#0091ff;
+}
+.busMetro .bmInfo view:nth-child(1){
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+}

@@ -1,0 +1,10 @@
+
+<import src="../template/tel_tab/tel_tab.wxml" />
+
+ <view class='head'>
+      <image src="../../../imgs/back_white.png"></image>
+      <text>快餐</text>
+      <icon type="search" size="20" color="#fff" bindtap='goSearchPage'/>
+  </view>
+  <!--标签切换  -->
+<template is="tab" data="{{...item,top1: top1, top2: top2, top3: top3,industry,sort,discountActive,stars,sortIcon,discountIcon,shopInfo,nav}}"/>

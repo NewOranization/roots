@@ -1,0 +1,68 @@
+.like{
+  padding-top: 20rpx;
+  background: #fff;
+}
+.like .switch{
+  font-size: 40rpx;
+  font-weight:bold;
+  margin-left:20rpx;
+  display: flex;
+  justify-content: space-between;
+  padding-right:20rpx;
+}
+.like .switch image{
+  width:46rpx;
+  height:46rpx;
+}
+.like .contentItem{
+  padding:20rpx;
+  border-bottom: 20rpx solid #dedede;
+  font-size:28rpx;
+}
+.like .contentItem .left{
+  display: flex;
+  align-items: flex-start;
+}
+
+.like .contentItem .left>image{
+  width:180rpx;
+  height:130rpx;
+  margin-right:20rpx;
+}
+.like .contentItem .left>view{
+  flex: 1;
+}
+.like .contentItem .left .foodName{
+   font-size:36rpx;
+  font-weight: bold;
+  color:#2d2d2d;
+}
+.like .contentItem .left .midStar{
+  font-size:28rpx;
+  margin-top:10rpx;
+  margin-bottom:10rpx;
+  color:#7c7c7c;
+}
+.like .contentItem .left .priceDetail{
+  font-size: 38rpx;
+  color:#f25834;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.like .contentItem .left .priceDetail text{
+  font-size: 28rpx;
+  font-weight:normal;
+  color:#f88c8a;
+  border:1rpx solid #f88c8a;
+  border-radius: 5rpx;
+  padding:0 10rpx;
+  margin-left:25rpx;
+}
+
+
+.tabContent>text{
+  font-weight: bold;
+  margin-left:20rpx;
+}
+

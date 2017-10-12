@@ -1,0 +1,312 @@
+
+<view class='box'>
+    <view class='header'>
+        <view class='title'>
+            <view class='fixed'>
+                <image class='img_l' src='/imgs/arrow_left_white.png' bindtap='navTo' data-click='back'></image>
+                <text>{{status == 1 ? dataList.store.title : '商户详情'}}</text>
+                <image class='img_r_s' src='/imgs/star_white.png' bindtap='navTo' wx:if="{{status == 1}}"></image>
+                <image class='img_r' src="{{status == 1 ? '/imgs/search_white.png' : '/imgs/star_white.png'}}" bindtap='navTo'></image>
+            </view>
+        </view>
+
+        <view class='notice' wx:if="{{scrollTop <= 50 && status == 1}}">
+            <image src='/imgs/notice.png'></image>
+            <text>营业时间：{{dataList.store.business_hours}}</text> 
+        </view>
+    </view>
+
+    <!-- 导航切换 -->
+    <view class='nav' wx:if="{{scrollTop <= 50 && status == 1}}">
+        <text class="{{status == 1 ? 'active' : ''}}" bindtap='tabSwitch' data-status='1'>商品</text>
+        <text class="{{status == 2 ? 'active' : ''}}" bindtap='tabSwitch' data-status='2'>评价</text>
+        <text class="{{status == 3 ? 'active' : ''}}" bindtap='tabSwitch' data-status='3'>商家</text>
+        <text class="{{status == 4 ? 'active' : ''}}" bindtap='tabSwitch' data-status='4'>客服</text>
+    </view>
+    
+    
+    <view class='section'>
+        <view class='content' wx:if="{{status == 1}}">
+            <!-- 左边导航 -->
+            <view class='aside'>
+                <view class='item {{click == item.cid ? "active" : ""}}' wx:for="{{content}}" wx:for-item="item" data-id='{{item.cid}}' data-index="{{index}}" wx:if="{{item.commodity != ''}}" bindtap='tabFloor'>
+                    <image src='/imgs/hot-sale.png' wx:if="{{item.isTry == 1}}"></image>
+                    <text>{{item.title}}</text>
+                </view>
+            </view>
+            <!-- 右边菜单 -->
+            
+            <view class='wrap'>
+                <scroll-view scroll-y="true" class='scroll-r' style='height: {{winHeight}}px' scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" bindscroll='scroll'>
+                <view class='redpackage' wx:if="{{store.coupon && notCollar}}">
+                    <view class='sum'>
+                        ￥<text>{{store.coupon.discount}}</text>
+                    </view>
+                    <view class='explain'>
+                        <text class='text-top'>商家代金券</text> 
+                        <text class='text-bottom'>{{store.coupon.condition}}</text> 
+                    </view>
+                    <view class='collar' bindtap='collarCoupon'>
+                        <text>领券</text>
+                    </view>
+                    <view class='circle circle-t'></view>
+                    <view class='circle circle-b'></view>
+                </view>
+
+                
+                <!-- <block wx:for="{{content}}" wx:for-item="item"> -->
+                <view class='menu' wx:for="{{content}}" wx:for-item="item" id='{{item.sid}}'>
+                    <view class='menu-title' id="{{item.cid}}" wx:if="{{item.commodity != ''}}">
+                        <text>{{item.title}}</text> 
+                    </view>
+
+                    <!-- <block wx:for="{{item.commodity}}" wx:for-item="comItem"> -->
+                    <view class='menu-list' wx:for="{{item.commodity}}" wx:for-item="comItem">
+                        <view class='menu-list-img'>
+                            <image src="{{comItem.thumb}}"></image>
+                        </view>
+                        <view class='menu-list-txt'>
+                            <view class='detail-a'>
+                                <text>{{comItem.title}}</text>
+                            </view>
+                            <view class='detail-b'>
+                                <text wx:if="{{comItem.sailed}}">已售{{comItem.sailed}}份 </text>
+                                <text> 好评0</text>
+                            </view>
+                            <view class='detail-c'>
+                                <text class='detail-c-left'>￥</text>
+                                <text class='detail-c-center'>{{comItem.discount_price ? comItem.discount_price : comItem.price}} </text>
+                                <text class='detail-c-right' wx:if="{{comItem.discount_price}}"> <text></text> ￥{{comItem.price}}</text>
+                            </view>
+                            <view class='detail-d' wx:if='{{comItem.discount}}'>
+                                <text>{{comItem.discount}}</text>
+                            </view>
+                        </view>
+                        <view class='menu-list-btn'>
+                            <text class='reduce' wx:if="{{comItem.cartNum > 0}}" data-id='{{comItem.id}}' data-idx="{{item.id}}" data-index='{{index}}' data-click="reduce" bindtap='plus'>-</text>
+                            <input type='number' disabled='true' value='{{comItem.cartNum}}' wx:if="{{comItem.cartNum > 0}}"></input>
+                            <text class='add' data-id='{{comItem.id}}' data-idx="{{item.id}}" data-index='{{index}}' data-click="plus" bindtap='plus'>+</text>
+                        </view>
+                    </view>
+                    <!-- </block> -->
+                </view>
+                </scroll-view>
+                <!-- </block> -->
+            </view>
+
+            <!-- 底部价格 -->
+            <view class='cart'>
+                <view class='cart-img' bindtap='showCart'>
+                    <view class='cart-img-circle'>
+                        <view class='cart-img-scircle' style="{{totalNum == 0 ? '' : 'background: #ff2648;'}}"> 
+                            <image src='/imgs/cart.png'></image>
+                        </view>
+                    </view>
+                    <text>{{totalNum}}</text>
+                </view>
+                <view class='cart-price'>
+                    <text>{{totalNum == 0 ? '购物车是空的' : '总计 ￥'+totalPrice}}</text>
+                </view>
+                <view class='cart-buy' style="{{totalNum == 0 ? 'background: #484242;' : 'background: #ff2648;'}}" bindtap='navTo' data-click="order">
+                    <text>{{totalNum == 0 ? '20元起送' : '选好了'}}</text>
+                </view>
+            </view>
+        </view>
+
+        <!-- 商家详情页 -->
+        <view class='content-b' wx:if="{{status == 3}}">
+            <view>
+                <swiper indicator-dots='true' autoplay='true' interval="3000" duration="500" circular='true'>
+                <block wx:for="{{dataList.thumbs}}">
+                    <swiper-item>
+                        <image src="{{item.image}}" mode="scaleToFill"/>
+                    </swiper-item>
+                </block>
+                </swiper>
+            </view>
+
+            <view class='storeInfo'>
+                <view class='wrap-top'>
+                    <view class='storeInfo-img'>
+                        <image src="{{dataList.logo}}"></image>
+                    </view>
+                    <view class='storeInfo-txt'>
+                        <view class='storeInfo-txt-tle'>
+                            <text>{{dataList.title}}</text>
+                        </view>
+                        <view class='storeInfo-txt-str'>
+                            <image src='/imgs/star.png'></image>
+                            <text>{{dataList.fraction}}</text>
+                        </view>
+                        <view class='storeInfo-txt-sle'>
+                            <text>已售{{dataList.sailed}}份</text>
+                        </view>
+                    </view>
+                </view>
+                <view class='wrap-btm'>
+                    <view>起送价￥{{dataList.send_price}}</view>
+                    <view>配送￥{{dataList.delivery_price}}</view>
+                    <view>送达时长{{dataList.longtime}}分钟</view>
+                </view>
+            </view>
+
+            <view class='storeSer'>
+                <view class='storeSer-title'>
+                    <image src='/imgs/service.png'></image>
+                    <text>商家服务</text>
+                </view>
+                <view class='storeSer-detail'>
+                    <view class='storeSer-detail-item'>
+                        <image src='/imgs/waimai.png'></image>
+                        <text>点外卖</text>
+                    </view>
+                    <view class='storeSer-detail-item' wx:if="{{dataList.is_meal == '1'}}">
+                        <image src='/imgs/tangshi.png'></image>
+                        <text>堂食</text>
+                    </view>
+                    <view class='storeSer-detail-item' wx:if="{{dataList.is_reserve == '1'}}">
+                        <image src='/imgs/yuding.png'></image>
+                        <text>预定</text>
+                    </view>
+                    <view class='storeSer-detail-item' wx:if="{{dataList.is_assign == '1'}}">
+                        <image src='/imgs/lingdang.png'></image>
+                        <text>排号</text>
+                    </view>
+                </view>
+            </view>
+
+            <view class='storeSer'>
+                <view class='storeSer-act'>
+                    <image src='/imgs/clock.png'></image>
+                    <text>{{dataList.business_hours}}</text>
+                </view>
+                <view class='storeSer-act'>
+                    <image src='/imgs/position.png'></image>
+                    <text>{{dataList.address}}</text>
+                    <image src='/imgs/more1.png' class='more'></image>
+                </view>
+                <view class='storeSer-act'>
+                    <image src='/imgs/callphone.png'></image>
+                    <text>{{dataList.telephone}}</text>
+                    <image src='/imgs/more1.png' class='more'></image>
+                </view>
+                <view class='storeSer-act'>
+                    <image src='/imgs/qq.png'></image>
+                    <text>{{dataList.qq_num}}</text>
+                    <image src='/imgs/more1.png' class='more'></image>
+                </view>
+                <view class='storeSer-act'>
+                    <image src='/imgs/wechat.png'></image>
+                    <text>{{dataList.weixin_num}}</text>
+                    <image src='/imgs/more1.png' class='more'></image>
+                </view>
+                <view class='storeSer-act'>
+                    <image src='/imgs/tese.png'></image>
+                    <text>{{dataList.description}}</text>
+                    <image src='/imgs/more1.png' class='more'></image>
+                </view>
+            </view>
+
+            <view class='storeSer'>
+                <view class='storeSer-act pay'>
+                    <image src='/imgs/pay.png'></image>
+                    <text>支持在线支付</text>
+                </view>
+            </view>
+
+            <view class='liecnse'>  
+                <text>资质证照</text>
+            </view>
+
+            <view class='report'>  
+                举报商家
+            </view>
+        </view>
+
+         <!-- 评价 -->
+    <view class='content' wx:if="{{status==2}}">
+      <view class='topScore'>
+        <view class='leftScore'>
+          <text>{{dataList.commodity_score}}</text>
+          商家评分
+        </view>
+        <view class='centerScore'>
+          <view class='first'>
+            口味
+            <block wx:for="{{dataList.comprehensive}}">
+              <image src='/imgs/star.png'></image>
+            </block>
+            <text>{{dataList.comprehensive}}</text>
+          </view>
+        </view>
+        <view class='rightScore'>
+          <text>{{dataList.distribution}}</text>
+          配送评分
+        </view>
+      </view>
+      <view class="evaluateSort">
+        <text class="{{current==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部({{dataList.sieve.beAll||0}}) </text>
+        <text class="{{current==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">有图({{dataList.sieve.thumb||0}}) </text>
+        <text class="{{current==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">好评({{dataList.sieve.praise||0}}) </text>
+        <text class="{{current==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">中评({{dataList.sieve.secondary||0}}) </text>
+        <text class="{{current==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">差评({{dataList.sieve.bad||0}}) </text>
+      </view>
+      <swiper current="{{currentTab}}" class="evaluate" duration="300" style="height:{{winHeight*1.5}}px" bindchange="bindChange">
+        <!-- 全部 -->
+        <swiper-item>
+          <block wx:for="{{dataList.score}}">
+            <view class='evaluateList'>
+            <!--代表当前标签页下的每一条评价-->
+            <view class='evlTop'>
+              <view class='evlLeft'>
+                <image src='{{item.avatar}}' class='headImg'></image>
+                <view class='elvLeftR'>
+                  <text class='uName'>{{item.nickname}}</text>
+                  <block wx:for="{{item.goods_quality}}">
+                  <image src="/imgs/star.png" class='star'></image>
+                  </block>
+                  <text class='arrive'>{{item.service}}</text>
+                </view>
+              </view>
+              <view class='evlTime'>{{item.comment_time}}</view>
+            </view>
+            <view class='evlBottom'>
+              <text class='evlContent'>{{item.note}}</text>
+              <image src='{{item.thumbs}}' mode="aspectFit" wx:if="{{item.thumbs}}"></image>
+              <text class='reply'>商家回复({{item.difference}}):{{item.reply}}</text>6
+            </view>
+          </view>
+          </block>
+        </swiper-item>
+      </swiper>
+    </view>
+
+        
+        <view class='content'></view>
+    </view>   
+</view>
+
+<!-- 购物车弹框 -->
+<view class='cratModel' wx:if="{{show}}">
+    <view class='mask'></view>
+    <view class='model'>
+        <view class='model-title'>
+            <text>{{dataList.store.title}}</text>
+            <text data-click='empty' bindtap='plus'>清空购物车</text>
+            <image src='/imgs/delete.png'></image>
+        </view>
+        <view class='model-menu' wx:if="{{item.cartNum > 0}}" wx:for="{{dataList.commodity}}" wx:for-item="item">
+            <view class='model-menu-title'>
+                <text>{{item.title}}</text>
+            </view>
+            <view class='model-menu-price'>
+                <text>￥{{item.totalPrice}}</text>
+            </view>
+            <view class='model-menu-btn'>
+                <text class='reduce' data-id='{{item.id}}' data-click="cartReduce" bindtap='plus'>-</text>
+                <input type='number' disabled='true' value='{{item.cartNum}}'></input>
+                <text class='add' data-id='{{item.id}}' data-click="cartPlus" bindtap='plus'>+</text>
+            </view>
+        </view>
+    </view>
+</view>

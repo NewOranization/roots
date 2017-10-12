@@ -1,0 +1,64 @@
+.box{
+    margin-top: 40rpx;
+    background: #fff;
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 100rpx;
+    color: #000;
+    padding-left: 30rpx;
+}
+
+.box .wrap{
+    overflow: hidden;
+    height: 100rpx;
+    border-bottom: 1px solid #ddd;
+}
+
+.box .wrap:last-child{
+    border: none;
+}
+
+.box .wrap .wrap_item{
+    float: left;
+    overflow: hidden;
+}
+
+.box .wrap .wrap_item image{
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+    float: left;
+    margin-top: 25rpx;
+    margin-left: 15rpx;
+}
+
+.box .wrap .wrap_item text{
+    display: block;
+    float: left;
+    margin-left: 30rpx;
+}
+
+.box .wrap .wrap_entry{
+    float: right;
+    overflow: hidden;
+}
+
+.box .wrap .wrap_entry text{
+    display: block;
+    float: right;
+    font-weight: normal;
+    color: #888888;
+    margin-right: 20rpx;
+}
+
+.box .wrap .wrap_entry image{
+    width: 40rpx;
+    height: 40rpx;
+    display: block;
+    float: right;
+    margin-top: 30rpx;
+    margin-right: 15rpx;
+}
+
+
+

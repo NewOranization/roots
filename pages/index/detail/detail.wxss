@@ -1,0 +1,40 @@
+.head{
+  padding:30rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  width:100%;
+}
+.head image{
+  width:56rpx;
+  height:56rpx;
+  margin-right:160rpx;
+}
+.head text{
+  font-size: 28rpx;
+}
+
+/*  */
+.picList{
+  padding:20rpx 30rpx;
+  border-top: 1rpx solid #eee;
+  margin-bottom: 10rpx;
+  background: #fff;
+  }
+.picList image{
+  width:120rpx;
+  height:120rpx;
+  border-radius: 10rpx;
+}
+.picList image:not(:last-child){
+  margin-right: 20rpx;
+}
+/*  */
+.body view:last-child{
+  padding:20rpx 30rpx;
+  background: #fff;
+  line-height: 60rpx;
+}
+.body view:last-child text{
+  display: block;
+}

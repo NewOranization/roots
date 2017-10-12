@@ -1,0 +1,93 @@
+/************************************like  */
+.like{
+  background: #fff;
+  padding-top:20rpx;
+}
+.like .switch{
+  font-size: 40rpx;
+  font-weight:bold;
+  margin-left:20rpx;
+  display: flex;
+  justify-content: space-between;
+  padding-right:20rpx;
+}
+.like .switch image{
+  width:46rpx;
+  height:46rpx;
+}
+.like .likeContent{
+  padding:20rpx;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+
+.like .likeContent .likeItem{
+  box-sizing: border-box;
+  background-color: white;
+  flex: 0 0 49%;
+}
+.like .likeContent .likeItem:nth-child(2n-1){
+  margin-right:2%;
+}
+.like .likeContent .likeItem>image{
+  width:100%;
+  height:200rpx;
+  display: block;
+}
+.like .likeContent .likeItem .proName{
+  font-size:36rpx;
+  font-weight: bold;
+  color:#2d2d2d;
+  display: block;
+}
+.like .likeContent .likeItem .itemText{
+  padding:20rpx;
+
+
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color:#a8a8a8;
+  border: 1rpx solid #ebebeb;
+  border-top:none;
+}
+.like .likeContent .likeItem .itemText .saleNum{
+  color:#7c7c7c;
+}
+.like .likeContent .likeItem .price{
+  color:#f25834;
+  font-size: 38rpx;
+  font-weight: bold;
+  border-bottom: 1rpx dashed #eee;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+  
+  display: flex;
+  align-items: center;
+}
+.like .likeContent .likeItem .price text{
+  font-size: 30rpx;
+  color:#f47272;
+  border:1rpx solid #f47272;
+  font-weight:normal;
+  margin-left: 20rpx;
+  border-radius: 5rpx;
+  padding:0 10rpx;
+}
+.like .likeContent .likeItem .shop view:nth-child(1){
+    width:280rpx; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;
+}
+.like .likeContent .likeItem .shop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.like .likeContent .likeItem .shop image{
+  width:46rpx;
+  height:46rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+.like .pricedel text{
+  color:#ea6c7a;
+}

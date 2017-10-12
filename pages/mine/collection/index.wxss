@@ -1,0 +1,184 @@
+/* pages/mine/collection/index.wxss */
+page{
+    background: #eee;
+}
+
+.box{
+    font-size: 30rpx;
+}
+/*tab导航样式*/
+.box .nav{
+    width: 100%;
+    height: 100rpx;
+    line-height: 97rpx;
+    font-size: 32rpx;
+    color: #000;
+    background: #fff;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.box .nav text{
+    width: 33%;
+    height: 97rpx;
+    display: inline-block;
+    /* border-bottom: 1px solid #FFF; */
+}
+
+.box .nav text.active{
+    color: #43CD80;
+    border-bottom: 2px solid #43CD80;
+}
+
+/* 收藏部分样式 */
+.box .content{
+    
+    
+}
+
+.box .content .wrap{
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+    margin-bottom: 20rpx;
+}
+
+.box .content .wrap .wrapTop{
+    padding: 15rpx;
+    overflow: hidden;
+}
+
+.box .content .wrap .wrapTop .wrap-img{
+    width: 150rpx;
+    height: 130rpx;
+    float: left;
+}
+
+.box .content .wrap .wrapTop .wrap-img image{
+    width: 150rpx;
+    height: 130rpx;
+    display: block;
+}
+
+.box .content .wrap .wrapTop .wrap-dtl{
+    width: auto;
+    float: left;
+    margin-left: 20rpx;
+}
+
+.box .content .wrap .wrapTop .wrap-dtl .wrap-dtl-name{
+    height: 50rpx;
+    line-height: 50rpx;
+    overflow: hidden;
+}
+
+/* .box .content .wrap .wrapTop .wrap-dtl .wrap-dtl-name image{
+    float: left;
+    width: 50rpx;
+    height: 40rpx;
+    display: block;
+    margin-top: 10rpx;
+
+} */
+
+.box .content .wrap .wrapTop .wrap-dtl .wrap-dtl-name text{
+    /* float: left;
+    display: block; */
+    font-size: 32rpx;
+    color: #000;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.box .content .wrap .wrapTop .wrap-dtl .wrap-dtl-sale{
+    font-size: 26rpx;
+    color: #666;
+}
+
+.box .content .wrap .wrapTop .wrap-dtl .wrap-dtl-sale image{
+    width: 25rpx;
+    height: 25rpx;
+    display: inline-block;
+}
+
+.box .content .wrap .wrapTop .wrap-dtl .wrap-dtl-sale text{
+    display: inline-block;
+    margin-left: 15rpx;
+}
+
+.box .content .wrap .wrapTop .wrap-dtl .wrap-dtl-price{
+    font-size: 26rpx;
+    color: #666;
+    overflow: hidden;
+}
+
+.box .content .wrap .wrapTop .wrap-dtl .wrap-dtl-price text{
+    display: block;
+    float: left;
+}
+
+.box .content .wrap .wrapTop .wrap-dtl .wrap-dtl-price text.line{
+    width: 1px;
+    height: 35rpx;
+    margin: 0 15rpx;
+    background: #ddd;
+}
+
+.box .content .wrap .wrap-hot{
+    border-top: 1px dashed #ddd;
+    height: 60rpx;
+    overflow: hidden;
+    padding-left: 20rpx;
+    line-height:50rpx;
+}
+
+.box .content .wrap .wrap-hot image{
+    width: 38rpx;
+    height: 38rpx;
+    display: block;
+    float: left;
+    margin-top: 6rpx;
+}
+
+.box .content .wrap .wrap-hot text{
+    float: left;
+    display: block;
+    margin-left: 15rpx;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.box .content .wrap .mark_img{
+    position: absolute;
+    width: 30rpx;
+    height: 30rpx;
+    top: 25rpx;
+    right: 15rpx;
+}
+
+
+
+/*收藏内容为空时*/
+.box .empty{
+    width: 100%;
+    text-align: center;
+    margin-top: 200rpx;
+}
+
+.box .empty image{
+    width: 360rpx;
+    height: 360rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.box .empty text{
+    display: block;
+    margin: 40rpx auto 0;
+    color: #666;
+    
+}
+
+

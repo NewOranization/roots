@@ -1,0 +1,38 @@
+<view class="head">
+  <image src="/imgs/back.png"></image><text>附近公交地铁</text>
+</view>
+
+<view class="busMetro">
+  <text>附近公交站</text>
+  <view class="bmInfo">
+    <view>
+      <text>吴山广场华光巷(公交站)</text>
+      <text>965米</text>
+    </view>
+    <view>56路、78路、8路、93路</view>
+  </view>
+  <view class="bmInfo">
+    <view>
+      <text>吴山广场华光巷(公交站)</text>
+      <text>965米</text>
+    </view>
+    <view>56路、78路、8路、93路</view>
+  </view>
+</view>
+<view class="busMetro">
+  <text>附近地铁站</text>
+  <view class="bmInfo">
+    <view>
+      <text>吴山广场华光巷(公交站)</text>
+      <text>965米</text>
+    </view>
+    <view>56路、78路、8路、93路</view>
+  </view>
+  <view class="bmInfo">
+    <view>
+      <text>吴山广场华光巷(公交站)</text>
+      <text>965米</text>
+    </view>
+    <view>56路、78路、8路、93路</view>
+  </view>
+</view>

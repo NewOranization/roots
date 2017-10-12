@@ -1,0 +1,20 @@
+<view class="search">
+  <image src="../../../imgs/back.png" bindtap='backNearBy'></image>
+  <input type='text' placeholder='鲈鱼' placeholder-style="margin-left:50rpx;font-size:28rpx;color:#bbb;" bindinput="bindblur"></input>
+  <icon type="search" size="15" color="#000" />
+  <text class='searchSub' bindtap='btnSearch'>搜索</text>
+</view>
+<view class="hotSearch">
+  <view>热门搜索</view>
+  <block wx:for="{{searchData.hotSearch}}">
+    <text bindtap='hotData' data-hot="{{item.title}}">{{item.title}}</text>
+  </block>
+</view>
+<view class='historySearch'>
+  <block wx:for="{{historySearch}}">
+    <view bindtap='historyData' data-history="{{item}}">
+      <image src='/imgs/clock_sky.png'></image>{{item}}
+    </view>
+  </block>
+  <view bindtap='cleanHistory' wx:if="{{historySearch.length>0}}">清空历史记录</view>
+</view>

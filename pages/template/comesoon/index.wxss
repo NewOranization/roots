@@ -1,0 +1,25 @@
+/* pages/template/comesoon/index.wxss */
+.comesoon{
+    text-align: center;
+    line-height: 200rpx;
+    color: #768491;
+    margin-top: 250rpx;
+}
+
+.comesoon .img{
+    width: 300rpx;
+    height: 300rpx;
+    background: #fff;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 50%;
+}
+
+.comesoon .img image{
+    width: 180rpx;
+    height: 180rpx;
+    display: block;
+    position: absolute;
+    top: 60rpx;
+    left: 60rpx;
+}

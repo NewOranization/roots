@@ -1,0 +1,47 @@
+<!--pages/mine/address/addAdress.wxml-->
+<view class='box'>
+    <view class='title'>
+        <image src='/imgs/arrow_left.png' bindtap='backTo'></image>
+        <text>{{click == 'editAddress' ? '编辑地址' : '添加新地址'}}</text>
+    </view>
+    <form bindsubmit="saveAddress">
+            <view class='content'> 
+                  <view class='item'>
+                        <text class='item_txt'>收货人</text>
+                        <input type='text' name="userName" value='{{userName}}' bindblur='getUser'></input>
+                  </view>
+                  <view class='item'>
+                        <text class='item_txt'>联系电话</text>
+                        <input type='number' name="phoneNumber" maxlength="11" value='{{phoneNumber}}' bindblur='getPhone'></input>
+                  </view>
+                 
+                  <view class='item item_dtl'>
+                        <text>收货地址</text>
+                        <textarea type='text' disabled="true" name="address" value="{{address}}" placeholder='选择收货详细地址' placeholder-style='color: #999; font-weight: nomal;' bindtap='chooseAddress'></textarea> 
+                  </view>
+                  <view class='item item_number'>
+                        <text class='item_txt'>门牌号</text>
+                        <input type='text' name="detailAddress" value='{{detailAddress}}' bindblur='getDetailAddress' placeholder='例：3幢5单元801' placeholder-style='color: #999; font-weight: nomal;'></input>
+                  </view>
+            </view>
+
+            <view class='save'>
+                  <text>设为默认</text>
+                  <switch checked="{{checked}}" bindchange='setDefault'></switch>
+            </view>
+
+            <button form-type="submit" type="warn" class='saveBtn' bindtap='deleteAddress' wx:if="{{click == 'editAddress'}}">删除地址</button>
+                  
+           
+            <button form-type="submit" type="primary" class='saveBtn'>保存地址</button>
+    </form>
+</view>
+
+ <!-- <view class="section">
+    <view class="section__title">省市区选择器</view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+      <view class="picker">
+        当前选择: {{region[0]}},{{region[1]}},{{region[2]}}
+      </view>
+    </picker>
+</view> -->

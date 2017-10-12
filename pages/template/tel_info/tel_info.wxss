@@ -1,0 +1,37 @@
+
+.msg{
+  background: #fff;
+  border-top:2rpx solid #e7e3e7;
+  display: flex;
+  line-height: 90rpx;
+  position: relative;
+}
+.msg .wm{
+font-style: oblique;
+font-size: 34rpx;
+color:#ff2c4a;
+font-weight: bold;
+flex: 0 0 20%;
+margin-left:20rpx;
+}
+.msg image{
+  width:36rpx;
+  height:36rpx;
+  position: absolute;
+  right:20rpx;
+  top:30rpx;
+}
+.msg swiper{
+  height:70.8rpx;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  flex: 0 0 60%;
+  margin-left:20rpx;
+
+  
+}
+/* ::-webkit-scrollbar{
+  width:0;
+  height:0;
+  color:transparent;
+} */

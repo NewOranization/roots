@@ -1,0 +1,82 @@
+.head{
+  padding:30rpx;
+  background: #fff;
+  display: flex;
+  text-align: center;
+  position:fixed;
+  top:0rpx;
+  z-index: 100;
+  width:100%;
+  border-bottom:1rpx solid #eee;
+}
+.head image{
+  width:56rpx;
+  height:56rpx;
+  margin-right:230rpx;
+}
+/*  */
+.evaluteTab{
+  padding-top:30rpx;
+  padding-bottom:30rpx;
+  border-bottom:1rpx solid #eee;
+  display: flex;
+  text-align: center;
+  margin-top: 113rpx;
+  background: #fff;
+  font-size: 36rpx;
+}
+.evaluteTab view{
+flex: 1;
+}
+.evaluteTab view:nth-child(2){
+  border-left:1rpx solid #eee;
+  border-right: 1rpx solid #eee;
+}
+.evaluteTab view image{
+  width:36rpx;
+  height:36rpx;
+}
+/*  */
+.evaluteDetail{
+  padding:20rpx 30rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+.evaluteDetail .stars image{
+  width:26rpx;
+  height:26rpx;
+}
+.evaluteDetail .content{
+  font-size: 34rpx;
+  margin-top:30rpx;
+  margin-bottom:20rpx;
+}
+.evaluteDetail>text{
+  color:#f7925a;
+  font-size: 32rpx;
+}
+.evaluteDetail .conTime{
+  font-size: 30rpx;
+  color:#bdbabd;
+  display: flex;
+  justify-content:space-between;
+  margin-top:20rpx;
+  margin-bottom:30rpx;
+}
+/*  */
+.footBtn{
+  padding: 30rpx;
+}
+.footBtn text{
+  display: inline-block;
+  width:47%;
+  text-align: center;
+  padding-top:30rpx;
+  padding-bottom: 30rpx;
+  border:1rpx solid #cecbce;
+  background: #fff;
+  color:#0092ff;
+}
+.footBtn text:nth-child(1){
+  margin-right:4%;
+}

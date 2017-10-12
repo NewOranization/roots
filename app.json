@@ -1,0 +1,84 @@
+{
+    "pages": [
+        
+        "pages/index/index",
+        "pages/runleg/index",
+        "pages/form/index",
+        "pages/mine/index",
+        "pages/nearby/index",
+        "pages/mine/collection/index",
+        "pages/mine/share/index",
+        "pages/mine/vipcard/index",
+        "pages/mine/redpackage/index",
+        "pages/mine/address/index",
+        "pages/mine/address/addAddress",
+        "pages/mine/coupon/index",
+        "pages/mine/balance/index",
+        "pages/mine/problem/index",
+        "pages/mine/point/index",
+        "pages/mine/assess/index",
+        "pages/form/details/index",
+        "pages/index/evaluate/evaluate",
+        "pages/index/nearBus/nearBus",
+        "pages/index/detail/detail",
+        "pages/index/allMenu/allMenu",
+        "pages/index/pictrues/pictrues",
+        "pages/index/foodShopDetail/foodShopDetail",
+        "pages/index/foodMap/foodMap",
+        "pages/index/reMark/reMark",
+        "pages/index/rowNum/rowNum",
+        "pages/index/shopMenuList/shopMenuList",
+        "pages/index/shopMap2/shopMap2",
+        "pages/index/shopMap1/shopMap1",
+        "pages/index/fastFood/fastFood",
+        "pages/index/search/search",
+        "pages/index/submitOrder/submitOrder",
+        "pages/nearby/shopDetail/shopDetail"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#000",
+        "navigationBarTitleText": "首页",
+        "navigationBarTextStyle": "light",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "color": "#929292",
+        "selectedColor": "#29a1f7",
+        "borderStyle": "#a6a6a6",
+        "position": "bottom",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "imgs/tabbar/index.png",
+                "selectedIconPath": "imgs/tabbar/index-sel.png"
+            },
+            {
+                "pagePath": "pages/nearby/index",
+                "text": "附近",
+                "iconPath": "imgs/tabbar/nearby.png",
+                "selectedIconPath": "imgs/tabbar/nearby-sel.png"
+            },
+            {
+                "pagePath": "pages/runleg/index",
+                "text": "跑腿",
+                "iconPath": "imgs/tabbar/polter.png",
+                "selectedIconPath": "imgs/tabbar/polter-sel.png"
+            },
+            {
+                "pagePath": "pages/form/index",
+                "text": "订单",
+                "iconPath": "imgs/tabbar/form.png",
+                "selectedIconPath": "imgs/tabbar/form-sel.png"
+            },
+            {
+                "pagePath": "pages/mine/index",
+                "text": "我的",
+                "iconPath": "imgs/tabbar/mine.png",
+                "selectedIconPath": "imgs/tabbar/mine-sel.png"
+            }
+        ]
+    },
+    "debug": true
+}

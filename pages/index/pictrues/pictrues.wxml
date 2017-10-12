@@ -1,0 +1,18 @@
+
+  <view class="head">
+    <image src="/imgs/back.png"></image>图片展示
+  </view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="footer">
+  <view>
+    <image src="/imgs/back.png"></image>
+    <text>1</text>/5
+  </view>
+  <image src="/imgs/more.png"></image>
+</view>

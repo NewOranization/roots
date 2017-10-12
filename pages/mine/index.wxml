@@ -1,0 +1,71 @@
+<import src="../template/user_menu/index.wxml"/>
+
+<!-- 头部 -->
+<view class="userInfo">
+  <view class="userHead">
+    <view class="user_img">
+      <image src="{{userInfo.avatar}}" class="head_img"></image>
+    </view>
+    <view class="user_name">
+      <text>{{userInfo.userName}}</text>
+      <text>{{login ? '[普通会员]' : '请登录'}}</text>
+    </view>
+  </view>
+  <view class="userMessage">
+     <view class="balance" bindtap='navTo' data-click='balance'>
+        <view class='number'>
+            <text>{{userInfo.credit1}} </text>元
+        </view>
+        <view class='item'>
+          <image src='/imgs/balance.png'></image>
+          <text>余额</text>
+        </view>
+     </view>
+     <view class="balance" bindtap='navTo' data-click='point'>
+        <view class='number'>
+            <text>{{userInfo.credit2}} </text>分
+        </view>
+        <view class='item'>
+          <image src='/imgs/point.png'></image>
+          <text>积分</text>
+        </view>
+     </view>
+     <view class="balance" bindtap='navTo' data-click='redpackage'>
+        <view class='number'>
+            <text>{{userInfo.title == null ? '0' : userInfo.title}} </text>个
+        </view>
+        <view class='item'>
+          <image src='/imgs/hongbao.png'></image>
+          <text>红包</text>
+        </view>
+     </view>
+     <view class="balance" bindtap='navTo' data-click='coupon'>
+        <view class='number'>
+            <text>{{userInfo.code == null ? '0' : userInfo.code}} </text>张
+        </view>
+        <view class='item'>
+          <image src='/imgs/daijinquan.png'></image>
+          <text>代金券</text>
+        </view>
+     </view>
+  </view>
+</view>
+
+<view class='content'>
+    <!-- <block wx:for="{{formList}}" wx:for-item="formList">
+        <template is="tel_1" data="{{...formList}}" /> 
+    </block> -->
+    <template is="user_menu" />
+</view>
+
+<view class='serviceBox'>
+    客服热线： 789264109
+</view>
+
+<view class='footer'>
+    <text class='line'></text>
+    <text>我是有底线的</text>
+    <text class='line_r'></text>
+</view>
+
+

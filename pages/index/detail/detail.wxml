@@ -1,0 +1,16 @@
+<view class="body">
+  <view class="head">
+    <image src="/imgs/back.png"></image>鲈鱼（西湖银泰城店）
+  </view>
+  <view class="picList">
+    <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3743261650,2156993025&fm=27&gp=0.jpg"></image>
+    <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3743261650,2156993025&fm=27&gp=0.jpg"></image>
+    <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3743261650,2156993025&fm=27&gp=0.jpg"></image>
+    <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3743261650,2156993025&fm=27&gp=0.jpg"></image>
+    <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3743261650,2156993025&fm=27&gp=0.jpg"></image>
+  </view>
+  <view>
+    <text>营业时间</text>
+    <text>11:00-21:00</text>
+  </view>
+</view>

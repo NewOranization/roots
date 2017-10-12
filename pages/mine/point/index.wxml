@@ -1,0 +1,43 @@
+<!--pages/mine/point/index.wxml-->
+<view class='box'>
+    <view class='point'>
+        <text class='txt'>当前积分</text>
+        <view>
+            {{point}}
+            <text>分</text>
+        </view>
+        <text class='exchange' bindtap='exchange'>{{point != 0 ? '积分兑换商品' : '您暂无积分'}}</text>
+    </view>
+    <view class='wrap' wx:if="{{point > 0}}">
+        <view class='title'>
+            积分记录
+        </view>
+        <view class='content'>
+            <view class='content-left'>
+                <text>订单积分</text>
+                <text>2017-03-09</text>
+            </view>
+            <text class='content-right'>+189</text>
+        </view>
+        <view class='content'>
+            <view class='content-left'>
+                <text>订单积分</text>
+                <text>2017-03-09</text>
+            </view>
+            <text class='content-right'>+189</text>
+        </view>
+        <view class='content'>
+            <view class='content-left'>
+                <text>订单积分</text>
+                <text>2017-03-09</text>
+            </view>
+            <text class='content-right'>+189</text>
+        </view>
+    </view>
+</view>
+<view class='empty' wx:if="{{point <= 0}}">
+    <view class='img'>
+        <image src='/imgs/empty_item.png'></image>
+    </view>
+    <view class='text'>您暂时还没有积分, 快去下单挣积分吧</view>
+</view>

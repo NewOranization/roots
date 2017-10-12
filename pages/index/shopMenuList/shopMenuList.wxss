@@ -1,0 +1,915 @@
+
+page{
+    background: #eee;
+    font-size: 30rpx;
+}
+
+.box{
+    font-size: 30rpx;
+}
+/* 标题样式*/
+.box .header .title{
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 32rpx;
+    color: #fff;
+    font-weight: bold;
+    background: #fe2d4c;
+    text-align: center;
+    
+}
+
+.box .header .title .fixed{
+    width: 100%;
+    height: 100rpx;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: #fe2d4c;
+}
+
+.box .header .title .fixed image{
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 25rpx;
+    
+}
+
+.box .header .title .fixed image.img_l{
+    width: 40rpx;
+    height: 40rpx;
+    top: 30rpx;
+    left: 20rpx;
+}
+
+.box .header .title .fixed image.img_r_s{
+    width: 55rpx;
+    height: 55rpx;
+    top: 20rpx;
+    right: 90rpx;
+}
+
+.box .header .title .fixed image.img_r{
+    right: 20rpx;
+}
+
+.box .notice{
+    background: #ffffcd;
+    height: 75rpx;
+    line-height: 75rpx;
+    overflow: hidden;
+}
+
+.box .notice image{
+    float: left;
+    display: block;
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 17rpx;
+    margin-left: 20rpx;
+}
+
+.box .notice text{
+    float: left;
+    display: block;
+    color: #dda328;
+    margin-left: 15rpx;
+    font-size: 28rpx;
+}
+
+/*导航栏样式*/
+.box .nav{
+    width: 100%;
+    height: 98rpx;
+    line-height: 98rpx;
+    font-size: 34rpx;
+    color: #000;
+    background: #fff;
+    text-align: center;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.box .nav text{
+    width: 25%;
+    height: 97rpx;
+    display: inline-block;
+    border-bottom: 1px solid #FFF;
+}
+
+.box .nav text.active{
+    color: #f53451;
+    border-bottom: 2px solid #f53451;
+}
+
+/* 主题内容样式 菜单 评价 商家 */
+.box .section{
+    width: 100%;
+    /* margin-top: 30rpx; */
+}
+
+.box .section .content{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30rpx;
+}
+
+.box .section .content .aside{
+    overflow: hidden;
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.box .section .content .aside .item{
+    width: 100%;
+    height: 40rpx;
+    line-height: 40rpx;
+    padding: 20rpx 0;
+    background: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+
+.box .section .content .aside .item image{
+    width: 30rpx;
+    height: 30rpx;
+    display: inline-block;
+    margin-right: 10rpx;
+}
+
+.box .section .content .aside .active{
+    background: #fff;
+    color: #ff1952;
+}
+
+.box .section .content .wrap{
+    float: left;
+    width: 80%;
+    background: #fff;
+    margin-bottom: 120rpx;
+}
+
+.box .section .content .wrap .redpackage{
+    width: 94%;
+    height: 160rpx;
+    background: #ff6a49;
+    margin: 20rpx auto;
+    overflow: hidden;
+    color: #fff;
+    position: relative;
+}
+
+.box .section .content .wrap .redpackage .sum{
+    width: 30%;
+    float: left;
+    line-height: 160rpx;
+    text-align: center;
+}
+
+.box .section .content .wrap .redpackage .sum text{
+    font-size: 60rpx;
+}
+
+.box .section .content .wrap .redpackage .explain{
+    float: left;
+    text-align: center;
+    height: 80rpx;
+    margin: 40rpx 0;
+    border-left: 2px dotted #fff;
+}
+
+.box .section .content .wrap .redpackage .explain text{
+    display: block;
+    text-align: left;
+    margin-left: 30rpx;
+}
+
+.box .section .content .wrap .redpackage .explain text.text-top{
+    font-size: 36rpx;
+    line-height: 36rpx;
+}
+
+.box .section .content .wrap .redpackage .explain text.text-bottom{
+    margin-top: 10rpx;
+}
+
+.box .section .content .wrap .redpackage .collar{
+    float: left;
+    text-align: center;
+    margin-left: 55rpx;
+    height: 50rpx;
+    width: 100rpx;
+    border: 1px solid #fff;
+    line-height: 50rpx;
+    border-radius: 25rpx;
+    margin-top: 55rpx;
+}
+
+.box .section .content .wrap .redpackage .circle{
+    position: absolute;
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    background: #fff;
+    left: 27%;
+}
+
+.box .section .content .wrap .redpackage .circle-t{
+    top: -20rpx;
+}
+
+.box .section .content .wrap .redpackage .circle-b{
+    bottom: -20rpx;
+}
+
+
+.box .section .content .wrap .menu .menu-title{
+    height: 60rpx;
+    line-height: 60rpx;
+    padding-top: 20rpx;
+    padding-left: 40rpx;
+    background: #f9f9f9;
+    position: relative;
+}
+
+.box .section .content .wrap .menu .menu-list{
+    overflow: hidden;
+    padding: 20rpx;
+    border-bottom: 1px solid #eee;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-img{
+    float: left;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-img image{
+    width: 100rpx;
+    height: 100rpx;
+    display: block;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-txt{
+    float: left;
+    margin-left: 30rpx;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-txt .detail-a{
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #000;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-txt .detail-b{
+    font-size: 24rpx;
+    color: #848484;
+    margin-top: 6rpx;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-txt .detail-c{
+    font-size: 24rpx;
+    color: #848484;
+    margin-top: 6rpx;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-txt .detail-c .detail-c-left{
+    color: #fe2d4c;
+    font-weight: bold;
+    font-size: 28rpx;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-txt .detail-c .detail-c-center{
+    color: #fe2d4c;
+    font-weight: bold;
+    font-size: 32rpx;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-txt .detail-c .detail-c-right{
+    position: relative;
+    display: inline-block;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-txt .detail-c .detail-c-right text{
+    width: 45rpx;
+    height: 1px;
+    background: #848484;
+    display: inline-block;
+    position: absolute;
+    top: 20rpx;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-txt .detail-d{
+    padding: 0 10rpx;
+    text-align: center;
+    height: 36rpx;
+    line-height: 36rpx;
+    margin-top: 6rpx;
+    border: 1px solid #e71d1d;
+    color: #e71d1d;
+    font-size: 24rpx;
+    border-radius: 5rpx;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-btn{
+    float: right;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin-top: 10%;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-btn text{
+    display: block;
+    float: left;
+    width: 40rpx;
+    height: 40rpx;
+    text-align: center;
+    line-height: 34rpx;
+    color: #fff;
+    font-weight: bold;
+    background: #ff2c4d;
+    border-radius: 50%;
+    font-size: 38rpx;
+}
+
+.box .section .content .wrap .menu .menu-list .menu-list-btn input{
+    display: block;
+    float: left;
+    width: 40rpx;
+    height: 40rpx;
+    text-align: center;
+    line-height: 40rpx;
+}
+
+/*购物车*/
+.box .section .content .cart{
+    width: 100%;
+    height: 120rpx;
+    position: fixed;
+    bottom: 0;
+    background: #3a3635;
+    z-index: 100;
+    color: #fff;
+}
+
+.box .section .content .cart:after{
+    content: '';
+    height: 0;
+    width: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
+.box .section .content .cart .cart-img{
+    float: left;
+    width: 22%;
+    position: relative;
+}
+
+.box .section .content .cart .cart-img .cart-img-circle{
+    position: absolute;
+    width: 120rpx;
+    height: 120rpx;
+    top: -40rpx;
+    left: 50%;
+    margin-left: -60rpx;
+    border-radius: 50%;
+    background: #424043;
+}
+
+.box .section .content .cart .cart-img .cart-img-circle .cart-img-scircle{
+    width: 100rpx;
+    height: 100rpx;
+    display: block;
+    border-radius: 50%;
+    margin: 10rpx auto;
+    background: #3a3635;
+    position: relative;
+}
+
+.box .section .content .cart .cart-img .cart-img-circle .cart-img-scircle image{
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+    position: absolute;
+    top: 25rpx;
+    left: 25rpx;
+}
+
+.box .section .content .cart .cart-img text{
+    display: block;
+    width: 50rpx;
+    height: 50rpx;
+    background: #ff2648;
+    position: absolute;
+    top: -55rpx;
+    left: 70%;
+    text-align: center;
+    line-height: 50rpx;
+    border-radius: 50%;
+}
+
+.box .section .content .cart .cart-price{
+    float: left;
+    width: 50%;
+    height: 120rpx;
+    line-height: 120rpx;
+    margin-left: 22%;
+    font-size: 34rpx;
+    
+}
+
+.box .section .content .cart .cart-buy{
+    float: right;
+    width: 27%;
+    height: 120rpx;
+    line-height: 120rpx;
+    text-align: center;
+    font-size: 34rpx;
+}
+
+
+
+/**商家样式*/
+.box .section .content-b swiper{
+    width: 100%;
+    height: 220rpx;
+}
+
+.box .section .content-b swiper image{
+    width: 100%;
+    height: 220rpx;
+}
+
+.box .section .content-b .storeInfo{
+    background: #fff;
+    width: 100%;
+}
+
+.box .section .content-b .storeInfo .wrap-top{
+    width: 100%;
+    padding: 20rpx 0;
+    border-bottom: 1px solid #e7e7e7; 
+    overflow: hidden;
+}
+
+.box .section .content-b .storeInfo .wrap-top .storeInfo-img{
+    float: left;
+    margin-left: 50rpx;
+    border: 1px solid #eee;
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.box .section .content-b .storeInfo .wrap-top .storeInfo-img image{
+    width: 120rpx;
+    height: 120rpx;
+    display: block;
+    margin: 10rpx auto;
+}
+
+.box .section .content-b .storeInfo .wrap-top .storeInfo-txt{
+    float: left;
+    margin-left: 70rpx;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.box .section .content-b .storeInfo .wrap-top .storeInfo-txt .storeInfo-txt-tle{
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #000;
+    line-height: 52rpx;
+}
+
+.box .section .content-b .storeInfo .wrap-top .storeInfo-txt .storeInfo-txt-str{
+    color: #ed1d1d;
+    line-height: 44rpx;
+    overflow: hidden;
+}
+
+.box .section .content-b .storeInfo .wrap-top .storeInfo-txt .storeInfo-txt-str image{
+    display: block;
+    width: 30rpx;
+    height: 30rpx;
+    margin-top: 7rpx;
+    float: left;
+    margin-right: 3rpx;
+}
+
+.box .section .content-b .storeInfo .wrap-top .storeInfo-txt .storeInfo-txt-str text{
+    display: block;
+    float: left;
+    margin-left: 15rpx;
+    font-weight: bold;
+}
+
+.box .section .content-b .storeInfo .wrap-top .storeInfo-txt .storeInfo-txt-sle{
+    line-height: 44rpx;
+}
+
+.box .section .content-b .storeInfo .wrap-btm{
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx 0;
+    text-align: center;
+    color: #000;
+}
+
+.box .section .content-b .storeInfo .wrap-btm view{
+    flex: 1;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.box .section .content-b .storeInfo .wrap-btm view:nth-child(2){
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+.box .section .content-b .storeSer{
+    margin-top: 30rpx;
+    width: 100%;
+    background: #fff;
+}
+
+.box .section .content-b .storeSer .storeSer-title{
+    height: 80rpx;
+    line-height: 80rpx;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+    margin: 0 30rpx;
+}
+
+.box .section .content-b .storeSer .storeSer-title image{
+    width: 35rpx;
+    height: 35rpx;
+    float: left;
+    display: block;
+    margin-top: 25rpx;
+    margin-left: 10rpx;
+}
+
+.box .section .content-b .storeSer .storeSer-title text{
+    float: left;
+    display: block;
+    margin-left: 25rpx;
+}
+
+.box .section .content-b .storeSer .storeSer-detail{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    
+}
+
+.box .section .content-b .storeSer .storeSer-detail .storeSer-detail-item{
+    flex: 1;
+    margin-top: 40rpx;
+}
+
+.box .section .content-b .storeSer .storeSer-detail .storeSer-detail-item image{
+    display: block;
+    width: 50rpx;
+    height: 50rpx;
+    margin: 0 auto;
+}
+
+.box .section .content-b .storeSer .storeSer-detail .storeSer-detail-item text{
+    display: block;
+    line-height: 90rpx;
+}
+
+.box .section .content-b .storeSer .storeSer-act{
+    height: 80rpx;
+    line-height: 80rpx;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+    margin: 0 30rpx;
+}
+
+.box .section .content-b .storeSer .storeSer-act:last-child.storeSer-act{
+    border: none;
+}
+
+.box .section .content-b .storeSer .storeSer-act image{
+    width: 35rpx;
+    height: 35rpx;
+    display: block;
+    margin-top: 24rpx;
+    float: left;
+    margin-left: 10rpx;
+}
+
+.box .section .content-b .storeSer .storeSer-act text{
+    display: block;
+    float: left;
+    margin-left: 20rpx;
+}
+
+.box .section .content-b .storeSer .storeSer-act image.more{
+    width: 35rpx;
+    height: 35rpx;
+    display: block;
+    margin-top: 22rpx;
+    float: right;
+    margin-right: 10rpx;
+}
+
+.box .section .content-b .storeSer .pay{
+    border: none;
+}
+
+.box .section .content-b .liecnse{
+    margin-top: 30rpx;
+    background: #fff;
+    line-height: 80rpx;
+    padding-bottom: 20rpx;
+}
+
+.box .section .content-b .liecnse text{
+    display: block;
+    height: 80rpx;
+    margin: 0 30rpx;
+    border-bottom: 1px solid #eee;
+}
+
+.box .section .content-b .report{
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #d22514;
+    text-align: center;
+    font-size: 32rpx;
+    background: #fff;
+    margin: 30rpx 0;
+    font-weight: bold;
+}
+
+.cratModel{
+    width: 100%;
+    height: 100%;
+    
+    position: fixed;
+    bottom: 0;
+    z-index: 50;
+}
+
+.cratModel .mask{
+    width: 100%;
+    height: 40%;
+    background: #000;
+    opacity: 0.2
+}
+
+.cratModel .model{
+    overflow-y: scroll;
+    height: 60%;
+    background: #fff;
+}
+
+.cratModel .model .model-title{
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
+
+.cratModel .model .model-title text:first-child{
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #000;
+    float: left;
+    display: block;
+    margin-left: 30rpx;
+}
+
+.cratModel .model .model-title text:nth-child(2){
+    color: #666;
+    float: right;
+    display: block;
+    margin-left: 10rpx;
+    margin-right: 30rpx;
+}
+
+.cratModel .model .model-title image:last-child{
+    display: block;
+    width: 34rpx;
+    height: 34rpx;
+    margin-top: 30rpx;
+    float: right;
+    
+}
+
+.cratModel .model .model-menu{
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
+
+.cratModel .model .model-menu .model-menu-title{
+    float: left;
+    margin-left: 30rpx;
+    width: 55%;
+}
+
+.cratModel .model .model-menu .model-menu-price{
+    float: left;
+    width: 100rpx;
+}
+
+.cratModel .model .model-menu .model-menu-btn{
+    float: left;
+    height: 40rpx;
+    line-height: 40rpx;
+    margin-top: 20rpx;
+    margin-left: 40rpx;
+}
+
+.cratModel .model .model-menu .model-menu-btn text{
+    display: block;
+    float: left;
+    width: 40rpx;
+    height: 40rpx;
+    text-align: center;
+    line-height: 34rpx;
+    color: #fff;
+    font-weight: bold;
+    background: #ff2c4d;
+    border-radius: 50%;
+    font-size: 38rpx;
+}
+
+.cratModel .model .model-menu .model-menu-btn input{
+    display: block;
+    float: left;
+    width: 40rpx;
+    height: 40rpx;
+    text-align: center;
+    line-height: 40rpx;
+}
+
+
+
+
+/*************************************评价  */
+.topScore{
+  width:100%;
+  height:220rpx;
+  border-top: 20rpx solid #efefef;
+  border-bottom:20rpx solid #efefef;
+  display:flex;
+  align-items: center;
+  background: #fff;
+}
+.topScore>view{
+  flex: 1;
+}
+.topScore .leftScore{
+  flex:0 0 25%;
+  text-align: center
+}
+.topScore .centerScore{
+  flex:0 0 50%;
+  text-align: center;
+  font-size:28rpx;
+  color:#636563;
+}
+.topScore .rightScore{
+  flex:0 0 25%;
+  text-align: center
+}
+.topScore .centerScore image{
+   width:28.8rpx;height:28.8rpx;
+   vertical-align: middle;
+}
+.topScore .leftScore{
+  font-size: 28rpx;
+  color:#636563;
+}
+.topScore .rightScore{
+  font-size: 28rpx;
+  color:#cecfce;
+  border-left:1rpx solid #dedbde;
+}
+.topScore .leftScore text{
+  display: block;
+  font-size: 42rpx;
+  color:#ffd363;
+  margin-bottom:20rpx;
+}
+.topScore .rightScore text{
+  display: block;
+  font-size: 42rpx;
+  color:#a5a6a5;
+  margin-bottom:20rpx;
+}
+/*中间  */
+.topScore .centerScore image:nth-child(1){
+  margin-left:20rpx;
+}
+.topScore .centerScore text{
+  margin-left:20rpx;
+  font-size: 42rpx;
+}
+.topScore .centerScore .first{
+  margin-bottom: 20rpx;
+}
+/*******评价分类-  */
+.evaluateSort{
+   padding:15rpx 25rpx;
+   padding-bottom: 0;
+   border-bottom: 1rpx solid #cecfce;
+   background: #fff;
+ }
+ .evaluateSort text{
+   display: inline-block;
+   padding: 15rpx 25rpx;
+   border:1rpx solid #cecfce;
+   font-size:28rpx;
+   margin-right:25rpx;
+   margin-bottom: 25rpx;
+   border-radius: 3rpx;
+ }
+.on{ color: #da7c0c;  border:1rpx solid #da7c0c !important}
+  
+.evaluate{ display: block; height: 100%; width: 100%; overflow: hidden; }  
+.evaluate view{  
+    text-align: center;  
+}
+.evaluate .evaluateList {
+  padding-bottom:30rpx;
+  background: #fff;
+}
+.evaluate .evaluateList:not(:last-child){
+  border-bottom: 1rpx solid #dedbde;
+}
+.evaluate .evaluateList .evlTop .headImg{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50%;
+  vertical-align:top;
+}
+.evaluate .evaluateList .evlTop .star{
+  width:30rpx;
+  height:30rpx;
+  float: left;
+  vertical-align:middle;
+}
+.evaluate .evaluateList .evlTop{
+  padding: 30rpx;
+  display:flex;
+}
+.evaluate .evaluateList .evlTop .evlLeft{
+  flex:0 0 60%;
+  display: flex;
+  align-items: flex-start
+}
+.evaluate .evaluateList .evlTop .evlTime{
+  flex:0 0 30%;
+  text-align: right;
+  padding-left: 60rpx;
+  font-size: 30rpx;
+  color:#636563;
+}
+.evaluate .evaluateList .evlTop .evlLeft .elvLeftR{
+  flex: 1;
+  padding-left:20rpx;
+}
+.evaluate .evaluateList .evlTop .evlLeft .uName{
+  display: block;
+  text-align: left;
+  margin-bottom: 20rpx;
+}
+.evaluate .evaluateList .evlTop .evlLeft .arrive{
+  font-size: 30rpx;
+  float: left;
+  margin-left:20rpx;
+  color:#636563;
+}
+/*****/
+.evaluate .evaluateList .evlBottom{
+  text-align: left;
+  margin-left:130rpx;
+}
+.evaluate .evaluateList  .evlBottom image{
+  width:316rpx;
+  height:316rpx;
+  display: block;
+}
+.evaluate .evaluateList  .evlBottom .reply{
+  display: block;
+  padding: 20rpx;
+  margin-right:30rpx;
+  background: #efefef;
+  color:#636563;
+  text-align: left
+}
+
+
+
+
+

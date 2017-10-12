@@ -1,0 +1,23 @@
+page{
+  background: #fff;
+  text-align: center;
+}
+image{
+  width:200rpx;
+  height:200rpx;
+  margin:100rpx auto;
+}
+button{
+  width:80%;
+  height:100rpx;
+  background: #0eadfe;
+  color:#fff;
+  margin-top:80rpx;
+}
+text{
+  position: fixed;
+  bottom:30rpx;
+  left:42%;
+  color:#627190;
+  font-size: 34rpx;
+}

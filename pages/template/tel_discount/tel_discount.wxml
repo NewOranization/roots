@@ -1,0 +1,18 @@
+<template name="discount">
+  <view class="discount">
+    <view class="leftDiscount">
+      <text>{{leftDiscount.title}}</text>
+      <text>旅游1折特卖</text>
+      <image src='https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4104610072,2848409671&fm=27&gp=0.jpg'></image>
+    </view>
+    <view class="rightDiscount">
+      <block wx:for="{{discount}}">
+        <view>
+          <text>{{item.title}}</text>
+          <text>{{item.tips}}</text>
+          <image src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=240975057,180079141&fm=27&gp=0.jpg'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</template>

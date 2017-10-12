@@ -1,0 +1,47 @@
+<!--pages/mine/coupon/index.wxml-->
+<view class='box'>
+    <view class='clearfix'>
+        <view class='title'>
+            <image class='img_l' src='/imgs/arrow_left_white.png' bindtap='navTo' data-click='back'></image>
+            <text>我的代金券</text>
+            <image class='img_r' src='/imgs/daijinquan-white.png' bindtap='navTo'></image>
+        </view>
+        <view class='nav'>
+            <text class="{{status == 1 ? 'active' : ''}}" bindtap='tabSwitch' data-status='1'>未使用</text>
+            <text class="{{status == 2 ? 'active' : ''}}" bindtap='tabSwitch' data-status='2'>已使用</text>
+            <text class="{{status == 3 ? 'active' : ''}}" bindtap='tabSwitch' data-status='3'>已过期</text>
+        </view>
+    </view>
+    <view class='content' wx:if="{{isHave}}">
+        <view class='coupon' wx:for="{{coupon}}" wx:for-item="item">
+            <view class='coupon-detail'>
+                <view class='coupon-detail-img'>
+                    <view>
+                        ￥<text>{{item.discount}}</text>
+                    </view>
+                    <text class='condition'>满{{item.condition}}元可用</text>
+                </view>
+                <view class='coupon-detail-type'>
+                    <text>{{item.title}}</text>
+                    <text>有效期至: 2017-12-14</text>
+                </view>
+                <view class='coupon-detail-status'>
+                    <text>即将过期</text>
+                    <text bindtap='navTo' data-id='{{item.token}}' data-click='token'>立即使用</text>
+                </view>
+            </view>
+            
+            <view class='circle circle_t'></view>
+            <view class='circle circle_b'></view>
+        </view>
+    </view>
+
+    <!--没有代金券的页面  -->
+    <view class='empty' wx:else>
+        <view class='wrap_img'>
+            <image src='/imgs/daijinquan_eee.png'></image>
+        </view>
+        <text>您还没有优惠券</text>
+        <text>去领券中心看看</text>
+    </view>
+</view>

@@ -1,0 +1,17 @@
+<template name="sortSel">
+  <swiper indicator-dots="true"
+    class='sortSel'>
+      <swiper-item>
+        <view wx:for="{{sortSels}}">
+          <image src="{{item.thumb}}"></image>
+          <text>{{item.title}}</text>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view>
+          <image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=518663811,1842957615&fm=27&gp=0.jpg"></image>
+          <text>😫</text>
+        </view>
+      </swiper-item>
+  </swiper>
+</template>

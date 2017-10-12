@@ -1,0 +1,22 @@
+.box{
+    font-size: 32rpx;
+}
+
+.box .title{
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 36rpx;
+    color: #fff;
+    font-weight: bold;
+    background: #43CD80;
+    text-align: center;
+    position: relative;
+}
+
+.box .title image{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 30rpx;
+    left: 20rpx;
+}
