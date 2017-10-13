@@ -165,6 +165,12 @@ page{
     color: #666;
 }
 
+.wrap .discount text.mark-r{
+    color: #000;
+    font-weight: bold;
+    margin-left: 10rpx;
+}
+
 .wrap .discount image{
     float: right;
     width: 40rpx;

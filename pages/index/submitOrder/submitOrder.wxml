@@ -69,6 +69,7 @@
 <view class='wrap'>
     <view class='method discount'>
         <text>城市生活</text>
-        <text class='txt dist'>本单由 <text> 商家配送</text></text>
+        <text class='txt mark-r'> 商家配送</text>
+        <text class='txt mark'>本单由 </text>
     </view>
 </view>
