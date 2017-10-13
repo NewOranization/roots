@@ -127,15 +127,14 @@ page{
 }
 
 .wrap .method icon, .no-choose{
-    display: block;
-    float: right;
     margin-top: 17rpx
 }
 
 .wrap .method icon{
-    
     width: 35rpx;
     height: 35rpx;
+    float: right;
+    display: block;
 }
 
 .wrap .method .no-choose{
@@ -143,4 +142,8 @@ page{
     border-radius: 50%;
     width: 55rpx;
     height: 55rpx;
+    float: right;
+    display: block;
 }
+
+
