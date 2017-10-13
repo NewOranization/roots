@@ -31,7 +31,7 @@
         "pages/index/shopMap2/shopMap2",
         "pages/index/shopMap1/shopMap1",
         "pages/index/fastFood/fastFood",
-        "pages/index/search/search",
+        "pages/index/search/search"
         
     ],
     "window": {
