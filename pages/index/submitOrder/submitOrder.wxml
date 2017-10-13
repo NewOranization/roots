@@ -1,8 +1,11 @@
-<view class="header">
-    <image src="/imgs/back_white.png"></image>提交订单
+<view style="width: 100%; height:90rpx;">
+    <view class="header">
+        <image src="/imgs/back_white.png"></image>提交订单
+    </view>
 </view>
 
 <view class='receiveInfo'>
+    <view class='decoration'></view>
     <view class='info' data-click="chooseAddress">
         <view class='defaultAddress' bindtap='chooseAddress'>
             <view>
@@ -17,7 +20,7 @@
         </view>
     </view>
 
-    <view class='info times'>
+    <view class='info times' style='border: 0'>
         <text>请选择送达时间</text>
         <image class='img-more' src="/imgs/more1.png"></image>
         <text class='choose-time'>尽快送达</text>
@@ -66,10 +69,54 @@
     </view>
 </view>
 
-<view class='wrap'>
-    <view class='method discount'>
-        <text>城市生活</text>
-        <text class='txt mark-r'> 商家配送</text>
+<view class='wrap' style='margin-bottom: 150rpx;'>
+    <view class='method discount' style='border-bottom: 1px solid #ddd;margin-right:0;'>
+        <text style='color: #000; font-weight: bold; font-size: 32rpx;'>城市生活</text>
+        <text class='txt mark-r' style=';margin-right:30rpx;'> 商家配送</text>
         <text class='txt mark'>本单由 </text>
     </view>
+
+    <view class='menu'>
+        <view class='menu-item'>
+            <text>定制餐桌</text>
+            <text>×1</text>
+            <text>￥699</text>
+        </view>
+        <view class='menu-item'>
+            <text>定制餐桌</text>
+            <text>×1</text>
+            <text>￥699</text>
+        </view>
+    </view>
+
+    <view class='menu'>
+        <view class='menu-item'>
+            <text>包装费</text>
+            <text></text>
+            <text style='width: 34%;'>￥4</text>
+        </view>
+        <view class='menu-item'>
+            <text>餐盒费</text>
+            <text></text>
+            <text style='width: 34%;'>￥4</text>
+        </view>
+    </view>
+
+    <view class='total'>
+        <view>订单 <text>￥488</text></view>
+        <view>优惠 <text>￥88</text></view>
+        <view>总计 <text style='font-size: 32rpx;font-weight: bold;'> ￥400</text></view>
+    </view>
+</view>
+
+<view class='order'>
+    <view>
+        已优惠
+        <text>￥19</text>
+    </view>
+    <view  class='actualPrice'>
+        <text>还需支付</text>
+        <text>￥19</text>
+    </view>
+    <view style='width: 26%; background: #ff2d4b; font-size: 32rpx;'>确认下单</view>
 </view>
