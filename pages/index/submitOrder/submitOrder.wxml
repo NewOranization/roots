@@ -1,120 +1,59 @@
-<view class="head">
-  <image src="/imgs/back_white.png"></image>提交订单
+<view class="header">
+    <image src="/imgs/back_white.png"></image>提交订单
 </view>
-<view class='addressTime'>
-  <view bindtap='toNext'  data-next="address" data-click="chooseAdr">
-    <view wx:if="{{addressLen}}" class='defaultAddress'>
-      <view>吴巧红 13867104693</view>
-      地址：白果镇305县道
-    </view>
-    <text wx:else>请选择送达地址</text>
-    <image src="/imgs/more1.png"></image>
-  </view>
-  <view class='time'>
-    <view>请选择送达时间</view>
-    <view bindtap='toSelTime'>
-      <text wx:if="{{curSelTime==''}}">尽快送达</text>
-      <text wx:if="{{curSelTime!=''}}">{{curDate}} {{curSelTime}}</text>
-      <image src='/imgs/more1.png'></image>
-    </view>
-    <view class='chen' wx:if="{{boxShow}}">
-      <view class='selTime'>
-        <view class='pleaseSel'>请选择送达时间</view>
-        <view>
-          <view class='date'>{{curDate}}</view>
-          <scroll-view scroll-y style="height: 200px;">
-            <block wx:for="{{submitData.business_hours}}"><view class="scroll-view-item" bindtap='clickTime' data-time="{{item}}">{{item}}({{submitData.otherExpenses.deliveryPrice}}配送费)</view></block>
-          </scroll-view>
 
+<view class='receiveInfo'>
+    <view class='info' data-click="chooseAddress">
+        <view class='defaultAddress' bindtap='chooseAddress'>
+            <view>
+                <text>吴巧红</text>
+                <text>13867104693</text>
+            </view>
+            <view class='address'>地址： 香港九龙</view>
         </view>
-      </view>
+        <view class='choose-address'>
+            <text>请选择送达地址</text>
+            <image class='img-more' src="/imgs/more1.png"></image>
+        </view>
     </view>
-  </view>
-</view>
-<view class='payMethod'>
-  <view class='selPay'>请选择支付方式</view>
-  <radio-group class="radio-group" bindchange="radioChange">
-    <block wx:for="{{submitData.payment}}">
-      <view>{{item.name}}
-        <radio checked="true" /> </view>
-    </block>
-  </radio-group>
+
+    <view class='info times'>
+        <text>请选择送达时间</text>
+        <image class='img-more' src="/imgs/more1.png"></image>
+        <text class='choose-time'>尽快送达</text>
+    </view>
 </view>
 
-<view class='addressTime myBottom'>
-  <view>
-    <text>商家代金券</text>
-    <view class='myRed' bindtap='toNext' data-next="quan">{{submitData.coupon}}
-      <image src='/imgs/more1.png'></image>
+<view class='wrap'>
+    <view class='paymethod'>
+        <text>选择支付方式</text>
     </view>
-  </view>
-  <view class='time'>
-    <view>平台红包</view>
-    <view style="color:#ff2c4a" bindtap='toNext' data-next="hongbao">{{submitData.platformRed}}
-      <image src='/imgs/more1.png'></image>
+    <view class='method'>
+        <text>微信支付</text>
+        <icon type='success' color='red'></icon>
+        <text class='no-choose'></text>
     </view>
-  </view>
+    <view class='method'>
+        <text>余额支付</text>
+        <icon type='success' color='red'></icon>
+        <text class='no-choose'></text>
+    </view>
+    <view class='method'>
+        <text>货到付款</text>
+        <icon type='success' color='red'></icon>
+        <text class='no-choose'></text>
+    </view>
 </view>
-<view class='addressTime myBottom'>
-  <view>
-    <view>备注</view>
-    <view bindtap='toNext' data-next="ReMark">
-      <text wx:if="{{reMarkValue.length==0}}">（选填）可填入特殊要求 </text><text wx:else>{{reMarkValue}}</text>
-      <image src='/imgs/more1.png'></image>
+
+<view class='wrap'>
+    <view class='method discount'>
+        <text>微信支付</text>
+        <text>无可用代金券</text>
+        <image src='/imgs/more1.png'></image>
     </view>
-  </view>
-</view>
-<view class='orderDetail'>
-  <view class='busniessOrder'>
-    <view>{{submitData.store.title}}</view>
-    <view>
-      <text>本单由 </text>{{submitData.store.mode}}</view>
-  </view>
-  <view class='orderList' wx:for="{{submitData.showGoods}}">
-    <view class='listItem'>
-      <view>
-        <text>折</text>{{item.title}}</view>
-      <view>
-        <text class='number'>x{{item.num}}</text>
-        <text class='price' wx:if="{{item.isShow}}">￥{{item.oldPrice}}</text> ￥{{item.showPrice}}</view>
+    <view class='method discount'>
+        <text>余额支付</text>
+        <text>无可用红包</text>
+        <image src='/imgs/more1.png'></image>
     </view>
-  </view>
-  <view class='otherPrice'>
-    <view>
-      <text>餐盒费</text>
-      <text>{{submitData.otherExpenses.boxPrice}}</text>
-    </view>
-    <view>
-      <text>包装费</text>
-      <text>{{submitData.otherExpenses.packPrice}}</text>
-    </view>
-    <view>
-      <text>配送价格</text>
-      <text>{{submitData.otherExpenses.deliveryPrice}}</text>
-    </view>
-  </view>
-  <view class='discount'>
-    <view class='discrip'>特价商品按照优惠后价格计算满减</view>
-    <block wx:for="{{submitData.discount}}">
-      <view class='discountList'>
-        <view>
-          <text>{{item.type}}</text> {{item.words}}</view>
-        <view>{{item.discount}}</view>
-      </view>
-    </block>
-  </view>
-  <view class='calcPrice'>
-    <view>
-      <text>订单</text> ￥{{submitData.calculation.originalPrice}}
-      <text>-优惠 </text> ￥{{submitData.calculation.preferential}}</view>
-    <view>
-      <text>总计</text> ￥{{submitData.calculation.paid}}</view>
-  </view>
-</view>
-<view class='bottomPay'>
-  <view>已优惠 ￥{{submitData.calculation.preferential}}</view>
-  <view>还需付
-    <text>￥{{submitData.calculation.paid}}</text>
-  </view>
-  <view>确认下单</view>
 </view>

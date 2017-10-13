@@ -1,212 +1,146 @@
-.head{
-  padding:30rpx;
+page{
+    background: #eee;
+    font-size: 30rpx;
+}
+
+.header{
+  height: 90rpx;
+  line-height: 90rpx;
   background: #fe2d4a;
   color:#fff;
   text-align: center;
   position: relative;
 }
-.head image{
-  width:56rpx;
-  height:56rpx;
-  position: absolute;
-  left:30rpx;
-}
-.addressTime{
-  background: #fff;
-  color:#394142;
-}
-.addressTime>view{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding:30rpx;
-}
-.addressTime>view:nth-child(1){
-  border-bottom:1rpx solid #eee;
-}
-.addressTime .defaultAddress{
-  font-size: 32rpx;
-}
-.addressTime .defaultAddress view{
-  font-size: 28rpx;
-  color:#9b9b9b;
-}
-.addressTime image{
-  width:46rpx;
-  height:46rpx;
-  vertical-align: middle;
-  margin-left:15rpx;
-}
-.addressTime .time view:nth-child(2){
-  color:#000;
-  display: flex;
-}
-.payMethod .selPay{
-  background: #eee;
-  padding:30rpx;
-}
-.payMethod{
-  background: #fff;
-  margin-bottom:20rpx;
-}
-.payMethod radio-group view{
-  display: flex;
-  justify-content: space-between;
-  padding-top:30rpx;
-  padding-bottom: 30rpx;
-  padding-left:30rpx;
-  padding-right:30rpx;
-}
-.payMethod radio-group view:not(:last-child){
-  border-bottom:1rpx solid #eee;
-}
-.myRed{
-  color:#ff2c4a;
-}
-.myBottom{
-  margin-bottom: 20rpx;
-}
 
-.orderDetail{
-  padding:30rpx;
-  background: #fff;
-}
-.orderDetail>view:not(:last-child){
-  border-bottom:1rpx solid #eee;
-}
-.orderDetail .busniessOrder{
-  display: flex;
-  justify-content: space-between;
-  padding-bottom:30rpx;
-}
-.orderDetail .busniessOrder view:nth-child(1){
-  font-weight: bold;
-}
-.orderDetail .busniessOrder view:nth-child(2) text{
-  color:#5a656b;
-}
-.orderList{
-  line-height: 70rpx;
-}
-.orderList .listItem{
-display: flex;
-justify-content: space-between;
-}
-.orderList .listItem view:nth-child(1) text{
-  display: inline-block;
+.header image{
   width:40rpx;
   height:40rpx;
-  line-height: 40rpx;
-  background: #63db42;
-  border-radius: 50%;
-  font-size: 24rpx;
-  color:#fff;
-  text-align: center;
-  margin-right:10rpx;
-}
-.orderList .listItem view:nth-child(2) text{
-  color:#9c9a9c;
-}
-.orderList .listItem view:nth-child(2) text:nth-child(2){
-  text-decoration: line-through;
-  margin-left:30rpx;
-}
-.orderDetail .otherPrice{
-  padding:20rpx 0;
-  line-height:70rpx;
-}
-.orderDetail .otherPrice view{
-  display: flex;
-  justify-content: space-between;
-}
-
-.discount .discrip{
-  font-size: 22rpx;
-  color:#9c9e9c;
-  margin-top:20rpx;
-}
-.discount .discountList{
-  display: flex;
-  justify-content: space-between;
-}
-.discount .discountList{
-  line-height: 70rpx;
-}
-.discount .discountList view:nth-child(1) text{
-  display: inline-block;
-  width:40rpx;
-  height:40rpx;
-  line-height: 40rpx;
-  background: #63d3b5;
-  border-radius: 50%;
-  font-size: 24rpx;
-  color:#fff;
-  text-align: center;
-  margin-right:10rpx;
-}
-.calcPrice{
-  display: flex;
-  justify-content: space-between;
-  padding-top:20rpx;
-}
-.calcPrice text{
-  color: #9c9a9c;
-}
-.bottomPay{
-  display: flex;
-}
-.bottomPay view{
-  flex: 1;
-  text-align:center;
-  padding: 30rpx;
-  background: #3a3633;
-  color:#fff;
-}
-.bottomPay view:nth-child(3){
-  background: #fe2d4a
-}
-.bottomPay view:nth-child(2) text{
-  font-size: 36rpx;
-}
-
-
-.chen{
-  width:100%;
-  height:100%;
   position: absolute;
-  top:0;
-  left:0;
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index:200;
+  top: 25rpx;
+  left: 20rpx;
 }
-.chen .scroll-view-item{
-  height:100rpx;
-  line-height: 100rpx;
-  width:100%;
-  border-left:1rpx solid #eee;
-  padding-left:20rpx;
+
+.receiveInfo {
+    background: #fff;
 }
- .chen .selTime{
-   width:90%;
-  background: #fff;
- }
-.chen .selTime .pleaseSel{
-    text-align: center;
+
+.receiveInfo .info{
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.receiveInfo .info .defaultAddress{
+    width: 100%;
+}
+
+.receiveInfo .info .defaultAddress view{
+    overflow: hidden;
+    line-height: 60rpx;
+}
+
+.receiveInfo .info .defaultAddress view text{
+    display: block;
+}
+
+.receiveInfo .info .defaultAddress view text:first-child{
+    float: left;
+    margin-left: 30rpx;
+}
+
+.receiveInfo .info .defaultAddress view text:last-child{
+    float: right;
+    text-align: right;
+    margin-right: 30rpx;
+}
+
+.receiveInfo .info .defaultAddress .address{
+    margin: 0 30rpx;
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.img-more{
+    display: block;
+    float: right;
+    margin-top: 25rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.receiveInfo .info .choose-address{
+    margin: 0 30rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    overflow: hidden;
+}
+
+.receiveInfo .info .choose-address text{
+    display: block;
+    float: left;
+}
+
+
+.receiveInfo .times{
+    width: auto;
+    margin: 0 30rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    overflow: hidden;
+}
+
+.receiveInfo .times text{
+    display: block;
+    float: left;
+}
+
+.receiveInfo .times text.choose-time{
+    float: right;
+    margin-right: 20rpx;
+    color: #000;
+    font-weight: bold;
+}
+
+.wrap{
+    background: #fff;
+    line-height: 90rpx;
+    margin-bottom: 30rpx;
+}
+
+.wrap .paymethod{
     background: #eee;
-    padding-top:20rpx;
-    padding-bottom: 20rpx;
- }
- .chen .selTime .date{
-   width:35%;
-   text-align: center;
-   height:80rpx;
-   line-height: 80rpx;
-  border-bottom: 1rpx solid #eee;
- }
+    padding: 0 30rpx;
+}
 
+.wrap .method{
+    margin: 0 30rpx;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
 
+.wrap .method:last-child.method{
+    border: none;
+}
 
+.wrap .method text{
+    display: block;
+    float: left;
+}
 
+.wrap .method icon, .no-choose{
+    display: block;
+    float: right;
+    margin-top: 17rpx
+}
+
+.wrap .method icon{
+    
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.wrap .method .no-choose{
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 55rpx;
+    height: 55rpx;
+}
