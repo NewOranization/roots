@@ -124,6 +124,7 @@ page{
 .wrap .method text{
     display: block;
     float: left;
+    font-weight: bold;
 }
 
 .wrap .method icon, .no-choose{
@@ -144,6 +145,32 @@ page{
     height: 55rpx;
     float: right;
     display: block;
+}
+
+.wrap .discount text{
+    display: block;
+}
+
+.wrap .discount text{
+    float: left;
+    font-weight: 500;
+}
+
+.wrap .discount text.txt{
+    float: right;
+    color: #ff2d4b;
+}
+
+.wrap .discount text.mark{
+    color: #666;
+}
+
+.wrap .discount image{
+    float: right;
+    width: 40rpx;
+    height: 40rpx;
+    display: block;
+    margin-top: 25rpx;
 }
 
 
