@@ -12,7 +12,7 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
-    var that = this
+  onLoad: function (ops) {
+    var that = this;
   }
 })

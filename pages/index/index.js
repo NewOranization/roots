@@ -52,12 +52,13 @@ Page({
       op: 'store',
       page: that.data.page
     }
-    app.getPostData(function (post_data) {//请求轮播图
+    app.getPostData(function (post_data) {
       app.getApiData(function (res) {
         that.setData({
           shopInfo: that.data.shopInfo.concat(res.data.data),
           page: that.data.page + 1
         });
+        console.log(res.data.data);
         if (res.data.code == 0) {
           wx.hideToast();
         } else if(res.data.data.length<10){
@@ -96,13 +97,21 @@ Page({
     }, { ac: 'homepage', op: 'notice' });
     app.getPostData(function (post_data) {//请求优惠信息
       app.getApiData(function (res) {
-        that.setData({
-          leftDiscount: res.data.data[0]
-        });
-        res.data.data.shift();
-        that.setData({
-          discount: res.data.data
-        });
+        if(res.data.data.length==3){
+          that.setData({
+            leftDiscount: res.data.data[0]
+          });
+          res.data.data.shift();
+          that.setData({
+            discount: res.data.data
+          });
+        }else{
+          that.setData({
+            discount: res.data.data
+          });
+        }
+        console.log(that.data.discount)
+        
       }, 'GET', post_data)
     }, { ac: 'homepage', op: 'cube' });
     app.getPostData(function (post_data) {//请求筛选导航列表
@@ -199,9 +208,35 @@ Page({
    that.setData({
      likeLayout:!that.data.likeLayout
    })
-  }
+  },
   // ***********************************************请求函数
+  toScan:function(){
+    wx.scanCode({
+      success: function (res) {
+        var url = res.result;
+        console.log(url);
+        wx.navigateTo({
+          url:url
+        })
+      },
 
+      fail: function (res) { 
+        wx.showToast({
+          icon:'loading',
+          title: '该店铺暂不支持扫码功能',
+          duration: 1000
+        })
+      },
+
+      complete: function () {
+
+        // complete
+
+      }
+
+    })
+  }
+ 
 
 
 })

@@ -7,13 +7,19 @@ Page({
     boxShow:false,
     curSelTime:'',
     curDate:'',
-    reMarkValue:''
+    reMarkValue:'',
+    push_token:'',
+    oldPrice:0
   },
   onLoad: function (options) {
     var that = this;
     wx.getStorage({
       key: 'toSubmitData',
       success: function (res) {
+        that.setData({
+          push_token: res.data.push_token,
+          oldPrice: res.data.oldPrice
+        })
         var data = {
           ac: 'handleorder',
           op: 'orderCart',
@@ -63,7 +69,7 @@ Page({
     } else if (next == "quan") {
       console.log("hahaha");
       wx.navigateTo({
-        url: '/pages/index/coupon/coupon'
+        url: '/pages/index/coupon/coupon?push_token' + that.data.push_token + '&oldPrice' + that.data.oldPrice
       })
     } else if (next == "hongbao") {
       wx.navigateTo({

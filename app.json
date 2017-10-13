@@ -2,6 +2,9 @@
     "pages": [
         
         "pages/index/index",
+        "pages/index/searchResult/searchResult",
+        "pages/index/hongbao/hongbao",
+        "pages/index/coupon/coupon",
         "pages/runleg/index",
         "pages/form/index",
         "pages/mine/index",

@@ -35,7 +35,7 @@
   <view class='selPay'>请选择支付方式</view>
   <radio-group class="radio-group" bindchange="radioChange">
     <block wx:for="{{submitData.payment}}">
-      <view>{{item}}
+      <view>{{item.name}}
         <radio checked="true" /> </view>
     </block>
   </radio-group>

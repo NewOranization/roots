@@ -147,8 +147,8 @@
   font-size: 24rpx;
 }
 .box .shop .wrapSort image{
-  width:30rpx;
-  height:30rpx;
+  width:50rpx;
+  height:50rpx;
   vertical-align: middle
 }
 .box .shop .wrapSort .wrapSort-top{
@@ -156,9 +156,6 @@
   justify-content: space-between;
   padding: 10rpx;
   border-top: 1rpx dashed #eee;
-}
-.box .shop .wrapSort .wrapSort-top .right image{
-  margin-left: 20rpx;
 }
 .box .shop .wrapSort .wrapSort-bottom{
   padding: 10rpx;

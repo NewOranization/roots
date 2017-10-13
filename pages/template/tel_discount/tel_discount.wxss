@@ -44,9 +44,6 @@
   height:340rpx;
   display: flex;
 }
-.discount .num2{
-  display: none;
-}
 .discount .num2 view{
   flex: 1;
   line-height: 75rpx;
@@ -75,13 +72,12 @@
  .discount .num3{
   height:400rpx;
   display: flex;
-  display: none;
 }  
 
 .discount .num3 .left{
   flex: 0 0 50%;
   border-right:1rpx solid #eee;
-  line-height: 90rpx;
+  line-height: 120rpx;
 }
 .discount .num3 .left text{
   display: block;
@@ -131,14 +127,15 @@
 /************************后台传过来4个数据的布局  */
 .discount .num4 {
   height:400rpx;
-  display: none
 }
 .discount .num4 view{
   float: left;
   width:49%;
   height:199rpx;
-  line-height: 45rpx;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .discount .num4 view:nth-child(2){
   border-left:1rpx solid #eee;

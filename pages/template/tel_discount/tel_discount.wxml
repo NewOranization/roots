@@ -1,68 +1,49 @@
 <template name="discount">
   <view class="discount">
-    <view class='num1'>
-      <image src="http://img.sc115.com/uploads/sc/jpgs/05/xpic6826_sc115.com.jpg"></image>
-      <view>
-        <text class='title'>天天新鲜</text>
-        <text class='discrip'>新鲜蔬菜一折</text>
-      </view>
+    <view class='num1' wx:if="{{discount.length==1}}">
+      <block wx:for="{{discount}}">
+         <image src="{{item.thumb}}"></image>
+        <view>
+          <text class='title'>{{item.title}}</text>
+          <text class='discrip'>{{itemltips}}</text>
+        </view>
+      </block>
     </view>
-    <view class='num2'>
-      <view>
-        <text class='title'>天天新鲜</text>
-        <text class='discrip'>新鲜蔬菜一折</text>
-        <image src="http://img.sc115.com/uploads/sc/jpgs/05/xpic6826_sc115.com.jpg"></image>
-      </view>
-      <view>
-        <text class='title'>天天新鲜</text>
-        <text class='discrip'>新鲜蔬菜一折</text>
-        <image src="http://img.sc115.com/uploads/sc/jpgs/05/xpic6826_sc115.com.jpg"></image>
-      </view>
+    <view class='num2' wx:if="{{discount.length==2}}">
+      <block wx:for='{{discount}}'>
+        <view>
+          <text class='title'>{{item.title}}</text>
+          <text class='discrip'>{{item.tips}}</text>
+          <image src="{{item.thumb}}"></image>
+        </view>
+      </block>
     </view>
-    <view class='num3'>
+    <view class='num3' wx:if="{{discount.length==3}}">
       <view class='left'>
-        <text class='title'>天天新鲜</text>
-        <text class='discrip'>新鲜蔬菜一折</text>
-        <image src="http://img.sc115.com/uploads/sc/jpgs/05/xpic6826_sc115.com.jpg"></image>
+        <text class='title'>{{leftDiscount.title}}</text>
+        <text class='discrip'>{{leftDiscount.tips}}</text>
+        <image src="{{leftDiscount.thumb}}"></image>
       </view>
       <view class='right'>
-        <view>
-          <image src="http://img.sc115.com/uploads/sc/jpgs/05/xpic6826_sc115.com.jpg"></image>
+        <block wx:for="{{discount}}">
           <view>
-            <text class='title'>天天新鲜</text>
-            <text class='discrip'>新鲜蔬菜一折</text>
+            <image src="{{item.thumb}}"></image>
+            <view>
+              <text class='title'>{{item.title}}</text>
+              <text class='discrip'>{{item.tips}}</text>
+            </view>
           </view>
-        </view>
-        <view>
-          <image src="http://img.sc115.com/uploads/sc/jpgs/05/xpic6826_sc115.com.jpg"></image>
-          <view>
-            <text class='title'>天天新鲜</text>
-            <text class='discrip'>新鲜蔬菜一折</text>
-          </view>
-        </view>
+        </block>
       </view>
     </view>
-    <view class='num4'>
-      <view>
-        <text class='title'>天天新鲜</text>
-        <text class='discrip'>新鲜蔬菜一折</text>
-        <image src="http://img.sc115.com/uploads/sc/jpgs/05/xpic6826_sc115.com.jpg"></image>
-      </view>
-      <view>
-        <text class='title'>天天新鲜</text>
-        <text class='discrip'>新鲜蔬菜一折</text>
-        <image src="http://img.sc115.com/uploads/sc/jpgs/05/xpic6826_sc115.com.jpg"></image>
-      </view>
-      <view>
-        <text class='title'>天天新鲜</text>
-        <text class='discrip'>新鲜蔬菜一折</text>
-        <image src="http://img.sc115.com/uploads/sc/jpgs/05/xpic6826_sc115.com.jpg"></image>
-      </view>
-      <view>
-        <text class='title'>天天新鲜</text>
-        <text class='discrip'>新鲜蔬菜一折</text>
-        <image src="http://img.sc115.com/uploads/sc/jpgs/05/xpic6826_sc115.com.jpg"></image>
-      </view>
+    <view class='num4' wx:if="{{discount.length==4}}">
+      <block wx:for="{{discount}}">
+        <view>
+          <text class='title'>{{item.title}}</text>
+          <text class='discrip'>{{item.tips}}</text>
+          <image src="{{item.thumb}}"></image>
+        </view>
+      </block>
     </view>
 
 

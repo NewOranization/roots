@@ -80,7 +80,7 @@
             </block>
           </view>
           <view class='right' bindtap='moreWrap'>8个活动
-            <image src="/imgs/more.png"></image>
+            <image src="/imgs/bottom.png"></image>
           </view>
         </view>
         <view class='wrapSort-bottom' wx:if='{{item.selling}}'>
@@ -88,9 +88,5 @@
         </view>
       </view>
     </view>
-
-
-
-
   </view>
 </template>
