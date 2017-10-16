@@ -36,29 +36,46 @@ Page({
     page: 1,
     wrap:true,
     likeLayout:true,
-    likeData:[]
+    likeData:[],
+    selNav:1,
+    datalength:0
   },
 
   //封装获取商家信息及筛选请求函数
-  loadMore: function (that) {
+  loadMore: function (that,myData) {
     wx.showToast({
       title: '正在为您拼命加载。。。',
       icon: 'loading',
       duration: 2000,
       mask: true
     })
-    var requestData = {
-      ac: 'homepage',
-      op: 'store',
-      page: that.data.page
+    var data={};
+    if(myData){
+      data=myData
+    }else{
+      data={
+        ac: 'homepage',
+        op: 'store',
+        page: that.data.page
+      }
     }
+    console.log(data);
     app.getPostData(function (post_data) {
       app.getApiData(function (res) {
-        that.setData({
-          shopInfo: that.data.shopInfo.concat(res.data.data),
-          page: that.data.page + 1
-        });
-        console.log(res.data.data);
+        console.log(res.data.data.length)
+        if(myData){
+          that.setData({
+            shopInfo:res.data.data,
+            datalength: res.data.data.length
+          });
+        }else{
+          that.setData({
+            shopInfo: that.data.shopInfo.concat(res.data.data),
+            page: that.data.page + 1,
+            datalength: res.data.data.length
+          });
+        }
+        
         if (res.data.code == 0) {
           wx.hideToast();
         } else if(res.data.data.length<10){
@@ -70,7 +87,7 @@ Page({
           })
         }
       }, 'GET', post_data)
-    }, requestData);
+    },data);
   },
   onLoad: function (ops) {
     var that = this;
@@ -121,6 +138,8 @@ Page({
           sort: res.data.data.sort,
           discountActive: res.data.data.discount
         });
+        console.log(that.data.industry);
+        console.log(that.data.sort);
       }, 'GET', post_data)
     }, { ac: 'homepage', op: 'get_condition' });
     that.loadMore(that);
@@ -135,20 +154,59 @@ Page({
       }
     })
   },
+
+  againRequest: function(e){
+    var that=this;
+    var myData={};
+    var cid = e.currentTarget.dataset.cid;
+    var sort = e.currentTarget.dataset.sort;
+    var discount = e.currentTarget.dataset.discount;
+    if(that.data.selNav==1){
+      myData = {
+        ac: 'homepage',
+        op: 'store',
+        cid: cid,//分类id
+      }
+    } else if (that.data.selNav == 2){
+      myData = {
+        ac: 'homepage',
+        op: 'store',
+        sort: sort,//分类id
+      }
+    } else if (that.data.selNav==3){
+      myData = {
+        ac: 'homepage',
+        op: 'store',
+        discount: discount,//分类id
+      }
+    }
+   
+    that.loadMore(that,myData);
+    that.setData({
+      top1:false,
+      top2:false,
+      top3:false
+    })
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
     var that = this;
-    that.loadMore(that);
-    console.log(that.data.page)
+    console.log(that.data.datalength)
+    if (that.data.datalength = 10) {
+      console.log('aaaaaaaaaaaa');
+      that.loadMore(that);
+    }
   },
   /**
   * 页面下拉触顶事件的处理函数
   */
   onPullDownRefresh: function () {
     var that = this;
-    that.loadMore(that);
+    if (that.data.datalength = 10) {
+      that.loadMore(that);
+    }
   },
   bindRegionChange: function (e) {
     this.setData({
@@ -174,6 +232,9 @@ Page({
   navBarSwitch: function (e) {
     var that = this;
     var nav = e.currentTarget.dataset.nav;
+    that.setData({
+      selNav:nav
+    })
     if (nav == 1) {
       that.setData({
         top1: !that.data.top1,

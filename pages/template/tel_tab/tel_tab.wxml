@@ -22,20 +22,14 @@
     <view class='list' wx:if="{{top1 || top2 || top3}}">
       <text>全部</text>
       <!--商家分类  -->
-      <text wx:if="{{top1}}" wx:for="{{industry}}">{{item.title}}</text>
+      <text wx:if="{{top1}}" wx:for="{{industry}}" data-cid="{{item.cid}}" bindtap='againRequest'>{{item.title}}</text>
       <!--智能排序  -->
       <view class='item' wx:if="{{top2}}" wx:for="{{sort}}" wx:for-item="sortItem">
-        <block wx:for="{{sortIcon}}" wx:for-item="iconItem">
-          <image src='{{iconItem}}' wx:if="{{top2}}"></image>
-          <text wx:if="{{top2}}">{{sortItem}}</text>
-        </block>
+        <text wx:if="{{top2}}" bindtap='againRequest' data-sort='{{sortItem}}'>{{sortItem}}</text>
       </view>
       <!--优惠活动  -->
       <view class='item' wx:if="{{top3}}" wx:for="{{discountActive}}" wx:for-item="discountItem">
-        <block wx:for="{{discountIcon}}" wx:for-item="iconItem">
-          <image src='{{iconItem}}' wx:if="{{top3}}"></image>
-          <text wx:if="{{top3}}">{{discountItem}}</text>
-        </block>
+        <text wx:if="{{top3}}" bindtap='againRequest' data-discount='{{discountItem}}'>{{discountItem}}</text>
       </view>
     </view>
     <!--****************************************************  -->
@@ -59,8 +53,8 @@
             <view>
               起送
               <text>￥{{item.send_price}}</text>配送
-              <text>￥{{item.delivery_price
-}}</text> 约
+              <text>￥{{item.delivery_price }}
+              </text> 约
               <text>{{item.delivery_time}}分钟</text>
             </view>
             <view>
@@ -79,7 +73,7 @@
                 <image src="/imgs/hot-sale.png"></image>{{activityItem.title}}</view>
             </block>
           </view>
-          <view class='right' bindtap='moreWrap'>8个活动
+          <view class='right' bindtap='moreWrap'>{{item.activity.length}}个活动
             <image src="/imgs/bottom.png"></image>
           </view>
         </view>
