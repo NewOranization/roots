@@ -1,0 +1,24 @@
+<view class="sort">
+  <view class='left'>
+    <block wx:for="{{order}}">
+      <view bindtap="tap" data-ord="{{item.id}}">{{item.title}}</view>
+    </block>
+  </view>
+  <scroll-view scroll-y style="height:500rpx;" scroll-into-view="{{toView}}">
+    <block wx:for="{{rightInfo}}">
+      <view id="{{item.id}}" class="bc_green">
+        <block wx:for="{{item.content}}" wx:for-item="conItem">
+          <view class="title">{{conItem.title}}</view>
+          <view class="sortList">
+            <block wx:for="{{conItem.contentItem}}" wx:for-item="my">
+              <view class="sortItem">
+                <image src="{{my.thumb}}"></image>
+                <view>{{my.con}}</view>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
+  </scroll-view>
+</view>

@@ -1,6 +1,8 @@
 {
     "pages": [
-        
+        "pages/sort/index",
+        "pages/infor/inforDetail/inforDetail",
+        "pages/infor/index",
         "pages/index/index",
         "pages/index/searchResult/searchResult",
         "pages/index/hongbao/hongbao",
@@ -34,8 +36,7 @@
         "pages/index/shopMap2/shopMap2",
         "pages/index/shopMap1/shopMap1",
         "pages/index/fastFood/fastFood",
-        "pages/index/search/search",
-        "pages/index/submitOrder/submitOrder"
+        "pages/index/search/search"
         
     ],
     "window": {
