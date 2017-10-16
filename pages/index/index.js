@@ -144,7 +144,7 @@ Page({
     }, { ac: 'homepage', op: 'get_condition' });
     that.loadMore(that);
     wx.request({
-      url: 'http://xcx.szhuanya.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
+      url: 'https://xcx.xcwll.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
       data: {
         ac: 'homepage',
         op: 'guessLike'
