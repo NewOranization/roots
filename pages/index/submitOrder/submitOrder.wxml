@@ -24,7 +24,7 @@
         <view class='info times' style='border: 0' bindtap='showModal'>
             <text>请选择送达时间</text>
             <image class='img-more' src="/imgs/more1.png"></image>
-            <text class='choose-time'>{{ times == '' ? '尽快送达' : times}}</text>
+            <text class='choose-time'>{{times}}</text>
         </view>
     </view>
 
