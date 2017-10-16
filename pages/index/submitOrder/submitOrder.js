@@ -4,7 +4,7 @@ Page({
         orderInfo: {},
         address: '',
         show: false,
-        times: '',
+        times: '尽快送达',
         payMethod: 'wechat'
     },
 

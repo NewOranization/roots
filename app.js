@@ -40,23 +40,21 @@ App({
   * 获取用户信息
   ************************************************/
   getUserInfo: function (cb){
+      getApp().getglobalData();
       var that = this;
-    //   getApp().getglobalData();
-    //   that.globalData.userInfo = wx.getStorageSync('userInfo');
-    //   //console.log(that.globalData.userInfo);
-    //   if (that.globalData.userInfo.data.data != ''){
-    //         typeof cb == 'function' && cb(that.globalData.userInfo);
-    //   } else{
-    //       that.getPostData(function (post_data) {
-    //           //console.log(post_data);
-    //           //wx.setStorageSync('userInfo', post_data);
-    //           that.globalData.userInfo = post_data;
-    //         //   that.wxCache('userInfo', that.globalData.userInfo)
-    //         //   console.log(that.globalData.userInfo);
-    //           typeof cb == 'function' && cb(that.globalData.userInfo);
-    //       })
-    //   }
-      
+      that.globalData.userInfo = that.wxCache('userInfo');
+      if (that.globalData.userInfo == ''){
+          that.getPostData(function (post_data) {
+              that.getApiData(function (res) {
+                  if (res.data.code == 0) {
+                      console.log(res);
+                      that.globalData.userInfo = res.data.data;
+                      that.wxCache('userInfo', that.globalData.userInfo, 1800);
+                      typeof cb == 'function' && cb(that.globalData.userInfo);
+                  }
+              }, 'GET', post_data)
+          }, { op: 'info' })
+      }  
   },
 
 
@@ -82,9 +80,6 @@ App({
                         postData['iv'] = resU.iv;
                         //console.log(postData);
                         postData['encryptedData'] = resU.encryptedData;
-                        for (var key in resU.userInfo) {
-                            postData[key] = resU.userInfo[key]
-                        }
                         wx.request({
                             url: that.globalData.appApiUrl +'&op=openUserInfo',
                             data: {
@@ -97,11 +92,11 @@ App({
                             },
                             method: "GET",
                             success: function (res) {
-                                //console.log(res.data.data);
+                                console.log(res);
                                 wx.setStorageSync('openid', res.data.data.openId);
                                 //console.log(postData);
                                 if(res.data.data.openId == '' || undefined || null){
-                                      postData['openid'] = openId;
+                                    postData['openid'] = openId
                                 }else{
                                       postData['openid'] = res.data.data.openId;
                                 }

@@ -12,25 +12,24 @@ Page({
    */
   onLoad: function (options) {
       var that = this;
-         //console.log(userInfo);
-    //   if (userInfo != ''){
-    //      that.setData({
-    //         userInfo: userInfo,
-    //         login: true
-    //      })
-    //      console.log(userInfo)
-    //   }else{
-         app.getPostData(function (post_data) {
-            app.getApiData(function (res) {
-            console.log(res);
-            var userInfo = res.data.data;
-               that.setData({
-                  userInfo: userInfo,
-                  login: true
-               })
-            }, 'GET', post_data)
-         }, {op: 'info'})
-    // }
+       
+    //   app.getPostData(function (post_data) {
+    //      app.getApiData(function (res) {
+    //      console.log(res);
+    //      var userInfo = res.data.data;
+    //         that.setData({
+    //             userInfo: userInfo,
+    //             login: true
+    //         })
+    //      }, 'GET', post_data)
+    //   }, {op: 'info'});
+        app.getUserInfo(function (userInfo){
+             that.setData({
+                 userInfo: userInfo,
+                 login: true
+             })
+         })
+    
   
   },
 
