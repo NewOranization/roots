@@ -2,22 +2,22 @@
     <view class="formDetail">
         <view class='formContent' catchtap='navTo'>
             <view class='detail_l'>
-                <image src="{{url}}480×480" mode='aspectFill'></image>
+                <image src="{{logo}}" mode='aspectFill'></image>
             </view>
             <view class='detail_c'>
-                <text class='shop'>{{shopname}}</text>
+                <text class='shop'>{{stroeName}}</text>
                 <text>{{formtime}}</text>
-                <text>{{dishes}}</text>
+                <text>{{goods.name}}</text>
                 <text>￥{{price}}</text>
             </view>
             <view class='detail_r'>
-                <text class='form_state' wx:if="{{state == 1}}">已完成</text>
-                <text class='form_state' wx:if="{{state == 2}}">待付款</text>
-                <text class='form_state' wx:if="{{state == 3}}">已取消</text>
-                <text class='assess' wx:if="{{state == 1}}" catchtap='kkk'>再来一单</text>
-                <text class='assess pay' wx:if="{{state == 2}}">付款</text>
-                <text class='assess cancle' wx:if="{{state == 2}}">取消订单</text>
-                <text class='assess' wx:if="{{state == 3}}">重新下单</text>
+                <text class='form_state' wx:if="{{status == 1}}">已完成</text>
+                <text class='form_state' wx:if="{{status == 2}}">待付款</text>
+                <text class='form_state' wx:if="{{status == 3}}">已取消</text>
+                <text class='assess' wx:if="{{status == 1}}" catchtap='kkk'>再来一单</text>
+                <text class='assess pay' wx:if="{{status == 2}}">付款</text>
+                <text class='assess cancle' wx:if="{{status == 2}}">取消订单</text>
+                <text class='assess' wx:if="{{status == 3}}">重新下单</text>
             </view>
         </view>
     </view>
