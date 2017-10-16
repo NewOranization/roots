@@ -69,6 +69,6 @@ Page({
          app.getApiData(function (res){
              console.log(res)
          }, 'GET', post_data)
-     }, { op: 'comment'})
+     }, { op: 'comment', openid: 'oxi5ZwUX0lokIp0I5zXhAW15HMrw'})
   }
 })
