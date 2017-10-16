@@ -138,7 +138,8 @@ Page({
    * 跳转页面
    */
   navTo: function (e) {
-    var click = e.currentTarget.dataset.click || that.data.click;
+    var that = this;
+    var click = e.currentTarget.dataset.click;
     var id = e.currentTarget.dataset.id;
     var index = parseInt(e.currentTarget.dataset.index);
     if(click == 'addAddress' ||  'editAddress'){
@@ -146,10 +147,20 @@ Page({
             url: 'addAddress?click=' + click + '&id=' + id
         })
     }
-    if(click == 'chooseAdr'){
-        wx.setStorageSync('address', that.data.addressList[index]);
-        console.log(index)
-    }
     
+  },
+
+  /**
+   * 下单页跳转选择地址
+   */
+  chooseAddress: function (e){
+      var that = this;
+      var click = e.currentTarget.dataset.click;
+      var index = parseInt(e.currentTarget.dataset.index);
+      if(click != that.data.click) return
+      wx.setStorageSync('address', that.data.addressList[index]);
+      wx.navigateBack({
+          delta: 1
+      })
   }
 })
