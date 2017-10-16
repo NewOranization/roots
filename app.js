@@ -82,9 +82,9 @@ App({
                         postData['iv'] = resU.iv;
                         //console.log(postData);
                         postData['encryptedData'] = resU.encryptedData;
-                        // for (var key in resU.userInfo) {
-                        //     postData[key] = resU.userInfo[key]
-                        // }
+                        for (var key in resU.userInfo) {
+                            postData[key] = resU.userInfo[key]
+                        }
                         wx.request({
                             url: that.globalData.appApiUrl +'&op=openUserInfo',
                             data: {

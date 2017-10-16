@@ -108,7 +108,7 @@
                     <text>{{totalNum == 0 ? '购物车是空的' : '总计 ￥'+totalPrice}}</text>
                 </view>
                 <view class='cart-buy' style="{{totalNum == 0 ? 'background: #484242;' : 'background: #ff2648;'}}" bindtap='navTo' data-click="order">
-                    <text>{{totalNum == 0 ? '20元起送' : '选好了'}}</text>
+                    <text>{{totalPrice < dataList.store.send_price? "20元起送" : "选好了"}}</text>
                 </view>
             </view>
         </view>
@@ -306,6 +306,23 @@
                 <text class='reduce' data-id='{{item.id}}' data-click="cartReduce" bindtap='plus'>-</text>
                 <input type='number' disabled='true' value='{{item.cartNum}}'></input>
                 <text class='add' data-id='{{item.id}}' data-click="cartPlus" bindtap='plus'>+</text>
+            </view>
+        </view>
+
+        <view class='model-menu' wx:if="{{dataList.store.send_price != '0' || 0}}">
+            <view class='model-menu-title'>
+                <text>餐盒费</text>
+            </view>
+            <view class='model-menu-price'>
+                <text>￥{{dataList.store.send_price}}</text>
+            </view>
+        </view>
+        <view class='model-menu'>
+            <view class='model-menu-title'>
+                <text>配送费</text>
+            </view>
+            <view class='model-menu-price'>
+                <text>￥{{dataList.store.send_price}}</text>
             </view>
         </view>
     </view>

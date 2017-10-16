@@ -142,8 +142,6 @@ Page({
     //       })
       //}
       
-      
-      
   },
 
 
@@ -219,9 +217,13 @@ Page({
       app.getPostData(function (post_data) {
           app.getApiData(function (res) {
               //console.log(res);
-              wx.navigateTo({
-                  url: '/pages/mine/address/index',
-              })
+              if(res.data.code == 0){
+                  wx.hideToast();
+                  wx.navigateTo({
+                      url: '/pages/mine/address/index',
+                  })
+              }
+             
           }, 'POST', post_data)
       }, data)        
     
