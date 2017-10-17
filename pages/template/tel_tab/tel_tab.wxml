@@ -1,90 +1,90 @@
 <template name="tab">
-  <!--标签切换  -->
-  <view class="box">
-    <view class='nav'>
-      <view class='navbar' bindtap='navBarSwitch' data-nav='1'>
-        <text class="{{top1 ? 'active' : ''}}">商家分类</text>
-        <image wx:if="{{top1}}" src="/imgs/less.png"></image>
-        <image wx:else src="/imgs/more_bottom.png"></image>
-      </view>
-      <view class='navbar' bindtap='navBarSwitch' data-nav='2'>
-        <text class="{{top2 ? 'active' : ''}}">智能排序</text>
-        <image wx:if="{{top2}}" src="/imgs/less.png"></image>
-        <image wx:else src="/imgs/more_bottom.png"></image>
-      </view>
-      <view class='navbar' bindtap='navBarSwitch' data-nav='3'>
-        <text class="{{top3 ? 'active' : ''}}">优惠活动</text>
-        <image wx:if="{{top3}}" src="/imgs/less.png"></image>
-        <image wx:else src="/imgs/more_bottom.png"></image>
-      </view>
-    </view>
-
-    <view class='list' wx:if="{{top1 || top2 || top3}}">
-      <text>全部</text>
-      <!--商家分类  -->
-      <text wx:if="{{top1}}" wx:for="{{industry}}" data-cid="{{item.cid}}" bindtap='againRequest'>{{item.title}}</text>
-      <!--智能排序  -->
-      <view class='item' wx:if="{{top2}}" wx:for="{{sort}}" wx:for-item="sortItem">
-        <text wx:if="{{top2}}" bindtap='againRequest' data-sort='{{sortItem}}'>{{sortItem}}</text>
-      </view>
-      <!--优惠活动  -->
-      <view class='item' wx:if="{{top3}}" wx:for="{{discountActive}}" wx:for-item="discountItem">
-        <text wx:if="{{top3}}" bindtap='againRequest' data-discount='{{discountItem}}'>{{discountItem}}</text>
-      </view>
-    </view>
-    <!--****************************************************  -->
-    <view class='shop' wx:for="{{shopInfo}}" wx:key="*this">
-      <view class='wrap' bindtap='toShopMenuList' data-token="{{item.push_token}}">
-        <view class='wrap-left'>
-          <image src='{{item.logo}}'></image>
-        </view>
-        <view class='wrap-right'>
-          <view class='wrap-right-top'>
-            <text>{{item.title}}</text>
-            <image src='/imgs/pay.png'></image>
-          </view>
-          <view class='wrap-right-center'>
-            <block wx:for="{{stars}}" wx:key="*this">
-              <image src='/imgs/star.png'></image>
-            </block>
-            <text>已售 {{item.sailed}} 份</text>
-          </view>
-          <view class='wrap-right-bottom'>
-            <view>
-              起送
-              <text>￥{{item.send_price}}</text>配送
-              <text>￥{{item.delivery_price }}
-              </text>
-              约 <text>{{item.delivery_time}}分钟</text>
+    <!--标签切换  -->
+    <view class="box">
+        <view class='nav'>
+            <view class='navbar' bindtap='navBarSwitch' data-nav='1'>
+                <text class="{{top1 ? 'active' : ''}}">商家分类</text>
+                <image wx:if="{{top1}}" src="/imgs/less.png"></image>
+                <image wx:else src="/imgs/more_bottom.png"></image>
             </view>
-            <view>
-              <image src='/imgs/position.png'></image>
-              <text>{{item.distance}}km</text>
+            <view class='navbar' bindtap='navBarSwitch' data-nav='2'>
+                <text class="{{top2 ? 'active' : ''}}">智能排序</text>
+                <image wx:if="{{top2}}" src="/imgs/less.png"></image>
+                <image wx:else src="/imgs/more_bottom.png"></image>
             </view>
-          </view>
+            <view class='navbar' bindtap='navBarSwitch' data-nav='3'>
+                <text class="{{top3 ? 'active' : ''}}">优惠活动</text>
+                <image wx:if="{{top3}}" src="/imgs/less.png"></image>
+                <image wx:else src="/imgs/more_bottom.png"></image>
+            </view>
         </view>
-      </view>
-      <view class='wrapSort'>
 
-<<<<<<< HEAD
-        <view class="wrapSort-top {{wrapHeight==true?'wrapMinHeight':'wrapMaxHeight'}}" wx:if='{{item.activity.length>0}}'>
-=======
-        <view class="wrapSort-top {{wrapHeight==true?'wrapMinHeight':''}}" wx:if='{{item.activity.length>0}}'>
->>>>>>> 99d77a1b7324465f84e33a31af4fed64bb6f7279
-          <view class='left'>
-            <block wx:for='{{item.activity}}' wx:for-item="activityItem" wx:key="*this">
-              <view>
-                <image src="/imgs/hot-sale.png"></image>{{activityItem.title}}</view>
-            </block>
-          </view>
-          <view class='right' bindtap='moreWrap'>{{item.activity.length}}个活动
-            <image src="/imgs/bottom.png"></image>
-          </view>
+        <view class='list' wx:if="{{top1 || top2 || top3}}">
+            <text>全部</text>
+            <!--商家分类  -->
+            <text wx:if="{{top1}}" wx:for="{{industry}}" data-cid="{{item.cid}}" bindtap='againRequest'>{{item.title}}</text>
+            <!--智能排序  -->
+            <view class='item' wx:if="{{top2}}" wx:for="{{sort}}" wx:for-item="sortItem">
+                <text wx:if="{{top2}}" bindtap='againRequest' data-sort='{{sortItem}}'>{{sortItem}}</text>
+            </view>
+            <!--优惠活动  -->
+            <view class='item' wx:if="{{top3}}" wx:for="{{discountActive}}" wx:for-item="discountItem">
+                <text wx:if="{{top3}}" bindtap='againRequest' data-discount='{{discountItem}}'>{{discountItem}}</text>
+            </view>
         </view>
-        <view class='wrapSort-bottom' wx:if='{{item.selling}}'>
-          <image src="/imgs/hot-sale.png"></image> 热销:{{item.selling}}
+
+        <view class='shop' wx:for="{{shopInfo}}" wx:key="*this">
+            <view class='wrap' bindtap='toShopMenuList' data-token="{{item.push_token}}">
+                <view class='wrap-left'>
+                    <image src='{{item.logo}}'></image>
+                </view>
+                <view class='wrap-right'>
+                    <view class='wrap-right-top'>
+                        <text>{{item.title}}</text>
+                        <image src='/imgs/pay.png'></image>
+                    </view>
+                    <view class='wrap-right-center'>
+                        <block wx:for="{{stars}}" wx:key="*this">
+                            <image src='/imgs/star.png'></image>
+                        </block>
+                        <text>已售 {{item.sailed}} 份</text>
+                    </view>
+                    <view class='wrap-right-bottom'>
+                        <view>
+                            起送
+                            <text>￥{{item.send_price}}</text>配送
+                            <text>￥{{item.delivery_price }}
+              </text> 约
+                            <text>{{item.delivery_time}}分钟</text>
+                        </view>
+                        <view>
+                            <image src='/imgs/position.png'></image>
+                            <text>{{item.distance}}km</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='wrapSort'>
+
+                <view class="wrapSort-top {{wrapHeight==true?'wrapMinHeight':'wrapMaxHeight'}}" wx:if='{{item.activity.length>0}}'>
+
+                    <view class="wrapSort-top {{wrapHeight==true?'wrapMinHeight':''}}" wx:if='{{item.activity.length>0}}'>
+
+                        <view class='left'>
+                            <block wx:for='{{item.activity}}' wx:for-item="activityItem" wx:key="*this">
+                                <view>
+                                    <image src="/imgs/hot-sale.png"></image>{{activityItem.title}}</view>
+                            </block>
+                        </view>
+                        <view class='right' bindtap='moreWrap'>{{item.activity.length}}个活动
+                            <image src="/imgs/bottom.png"></image>
+                        </view>
+                    </view>
+                    <view class='wrapSort-bottom' wx:if='{{item.selling}}'>
+                        <image src="/imgs/hot-sale.png"></image> 热销:{{item.selling}}
+                    </view>
+                </view>
+            </view>
         </view>
-      </view>
     </view>
-  </view>
 </template>
