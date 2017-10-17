@@ -10,22 +10,6 @@ Page({
     sort: [],//智能排序
     discountActive: [],//优惠活动
     stars: 5,
-    sortIcon: [
-      '/imgs/sortIcon/balance.png',
-      '/imgs/sortIcon/clock.png',
-      '/imgs/sortIcon/hot-sale.png',
-      '/imgs/sortIcon/myaddress.png',
-      '/imgs/sortIcon/star.png'
-    ],
-    discountIcon: [
-      '/imgs/discountIcon/fan.png',
-      '/imgs/discountIcon/jian.png',
-      '/imgs/discountIcon/mian.png',
-      '/imgs/discountIcon/piao.png',
-      '/imgs/discountIcon/quan.png',
-      '/imgs/discountIcon/shou.png',
-      '/imgs/discountIcon/te.png',
-    ],
     shopInfo: [],
     page:1
   },
@@ -82,7 +66,7 @@ Page({
     var that = this;
  
     wx.request({//请求筛选导航列表
-      url: 'http://xcx.szhuanya.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
+      url: 'https://xcx.szhuanya.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
       data: {
         ac: 'homepage',
         op: 'get_condition'

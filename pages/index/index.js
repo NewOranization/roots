@@ -34,7 +34,7 @@ Page({
     ],
     shopInfo: [],
     page: 1,
-    wrap:true,
+    wrapHeight:true,
     likeLayout:true,
     likeData:[],
     selNav:1,
@@ -62,7 +62,7 @@ Page({
     console.log(data);
     app.getPostData(function (post_data) {
       app.getApiData(function (res) {
-        console.log(res.data.data.length)
+        console.log(res.data.data)
         if(myData){
           that.setData({
             shopInfo:res.data.data,
@@ -144,7 +144,7 @@ Page({
     }, { ac: 'homepage', op: 'get_condition' });
     that.loadMore(that);
     wx.request({
-      url: 'https://xcx.xcwll.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
+      url: 'https://xcx.szhuanya.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
       data: {
         ac: 'homepage',
         op: 'guessLike'
@@ -261,8 +261,9 @@ Page({
   moreWrap:function(){
     var that=this;
     that.setData({
-      wrap:!that.data.wrap
+      wrapHeight: !that.data.wrapHeight
     })
+    console.log(that.data.wrapHeight);
   },
   layoutSwith:function(){
    var that=this;
