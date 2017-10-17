@@ -1,4 +1,5 @@
 // pages/form/details/index.js
+var app = getApp();
 Page({
 
   /**
@@ -12,14 +13,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+     var that = this;
+     var id = options.id;
+     var data = {
+         op: 'details',
+         id: id
+     };
+     that.getAll(data);
   },
 
   /**
@@ -58,9 +58,16 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
+   * 获得订单数据
    */
-  onShareAppMessage: function () {
-  
+  getAll: function (data) {
+      var that = this;
+      app.getPostData(function (post_data){
+          app.getApiData(function (res){
+             that.setData({
+                 order: res.data.data
+             })
+          }, 'GET', post_data)
+      },data)
   }
 })
