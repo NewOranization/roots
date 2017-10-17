@@ -8,37 +8,7 @@ Page({
   data: {
     status: 0,
     empty: false,
-    formList: [
-        {
-            url: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3798126124,2283897759&fm=27&gp=0.jpg",
-            shopname: "私家小厨",
-            formtime: "2017-3-21 18:05",
-            dishes: "青椒肉丝盖浇饭",
-            price: "19.00",
-            state: 1
-        }, {
-            url: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3311942753,590438962&fm=27&gp=0.jpg",
-            shopname: "油瓶川菜",
-            formtime: "2017-7-25 18:00",
-            dishes: "金汤肥牛",
-            price: "29.00",
-            state: 2
-        }, {
-            url: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3561330097,3964536810&fm=11&gp=0.jpg",
-            shopname: "肯德基",
-            formtime: "2017-8-11 10:30",
-            dishes: "肯德基全家桶",
-            price: "49.00",
-            state: 1
-        }, {
-            url: "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4177982341,1891409126&fm=27&gp=0.jpg",
-            shopname: "七把叉餐饮",
-            formtime: "2017-8-19 17:30",
-            dishes: "麻辣香锅培根-米饭（300克）等两件商品",
-            price: "14.00",
-            state: 3
-        }
-    ]
+    formList: [],
   },
 
   /**
@@ -58,7 +28,7 @@ Page({
     //   that.setData({
     //       formList: that.data.formList.concat(that.data.formList)
     //   })
-      console.log(that.data.formList)
+      that.getAll();
   },
 
   /**
@@ -106,7 +76,12 @@ Page({
      var that = this;
      app.getPostData(function (post_data){
          app.getApiData(function (res){
-             console.log(res)
+             console.log(res);
+             if(res.data.code == 0){
+                 that.setData({
+                     formList: res.data.data
+                 })
+             }
          }, 'GET', post_data)
      }, {op: 'order'})
   },
