@@ -16,27 +16,11 @@ Page({
     sort:[],//智能排序
     discountActive:[],//优惠活动
     stars:5,
-    sortIcon:[
-      '/imgs/sortIcon/balance.png',
-      '/imgs/sortIcon/clock.png',
-      '/imgs/sortIcon/hot-sale.png',
-      '/imgs/sortIcon/myaddress.png',
-      '/imgs/sortIcon/star.png'
-    ],
-    discountIcon:[
-      '/imgs/discountIcon/fan.png',
-      '/imgs/discountIcon/jian.png',
-      '/imgs/discountIcon/mian.png',
-      '/imgs/discountIcon/piao.png',
-      '/imgs/discountIcon/quan.png',
-      '/imgs/discountIcon/shou.png',
-      '/imgs/discountIcon/te.png',
-    ],
     shopInfo: [],
     page: 1,
-    wrap:true,
     likeLayout:true,
-    likeData:[],
+    likeData: [],
+    wrapHeight: true,
     selNav:1,
     datalength:0
   },
@@ -62,7 +46,7 @@ Page({
     console.log(data);
     app.getPostData(function (post_data) {
       app.getApiData(function (res) {
-        console.log(res.data.data.length)
+        console.log(res.data.data)
         if(myData){
           that.setData({
             shopInfo:res.data.data,
@@ -144,7 +128,7 @@ Page({
     }, { ac: 'homepage', op: 'get_condition' });
     that.loadMore(that);
     wx.request({
-      url: 'https://xcx.xcwll.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
+      url: 'https://xcx.szhuanya.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
       data: {
         ac: 'homepage',
         op: 'guessLike'
@@ -261,8 +245,9 @@ Page({
   moreWrap:function(){
     var that=this;
     that.setData({
-      wrap:!that.data.wrap
+      wrapHeight:!that.data.wrapHeight
     })
+    console.log(that.data.wrapHeight);
   },
   layoutSwith:function(){
    var that=this;

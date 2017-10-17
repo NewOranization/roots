@@ -127,7 +127,7 @@
   display: flex;
 }
 .box .shop .wrap .wrap-right .wrap-right-bottom view:nth-child(1){
-  flex: 0 0 83%;
+  flex: 0 0 80%;
 }
 .box .shop .wrap .wrap-right .wrap-right-bottom view:nth-child(1) text{
   color:#ff2c4a;
@@ -147,8 +147,8 @@
   font-size: 24rpx;
 }
 .box .shop .wrapSort image{
-  width:50rpx;
-  height:50rpx;
+  width:35rpx;
+  height:35rpx;
   vertical-align: middle
 }
 .box .shop .wrapSort .wrapSort-top{
@@ -156,6 +156,10 @@
   justify-content: space-between;
   padding: 10rpx;
   border-top: 1rpx dashed #eee;
+  overflow-y:hidden;
+}
+.wrapMinHeight{
+  height:65rpx;
 }
 .box .shop .wrapSort .wrapSort-bottom{
   padding: 10rpx;
