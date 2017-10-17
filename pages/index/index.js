@@ -16,27 +16,15 @@ Page({
     sort:[],//智能排序
     discountActive:[],//优惠活动
     stars:5,
-    sortIcon:[
-      '/imgs/sortIcon/balance.png',
-      '/imgs/sortIcon/clock.png',
-      '/imgs/sortIcon/hot-sale.png',
-      '/imgs/sortIcon/myaddress.png',
-      '/imgs/sortIcon/star.png'
-    ],
-    discountIcon:[
-      '/imgs/discountIcon/fan.png',
-      '/imgs/discountIcon/jian.png',
-      '/imgs/discountIcon/mian.png',
-      '/imgs/discountIcon/piao.png',
-      '/imgs/discountIcon/quan.png',
-      '/imgs/discountIcon/shou.png',
-      '/imgs/discountIcon/te.png',
-    ],
     shopInfo: [],
     page: 1,
+<<<<<<< HEAD
     wrapHeight:true,
+=======
+>>>>>>> 99d77a1b7324465f84e33a31af4fed64bb6f7279
     likeLayout:true,
-    likeData:[],
+    likeData: [],
+    wrapHeight: true,
     selNav:1,
     datalength:0
   },
@@ -261,7 +249,11 @@ Page({
   moreWrap:function(){
     var that=this;
     that.setData({
+<<<<<<< HEAD
       wrapHeight: !that.data.wrapHeight
+=======
+      wrapHeight:!that.data.wrapHeight
+>>>>>>> 99d77a1b7324465f84e33a31af4fed64bb6f7279
     })
     console.log(that.data.wrapHeight);
   },

@@ -10,6 +10,7 @@ App({
    *********************************************/
   globalData: {
     appApiUrl: "https://xcx.szhuanya.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface&ac=member_info",
+      appApiUrl: "https://xcx.szhuanya.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface&ac=member_info",
       userInfo: null,
       shopConfig: null
   },
