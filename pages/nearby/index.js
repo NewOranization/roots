@@ -68,8 +68,19 @@ Page({
   },
   onLoad: function (ops) {
     var that = this;
+<<<<<<< HEAD
+ 
+    wx.request({//请求筛选导航列表
+      url: 'https://xcx.szhuanya.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
+      data: {
+        ac: 'homepage',
+        op: 'get_condition'
+      },
+      success: function (res) {
+=======
     app.getPostData(function (post_data) {//请求筛选导航列表
       app.getApiData(function (res) {
+>>>>>>> 99d77a1b7324465f84e33a31af4fed64bb6f7279
         that.setData({
           industry: res.data.data.nav,
           sort: res.data.data.sort,

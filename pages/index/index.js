@@ -18,6 +18,10 @@ Page({
     stars:5,
     shopInfo: [],
     page: 1,
+<<<<<<< HEAD
+    wrapHeight:true,
+=======
+>>>>>>> 99d77a1b7324465f84e33a31af4fed64bb6f7279
     likeLayout:true,
     likeData: [],
     wrapHeight: true,
@@ -245,7 +249,11 @@ Page({
   moreWrap:function(){
     var that=this;
     that.setData({
+<<<<<<< HEAD
+      wrapHeight: !that.data.wrapHeight
+=======
       wrapHeight:!that.data.wrapHeight
+>>>>>>> 99d77a1b7324465f84e33a31af4fed64bb6f7279
     })
     console.log(that.data.wrapHeight);
   },

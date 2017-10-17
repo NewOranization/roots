@@ -66,7 +66,11 @@
       </view>
       <view class='wrapSort'>
 
+<<<<<<< HEAD
+        <view class="wrapSort-top {{wrapHeight==true?'wrapMinHeight':'wrapMaxHeight'}}" wx:if='{{item.activity.length>0}}'>
+=======
         <view class="wrapSort-top {{wrapHeight==true?'wrapMinHeight':''}}" wx:if='{{item.activity.length>0}}'>
+>>>>>>> 99d77a1b7324465f84e33a31af4fed64bb6f7279
           <view class='left'>
             <block wx:for='{{item.activity}}' wx:for-item="activityItem" wx:key="*this">
               <view>
