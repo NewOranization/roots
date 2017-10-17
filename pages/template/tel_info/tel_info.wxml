@@ -8,6 +8,6 @@
         </swiper-item>
       </block>
     </swiper>
-    <image src='/imgs/more.png'></image>
+    <image src='/imgs/arrow_down.png'></image>
   </view>
 </template>

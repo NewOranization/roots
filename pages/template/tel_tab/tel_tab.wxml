@@ -20,7 +20,7 @@
     </view>
 
     <view class='list' wx:if="{{top1 || top2 || top3}}">
-      <text>全部</text>
+      <text bindtap='RequestAll'>全部</text>
       <!--商家分类  -->
       <text wx:if="{{top1}}" wx:for="{{industry}}" data-cid="{{item.cid}}" bindtap='againRequest'>{{item.title}}</text>
       <!--智能排序  -->
@@ -54,8 +54,8 @@
               起送
               <text>￥{{item.send_price}}</text>配送
               <text>￥{{item.delivery_price }}
-              </text> 约
-              <text>{{item.delivery_time}}分钟</text>
+              </text>
+              约 <text>{{item.delivery_time}}分钟</text>
             </view>
             <view>
               <image src='/imgs/position.png'></image>
@@ -65,8 +65,7 @@
         </view>
       </view>
       <view class='wrapSort'>
-
-        <view class='wrapSort-top' wx:if='{{item.activity.length>0}}'>
+        <view class="wrapSort-top {{wrapOpen?'':'wrapMinHeight'}}" wx:if='{{item.activity.length>0}}'>
           <view class='left'>
             <block wx:for='{{item.activity}}' wx:for-item="activityItem" wx:key="*this">
               <view>

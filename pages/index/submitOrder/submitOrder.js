@@ -60,7 +60,8 @@ Page({
                 url: '/pages/mine/address/index?click=' + click,
             })
         }else{
-            wx.setStorageSync('oldPrice', that.data.orderInfo.calculation.oldPrice)
+            wx.setStorageSync('oldPrice', that.data.orderInfo.calculation.paid)
+            console.log(that.data.orderInfo.calculation.paid)
             wx.navigateTo({
                 url: '/pages/index/' + click + '/' + click + '?push_token=' + that.data.token,
             })

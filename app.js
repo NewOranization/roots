@@ -9,7 +9,7 @@ App({
    * 全局变量
    *********************************************/
   globalData: {
-    appApiUrl: "https://xcx.xcwll.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface&ac=member_info",
+    appApiUrl: "https://xcx.szhuanya.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface&ac=member_info",
       userInfo: null,
       shopConfig: null
   },
@@ -92,7 +92,6 @@ App({
                             },
                             method: "GET",
                             success: function (res) {
-                                console.log(res);
                                 wx.setStorageSync('openid', res.data.data.openId);
                                 //console.log(postData);
                                 if(res.data.data.openId == '' || undefined || null){

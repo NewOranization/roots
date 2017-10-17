@@ -2,15 +2,15 @@
   <image src="/imgs/back_white.png"></image>选择红包
 </view>
 <button>不使用红包</button>
-<view class='hongbao'>
-  <view>
-    <text class='semi-circle semi-circle1'></text>
-    <text>通用红包</text>
-    限2017.09.29~2017.10.06
+<block wx:for="{{hongbaoData}}">
+  <view class='hongbao'>
+    <view>
+      <text class='semi-circle semi-circle1'></text>
+      <text>{{item.title}}</text>{{item.dayInterval}}
+    </view>
+    <view>
+      <text class='semi-circle semi-circle2'></text>
+      <text>￥{{item.discount}}</text> 满{{item.condition}}元可用
+    </view>
   </view>
-  <view>
-    <text class='semi-circle semi-circle2'></text>
-    <text>￥5.00</text>
-    满100.00元可用
-  </view>
-</view>
+</block>

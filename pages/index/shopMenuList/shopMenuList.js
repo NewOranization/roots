@@ -123,7 +123,6 @@ Page({
               })
           }
       } else if (click == "order"){
-        console.log("ffffffff");
         wx.setStorage({
           key: "toSubmitData",
           data: {
@@ -211,9 +210,9 @@ Page({
        var that = this;
        var data = {
            ac: 'homepage', 
-           op: 'nav',
+           op: 'userCoupons',
            push_token: that.data.token,
-           id: that.data.store.coupon.id
+           id: that.data.dataList.store.coupon.id
        }
        app.getPostData(function (post_data){
            app.getApiData(function (res){
@@ -347,6 +346,7 @@ Page({
       
       app.getPostData(function (post_data){
           app.getApiData(function (res) {
+            console.log(that.data.store);
               if(res.data.code == 0){
                   wx.hideToast();
                   if (res.data.data.category){

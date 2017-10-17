@@ -16,29 +16,13 @@ Page({
     sort:[],//智能排序
     discountActive:[],//优惠活动
     stars:5,
-    sortIcon:[
-      '/imgs/sortIcon/balance.png',
-      '/imgs/sortIcon/clock.png',
-      '/imgs/sortIcon/hot-sale.png',
-      '/imgs/sortIcon/myaddress.png',
-      '/imgs/sortIcon/star.png'
-    ],
-    discountIcon:[
-      '/imgs/discountIcon/fan.png',
-      '/imgs/discountIcon/jian.png',
-      '/imgs/discountIcon/mian.png',
-      '/imgs/discountIcon/piao.png',
-      '/imgs/discountIcon/quan.png',
-      '/imgs/discountIcon/shou.png',
-      '/imgs/discountIcon/te.png',
-    ],
     shopInfo: [],
     page: 1,
-    wrap:true,
     likeLayout:true,
     likeData:[],
     selNav:1,
-    datalength:0
+    datalength: 0,
+    wrapOpen: true,
   },
 
   //封装获取商家信息及筛选请求函数
@@ -62,7 +46,7 @@ Page({
     console.log(data);
     app.getPostData(function (post_data) {
       app.getApiData(function (res) {
-        console.log(res.data.data.length)
+        console.log(res.data.data)
         if(myData){
           that.setData({
             shopInfo:res.data.data,
@@ -144,7 +128,7 @@ Page({
     }, { ac: 'homepage', op: 'get_condition' });
     that.loadMore(that);
     wx.request({
-      url: 'https://xcx.xcwll.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
+      url: 'https://xcx.szhuanya.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
       data: {
         ac: 'homepage',
         op: 'guessLike'
@@ -186,6 +170,31 @@ Page({
       top1:false,
       top2:false,
       top3:false
+    })
+  },
+  RequestAll: function () {
+    var that = this;
+    that.setData({
+      shopInfo: [],
+      datalength: 0,
+      page: 2
+    })
+    app.getPostData(function (post_data) {
+      app.getApiData(function (res) {
+        console.log(res.data.data)
+        that.setData({
+          shopInfo: res.data.data,
+          page: that.data.page + 1
+        });
+        if (res.data.code == 0) {
+          wx.hideToast();
+        }
+      }, 'GET', post_data)
+    }, { ac: 'homepage', op: 'store' });
+    that.setData({
+      top1: false,
+      top2: false,
+      top3: false
     })
   },
   /**
@@ -258,11 +267,12 @@ Page({
     }
 
   },
-  moreWrap:function(){
-    var that=this;
+  moreWrap: function () {
+    var that = this;
     that.setData({
-      wrap:!that.data.wrap
+      wrapOpen: !that.data.wrapOpen
     })
+    console.log(that.data.wrapOpen);
   },
   layoutSwith:function(){
    var that=this;
