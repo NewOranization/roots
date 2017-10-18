@@ -166,6 +166,11 @@
 }
 .wrapMaxHeight{
   height:100rpx;
+
+}
+.wrapMaxHeight{
+  height:100rpx;
+
 }
 .box .shop .wrapSort .wrapSort-bottom{
   padding: 10rpx;
