@@ -1,23 +1,25 @@
 <template name="tel_1">
     <view class="formDetail">
-        <view class='formContent' catchtap='navTo'>
+        <view class='formContent' bindtap='navTo' data-click='detail' data-id='{{id}}'>
             <view class='detail_l'>
-                <image src="{{logo}}" mode='aspectFill'></image>
+                <image src="{{logo}}" mode='aspectFit'></image>
             </view>
             <view class='detail_c'>
                 <text class='shop'>{{stroeName}}</text>
-                <text>{{formtime}}</text>
-                <text>{{goods.name}}</text>
-                <text>￥{{price}}</text>
+                <text>{{createTime}}</text>
+                <text>{{goodsTitle}}</text>
+                <text>￥{{totalPrice}}</text>
             </view>
             <view class='detail_r'>
-                <text class='form_state' wx:if="{{status == 1}}">已完成</text>
-                <text class='form_state' wx:if="{{status == 2}}">待付款</text>
-                <text class='form_state' wx:if="{{status == 3}}">已取消</text>
-                <text class='assess' wx:if="{{status == 1}}" catchtap='kkk'>再来一单</text>
-                <text class='assess pay' wx:if="{{status == 2}}">付款</text>
-                <text class='assess cancle' wx:if="{{status == 2}}">取消订单</text>
-                <text class='assess' wx:if="{{status == 3}}">重新下单</text>
+                <text class='form_state' wx:if="{{status == '1'}}">待付款</text>
+                <text class='form_state' wx:if="{{status == '2'}}">处理中</text>
+                <text class='form_state' wx:if="{{status == '4'}}">配送中</text>
+                <text class='form_state' wx:if="{{status == '5'}}">已完成</text>
+                <text class='form_state' wx:if="{{status == '6'}}">已取消</text>
+                <text class='assess pay' wx:if="{{status == '1'}}">付款</text>
+                <text class='assess cancle' wx:if="{{status == '1'}}" catchtap='cancle' data-id='{{id}}'>取消订单</text>
+                 <text class='assess' wx:if="{{status == '2' || status == '4'}}">确认送达</text>
+                <text class='assess' wx:if="{{status == '5' || status == '6'}}" catchtap='navTo' data-click='placeOrder' data-token='{{token}}'>再来一单</text> 
             </view>
         </view>
     </view>

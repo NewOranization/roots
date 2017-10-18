@@ -3,10 +3,11 @@
 <view class='box'>
     <view class='formHead'>
         <view class='fixed-box'>
-            <view class="form_state {{status == 0? 'active' : ''}}" data-status='0' bindtap='tabSwitch'>
-                <text>全部</text>
+            <view class="form_state" bindtap='navTo' data-click='runleg'>
+                <image src='/imgs/polterform.png'></image>
+                <text>万能跑腿订单</text>
             </view>
-            <view class="form_state {{status == 1? 'active' : ''}}" data-status='1' bindtap='tabSwitch'>
+            <!-- <view class="form_state {{status == 1? 'active' : ''}}" data-status='1' bindtap='tabSwitch'>
                 <text>待付款</text>
             </view>
             <view class="form_state {{status == 2? 'active' : ''}}" data-status='2' bindtap='tabSwitch'>
@@ -17,7 +18,7 @@
             </view>
             <view class="form_state {{status == 4? 'active' : ''}}" data-status='4' bindtap='tabSwitch'>
                 <text>退款/售后</text>
-            </view>
+            </view> -->
         </view>
     </view>
 
@@ -30,10 +31,10 @@
 </view>
 
 <view class='load-notice'>
-    <view class='loading'>
+    <view class='loading' wx:if="{{isLoading}}">
         <text>正在加载，请稍后...</text>
     </view>
-    <view class='endding'>
+    <view class='endding' wx:if="{{isNone}}">
         <text class='line'></text>
         <text>我是有底线的</text>
         <text class='line_r'></text>
