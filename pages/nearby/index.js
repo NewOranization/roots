@@ -16,7 +16,7 @@ Page({
     wrapHeight: true,
     selNav: 1,
     datalength: 0,
-    wrapOpen:null,
+    wrapOpen: null,
   },
   moreWrap: function () {
     var that = this;

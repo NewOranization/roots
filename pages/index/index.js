@@ -16,15 +16,16 @@ Page({
     sort:[],//智能排序
     discountActive:[],//优惠活动
     stars:5,
-    shopInfo: [],
-    page: 1,
+    shopInfo:[],
+    page:1,
+    wrapHeight:true,
     likeLayout:true,
-    likeData:[],
+    likeData: [],
+    wrapHeight: true,
     selNav:1,
     datalength: 0,
-    wrapOpen: true,
+    wrapOpen: true
   },
-
   //封装获取商家信息及筛选请求函数
   loadMore: function (that,myData) {
     wx.showToast({
@@ -273,6 +274,9 @@ Page({
       wrapOpen: !that.data.wrapOpen
     })
     console.log(that.data.wrapOpen);
+      wrapHeight: !that.data.wrapHeight
+      wrapHeight:!that.data.wrapHeight
+    console.log(that.data.wrapHeight);
   },
   layoutSwith:function(){
    var that=this;
@@ -300,14 +304,8 @@ Page({
       },
 
       complete: function () {
-
-        // complete
-
       }
 
     })
   }
- 
-
-
 })

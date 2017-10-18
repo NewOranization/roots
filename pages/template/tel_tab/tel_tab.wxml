@@ -54,8 +54,8 @@
               起送
               <text>￥{{item.send_price}}</text>配送
               <text>￥{{item.delivery_price }}
-              </text>
-              约 <text>{{item.delivery_time}}分钟</text>
+              </text> 约
+              <text>{{item.delivery_time}}分钟</text>
             </view>
             <view>
               <image src='/imgs/position.png'></image>
@@ -66,20 +66,24 @@
       </view>
       <view class='wrapSort'>
         <view class="wrapSort-top {{wrapOpen?'':'wrapMinHeight'}}" wx:if='{{item.activity.length>0}}'>
-          <view class='left'>
-            <block wx:for='{{item.activity}}' wx:for-item="activityItem" wx:key="*this">
-              <view>
-                <image src="/imgs/hot-sale.png"></image>{{activityItem.title}}</view>
-            </block>
+          <view class="wrapSort-top {{wrapHeight==true?'wrapMinHeight':'wrapMaxHeight'}}" wx:if='{{item.activity.length>0}}'>
+            <view class="wrapSort-top {{wrapHeight==true?'wrapMinHeight':''}}" wx:if='{{item.activity.length>0}}'>
+              <view class='left'>
+                <block wx:for='{{item.activity}}' wx:for-item="activityItem" wx:key="*this">
+                  <view>
+                    <image src="/imgs/hot-sale.png"></image>{{activityItem.title}}</view>
+                </block>
+              </view>
+              <view class='right' bindtap='moreWrap'>{{item.activity.length}}个活动
+                <image src="/imgs/bottom.png"></image>
+              </view>
+            </view>
+            <view class='wrapSort-bottom' wx:if='{{item.selling}}'>
+              <image src="/imgs/hot-sale.png"></image> 热销:{{item.selling}}
+            </view>
           </view>
-          <view class='right' bindtap='moreWrap'>{{item.activity.length}}个活动
-            <image src="/imgs/bottom.png"></image>
-          </view>
-        </view>
-        <view class='wrapSort-bottom' wx:if='{{item.selling}}'>
-          <image src="/imgs/hot-sale.png"></image> 热销:{{item.selling}}
         </view>
       </view>
     </view>
-  </view>
+    </view>
 </template>
