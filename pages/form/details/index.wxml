@@ -2,7 +2,7 @@
 <view class='box'>
     <view class='header'>
         <image src='{{order.logo}}'></image>
-        <text class='txt1' wx:if="{{order.status == '1'}}">订单待付款</text>
+        <text class='txt1' wx:if="{{order.status == '1'}}">订单未付款</text>
         <text class='txt1' wx:if="{{order.status == '2'}}">订单处理中</text>
         <text class='txt1' wx:if="{{order.status == '4'}}">订单配送中</text>
         <text class='txt1' wx:if="{{order.status == '5'}}">订单已完成</text>
