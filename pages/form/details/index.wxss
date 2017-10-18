@@ -156,11 +156,14 @@ page{
 }
 
 .box .content .contact text:nth-child(2){
+    float: left;
+    margin-left: 20rpx;
     color: #2395ff;
     font-weight: bold;
 }
 
 .box .content .discount text:last-child{
+    float: right;
     font-size: 32rpx;
     font-weight: bold;
 }

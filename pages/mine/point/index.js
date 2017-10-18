@@ -15,17 +15,11 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var data = {
-        op: 'credita'
-    }
-    app.getPostData(function (post_data){
-        app.getApiData(function (res){
-            var point = parseInt(res.data.data.credit2);
-            that.setData({
-                point: point
-            })
-        }, 'GET', post_data)
-    }, data)
+    app.getUserInfo(function (res) {
+        that.setData({
+            point: res.credit2
+        })
+    })
   },
 
   /**
@@ -49,7 +43,11 @@ Page({
     var that = this;
     var point = that.data.point;
     //console.log(point);
-    if(point == 0) return;
+    if(point == '0') return;
+    wx.showToast({
+        title: '功能暂未开放',
+        duration: 1000
+    })
   },
 
   /**

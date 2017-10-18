@@ -4,10 +4,13 @@ page{
 }
 
 .box{
+    width: 100%;
     font-size: 30rpx;
 }
 /*tab导航样式*/
-.box .nav{
+.box .navbox .nav{
+    position: fixed;
+    top: 0;
     width: 100%;
     height: 100rpx;
     line-height: 97rpx;
@@ -16,24 +19,24 @@ page{
     background: #fff;
     text-align: center;
     border-bottom: 1px solid #eee;
+    z-index: 100;
 }
 
-.box .nav text{
+.box .navbox .nav text{
     width: 33%;
     height: 97rpx;
     display: inline-block;
     /* border-bottom: 1px solid #FFF; */
 }
 
-.box .nav text.active{
+.box .navbox .nav text.active{
     color: #43CD80;
     border-bottom: 2px solid #43CD80;
 }
 
 /* 收藏部分样式 */
 .box .content{
-    
-    
+    margin-top: 10rpx; 
 }
 
 .box .content .wrap{

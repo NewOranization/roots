@@ -10,6 +10,7 @@ Page({
     empty: false,
     formList: [],
     isLoading: false,
+    onLoading: true,
     isNone: false,
   },
 
@@ -18,12 +19,6 @@ Page({
    */
   onLoad: function (options) {
       var that = this;
-      wx.showToast({
-          title: '正在加载',
-          icon: 'loading',
-          duration: 20000,
-          mask: true
-      })
       var data = {
           op: 'order'
       }
@@ -49,7 +44,7 @@ Page({
     var that = this;
     var id = e.currentTarget.dataset.id;
     var data = {
-        op: 'cancle',
+        op: 'cancel',
         id: id
     };
     app.getPostData(function (post_data){
@@ -120,7 +115,6 @@ Page({
              
              var length = formList.length;
              if(res.data.code == 0){
-                 wx.hideToast();
                  if(page > 1){
                      if(length >= 10){
                          that.setData({
@@ -143,12 +137,14 @@ Page({
                      }else if(length >= 10){
                          that.setData({
                              formList: formList,
+                             onLoading: false,
                              isLoading: true,
                              isNone: false,
                          })
                      }else{
                          that.setData({
                              formList: formList,
+                             onLoading: false,
                              isLoading: false,
                              isNone: true,
                          })

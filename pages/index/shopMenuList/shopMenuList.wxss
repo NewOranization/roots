@@ -6,7 +6,25 @@ page{
 
 .box{
     font-size: 30rpx;
+    width: 100%;
 }
+
+.box .waitLoading{
+    position: fixed;
+    width: 100%;
+    height: 1000px;
+    background: #fff;
+    z-index: 2000;
+}
+
+.box .waitLoading image{
+    display: block;
+    width: 200rpx;
+    height: 200rpx;
+    margin: 300rpx auto;
+}
+
+
 /* 标题样式*/
 .box .header .title{
     height: 100rpx;

@@ -36,12 +36,12 @@
         </view>
         <view class='foods discount'>
             <text>优惠</text>
-            <text>-￥{{order.diecountFee}}</text>
+            <text>-￥{{order.discountFee}}</text>
         </view>
         <view class='foods discount contact'>
             <image src='/imgs/callphone.png'></image>
             <text>联系商家</text>
-            <text>实付￥{{order.finalPrice}}</text>
+            <text>实付 ￥{{order.finalPrice}}</text>
         </view>
     </view>
     <view class='content'>
@@ -50,11 +50,15 @@
         </view>
         <view class='item'>
             <text>送达时间</text>
-            <text>尽快送达[22:08]</text>
+            <text>{{order.deliveryTime}}</text>
         </view>
         <view class='item address'>
             <text>收货地址</text>
-            <text>{{order.address}}\n{{order.userName}} {{order.mobile}}</text>
+            <text style='width: 78%;text-align: left;'>{{order.address}}{{order.detailAddress}}</text>
+        </view>
+        <view class='item address'>
+            <text>收货人</text>
+            <text style='width: 78%;'>{{order.userName}} {{order.mobile}}</text>
         </view>
     </view>
     <view class='content'>
@@ -63,15 +67,17 @@
         </view>
         <view class='item'>
             <text>订单号</text>
-            <text>3012 0550 8934 6729 094</text>
+            <text>{{order.ordersn}}</text>
         </view>
         <view class='item'>
             <text>支付方式</text>
-            <text>在线支付</text>
+            <text wx:if="{{order.payType == 'wechat'}}">微信支付</text>
+            <text wx:if="{{order.payType == 'credit'}}">余额支付</text>
+            <text wx:if="{{order.payType == 'delivery'}}">货到付款</text>
         </view>
         <view class='item'>
             <text>下单时间</text>
-            <text>2017-09-12 22：00</text>
+            <text>{{order.createTime}}</text>
         </view>
     </view>
 </view>

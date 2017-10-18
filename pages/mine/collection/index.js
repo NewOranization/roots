@@ -8,7 +8,8 @@ Page({
   data: {
     status: 0,
     stars: [1,1,1,1,1],
-    isNone: false,
+    isHave: true,
+    shopList: [],
   },
 
   /**
@@ -70,7 +71,19 @@ Page({
      var that = this;
      app.getPostData(function (post_data){
          app.getApiData(function (res){
-             console.log(res)
+             var shopList = res.data.data;
+             if(res.data.code == 0){
+                 if(shopList.length == 0){
+                     that.setData({
+                         isHave: false,
+                     })
+                 }else{
+                     that.setData({
+                         shopList: shopList,
+                         isHave: true
+                     })
+                 }  
+             }
          }, 'GET', post_data)
      }, { op: 'favorite'})
   },
