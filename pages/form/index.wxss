@@ -11,42 +11,33 @@ page{
 }
 
 .box .formHead{
-  font-size: 34rpx;
-  font-weight: bold;
+  font-size: 32rpx;
   height: 100rpx;
   line-height: 100rpx;
   background: #fff;
-  color: #000;
 }
 
 .box .formHead .fixed-box{
     position: fixed;
     width: 100%;
     height: 100rpx;
+    display: flex;
+    flex-direction: row;
     overflow: hidden;
     z-index: 100;
     background: #fff;
+    border-bottom: 1px solid #d0d0d0;
 }
 
  .box .formHead .fixed-box .form_state{ 
-  width: 100%;
-  text-align: left;
-  overflow: hidden;
+  width: 25%;
+  text-align: center;
+  border-bottom: 2px solid #fff;
 }
 
-.box .formHead .fixed-box .form_state image{
-    display: block;
-    float: left;
-    width: 60rpx;
-    height: 60rpx;
-    margin-top: 20rpx;
-    margin-left: 30rpx;
-}
-
-.box .formHead .fixed-box .form_state text{
-    display: block;
-    float: left;
-    margin-left: 20rpx;
+.box .formHead .fixed-box .active{
+  border-bottom: 2px solid #06c1ae;
+  color: #06c1ae;
 }
 
 /*表单列表  */
