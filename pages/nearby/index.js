@@ -2,7 +2,6 @@
 //获取应用实例
 var app = getApp();
 Page({
-<<<<<<< HEAD
   data: {
     top1: false,
     top2: false,
@@ -65,8 +64,6 @@ Page({
           wx.hideToast();
         } else if (res.data.data.length < 10) {
           wx.showToast({
-=======
->>>>>>> 1c33ce35a7528f086520745e86de0987c794bd2c
     data: {
         top1: false,
         top2: false,
@@ -108,7 +105,6 @@ Page({
                 page: that.data.page
             }
         }
-<<<<<<< HEAD
       }, 'GET', post_data)
     }, data);
   },
@@ -127,8 +123,6 @@ Page({
     }, { ac: 'homepage', op: 'get_condition' });
     that.loadMore(that);
   },
-=======
->>>>>>> 1c33ce35a7528f086520745e86de0987c794bd2c
         console.log(data);
         app.getPostData(function (post_data) {
             app.getApiData(function (res) {
@@ -145,9 +139,6 @@ Page({
                         datalength: res.data.data.length
                     });
                 }
-<<<<<<< HEAD
->>>>>>> 1c33ce35a7528f086520745e86de0987c794bd2c
-=======
 >>>>>>> 1c33ce35a7528f086520745e86de0987c794bd2c
 
                 if (res.data.code == 0) {
@@ -178,7 +169,6 @@ Page({
         that.loadMore(that);
     },
 
-<<<<<<< HEAD
 <<<<<<< HEAD
     that.loadMore(that, myData);
     that.setData({
@@ -278,8 +268,6 @@ Page({
   },
 })
 =======
-=======
->>>>>>> 1c33ce35a7528f086520745e86de0987c794bd2c
     againRequest: function (e) {
         var that = this;
         var myData = {};
@@ -402,9 +390,5 @@ Page({
         }
 
     },
-<<<<<<< HEAD
-})
->>>>>>> 1c33ce35a7528f086520745e86de0987c794bd2c
-=======
 })
 >>>>>>> 1c33ce35a7528f086520745e86de0987c794bd2c

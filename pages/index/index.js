@@ -16,13 +16,8 @@ Page({
     sort:[],//智能排序
     discountActive:[],//优惠活动
     stars:5,
-<<<<<<< HEAD
     shopInfo:[],
     page:1,
-=======
-    shopInfo: [],
-    page: 1,
->>>>>>> 1c33ce35a7528f086520745e86de0987c794bd2c
     wrapHeight:true,
     likeLayout:true,
     likeData: [],
@@ -276,17 +271,11 @@ Page({
   moreWrap: function () {
     var that = this;
     that.setData({
-<<<<<<< HEAD
       wrapOpen: !that.data.wrapOpen
     })
     console.log(that.data.wrapOpen);
       wrapHeight: !that.data.wrapHeight
       wrapHeight:!that.data.wrapHeight
-=======
-      wrapHeight: !that.data.wrapHeight,
-      wrapHeight:!that.data.wrapHeight
-    })
->>>>>>> 1c33ce35a7528f086520745e86de0987c794bd2c
     console.log(that.data.wrapHeight);
   },
   layoutSwith:function(){
