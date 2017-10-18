@@ -3,8 +3,10 @@ var app = getApp();
 // page/one/index.js
 Page({
   data: {
+    isLoading: true,
     token:'',
     status: 1,
+    collect: false,
     dataList: {},
     store: {},
     toView: '0',
@@ -32,12 +34,7 @@ Page({
         op: 'merchant_commodity',
         push_token: token,
     };
-    wx.showToast({
-        title: '正在为您拼命加载。。。',
-        icon: 'loading',
-        duration: 10000,
-        mask: true
-    })
+  
     that.getData(that, data);
     
     wx.getSystemInfo({
@@ -54,6 +51,31 @@ Page({
     var that = this;
 
     
+  },
+
+  /**
+  * 收藏店铺
+  */
+  collect: function (e) {
+      var that = this;
+      var token = e.currentTarget.dataset.token;
+      var data = {
+          op: 'cfavorite',
+          push_token: token
+      }
+      app.getPostData(function (post_data){
+          app.getApiData(function (res){
+              if(res.data.code == 0){
+                  wx.showToast({
+                      title: '收藏成功',
+                      duration: 500
+                  })
+                  that.setData({
+                      collect: !that.data.collect
+                  })
+              }
+          }, 'GET', post_data)
+      }, data)
   },
 
   /**
@@ -348,7 +370,6 @@ Page({
           app.getApiData(function (res) {
             console.log(that.data.store);
               if(res.data.code == 0){
-                  wx.hideToast();
                   if (res.data.data.category){
                       for (var i = 0; i < res.data.data.category.length; i++) {
                           res.data.data.category[i]['cid'] = "sort" + i;
@@ -357,6 +378,7 @@ Page({
                   }
                   
                   that.setData({
+                      isLoading: false,
                       dataList: res.data.data,
                       content: res.data.data.category
                   })

@@ -82,8 +82,12 @@ Page({
     chooseTime: function (e){
         var that = this;
         var index = parseInt(e.currentTarget.dataset.index);
+        var times = that.data.orderInfo.business_hours[index];
+        if(index == 0){
+            times = that.data.orderInfo.business_hours[1]
+        }
         that.setData({
-            times: that.data.orderInfo.business_hours[index],
+            times: times,
             show: false
         })
     },
@@ -111,6 +115,11 @@ Page({
      */
     placeOrder: function(e) {
         var that = this;
+        if(that.data.times == '尽快送达'){
+            that.setData({
+                times: that.data.orderInfo.business_hours[1]
+            })
+        }
         var data = {
             ac: 'handleorder',
             op: 'confirmOrder',
@@ -127,7 +136,7 @@ Page({
         }
         app.getPostData(function (post_data){
             app.getApiData(function (res){
-                console.log(res)
+                //console.log(res)
             }, 'GET', post_data)
         }, data)
     },

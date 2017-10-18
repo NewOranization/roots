@@ -2,7 +2,7 @@
     <view class='box'>
         <view class='title'>
             <image class='img_l' src='/imgs/arrow_left_white.png' bindtap='navTo' data-click='back'></image>
-            <text>{{headTitle}}我的红包</text>
+            <text>{{headTitle}}</text>
         </view>
     </view>
 </template>

@@ -1,21 +1,23 @@
 <!--pages/mine/collection/index.wxml-->
 <view class='box'>
-    <view class='nav'>
-        <text class="{{status == 0 ? 'active' : ''}}" bindtap='tabSwitch' data-status='0'>商家</text>
-        <text class="{{status == 1 ? 'active' : ''}}" bindtap='tabSwitch' data-status='1'>团购</text>
-        <text class="{{status == 2 ? 'active' : ''}}" bindtap='tabSwitch' data-status='2'>内容</text>
+    <view class='navbox' style='width: 100%; height: 100rpx'>
+        <view class='nav'>
+            <text class="{{status == 0 ? 'active' : ''}}" bindtap='tabSwitch' data-status='0'>商家</text>
+            <text class="{{status == 1 ? 'active' : ''}}" bindtap='tabSwitch' data-status='1'>团购</text>
+            <text class="{{status == 2 ? 'active' : ''}}" bindtap='tabSwitch' data-status='2'>内容</text>
+        </view>
     </view>
 
-    <view class='content' wx:if="{{status == 0}}">
-        <view class='wrap'>
+    <view class='content' wx:if="{{status == 0}}" wx:if="{{isHave}}">
+        <view class='wrap' wx:for="{{shopList}}" wx:for-item="item">
             <view class='wrapTop'>
                 <view class='wrap-img'>
-                    <image src='/imgs/hongbao.png'></image>
+                    <image src='{{item.logo}}'></image>
                 </view>
                 <view class='wrap-dtl'>
                     <view class='wrap-dtl-name'>
                         <!-- <image src='/imgs/share_box.png'></image> -->
-                        <text>杭州麦当劳江南大道中南餐厅</text>
+                        <text>{{item.title}}</text>
                     </view>
                     <view class='wrap-dtl-sale'>
                         <block wx:for="{{stars}}">
@@ -25,11 +27,11 @@
                         <text>已售 90 份</text>
                     </view>
                     <view class='wrap-dtl-price'>
-                        <text>起送￥20</text>
+                        <text>起送￥{{item.send_price}}</text>
                         <text class='line'></text>
-                        <text>配送￥20</text>
+                        <text>配送￥{{item.delivery_price}}</text>
                         <text class='line'></text>
-                        <text>约20分钟</text>
+                        <text>约{{item.delivery_time}}分钟</text>
                     </view>                
                 </view>
             </view>
@@ -42,7 +44,7 @@
         
     </view>
 
-    <view class='empty'  wx:else>
+    <view class='empty' wx:else>
         <image src='/imgs/empty_item.png'></image>
         <text>您还没有此项收藏</text>
     </view>

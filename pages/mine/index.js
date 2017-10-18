@@ -23,14 +23,12 @@ Page({
     //         })
     //      }, 'GET', post_data)
     //   }, {op: 'info'});
-        app.getUserInfo(function (userInfo){
-             that.setData({
-                 userInfo: userInfo,
-                 login: true
-             })
-         })
-    
-  
+      app.getUserInfo(function (userInfo) {
+          that.setData({
+              userInfo: userInfo,
+              login: true
+          })
+      })
   },
 
   /**

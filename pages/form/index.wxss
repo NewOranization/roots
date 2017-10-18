@@ -11,33 +11,57 @@ page{
 }
 
 .box .formHead{
-  font-size: 32rpx;
+  font-size: 34rpx;
+  font-weight: bold;
   height: 100rpx;
   line-height: 100rpx;
   background: #fff;
+  color: #000;
 }
 
 .box .formHead .fixed-box{
     position: fixed;
     width: 100%;
     height: 100rpx;
-    display: flex;
-    flex-direction: row;
     overflow: hidden;
     z-index: 100;
-    background: #fff;
-    border-bottom: 1px solid #d0d0d0;
+    background: #43CD80;
 }
 
  .box .formHead .fixed-box .form_state{ 
-  width: 25%;
-  text-align: center;
-  border-bottom: 2px solid #fff;
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
 }
 
-.box .formHead .fixed-box .active{
-  border-bottom: 2px solid #06c1ae;
-  color: #06c1ae;
+.box .formHead .fixed-box .form_state image{
+    display: block;
+    float: left;
+    width: 60rpx;
+    height: 60rpx;
+    margin-top: 20rpx;
+    margin-left: 30rpx;
+}
+
+.box .formHead .fixed-box .form_state text{
+    display: block;
+    float: left;
+    margin-left: 20rpx;
+}
+
+.box .waitLoading{
+    position: fixed;
+    width: 100%;
+    height: 1000px;
+    background: #fff;
+    z-index: 2000;
+}
+
+.box .waitLoading image{
+    display: block;
+    width: 200rpx;
+    height: 200rpx;
+    margin: 300rpx auto;
 }
 
 /*表单列表  */
@@ -107,8 +131,8 @@ page{
 
 .load-notice .endding{
     width: 100%;
-    height: 120rpx;
-    line-height: 120rpx;
+    height: 100rpx;
+    line-height: 100rpx;
     background: #ededed;
     color: #8b8b8d;
     position: relative;
@@ -121,7 +145,7 @@ page{
     display: inline-block;
     position: absolute;
     left: 20rpx;
-    top: 59rpx;
+    top: 49rpx;
 }
 .load-notice .endding .line_r{
     width: 240rpx;
@@ -130,7 +154,7 @@ page{
     display: inline-block;
     position: absolute;
     right: 20rpx;
-    top: 59rpx;
+    top: 49rpx;
 }
 
 

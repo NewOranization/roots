@@ -6,9 +6,9 @@
             {{point}}
             <text>分</text>
         </view>
-        <text class='exchange' bindtap='exchange'>{{point != 0 ? '积分兑换商品' : '您暂无积分'}}</text>
+        <text class='exchange' bindtap='exchange'>{{point != '0' ? '积分兑换商品' : '您暂无积分'}}</text>
     </view>
-    <view class='wrap' wx:if="{{point > 0}}">
+    <view class='wrap' wx:if="{{point != '0'}}">
         <view class='title'>
             积分记录
         </view>
@@ -35,7 +35,7 @@
         </view>
     </view>
 </view>
-<view class='empty' wx:if="{{point <= 0}}">
+<view class='empty' wx:if="{{point == '0'}}">
     <view class='img'>
         <image src='/imgs/empty_item.png'></image>
     </view>

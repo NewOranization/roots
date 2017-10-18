@@ -1,11 +1,14 @@
 
 <view class='box'>
+    <view class='waitLoading' wx:if="{{isLoading}}">
+        <image src='/imgs/isLoading.gif'></image>
+    </view>
     <view class='header'>
         <view class='title'>
             <view class='fixed'>
                 <image class='img_l' src='/imgs/arrow_left_white.png' bindtap='navTo' data-click='back'></image>
                 <text>{{status == 1 ? dataList.store.title : '商户详情'}}</text>
-                <image class='img_r_s' src='/imgs/star_white.png' bindtap='navTo' wx:if="{{status == 1}}"></image>
+                <image class='img_r_s' src="{{collect ? '/imgs/star.png' :'/imgs/star_white.png'}}" bindtap='collect' wx:if="{{status == 1}}" data-token='{{dataList.store.push_token}}'></image>
                 <image class='img_r' src="{{status == 1 ? '/imgs/search_white.png' : '/imgs/star_white.png'}}" bindtap='navTo'></image>
             </view>
         </view>

@@ -13,6 +13,7 @@
 
 .formDetail .formContent .detail_l{
     float: left; 
+    width: 11%;
     margin-left: 25rpx;
 }
 
@@ -25,6 +26,7 @@
 
 .formDetail .formContent .detail_c{
     float: left;
+    width: 65%;
     margin-left: 15rpx;
     font-size: 28rpx;
     line-height: 45rpx;
@@ -61,6 +63,7 @@
 
 .formDetail .formContent .detail_r{
     float: right;
+    width: 15%;
     text-align: right;
     font-size: 28rpx;
     height: 100%;

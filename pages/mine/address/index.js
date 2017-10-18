@@ -37,13 +37,12 @@ Page({
       var that = this;
       var id = e.currentTarget.dataset.id;
       var is_default = e.currentTarget.dataset.is_default;
-      is_default = is_default == '0' ? '1' : '0';
+      if(is_default == '1')return
+      is_default = '1';
       var data = {
           op: 'is_default',
           id: id,
-          is_default: is_default
       }
-      //console.log(id);
       
       app.getPostData(function (post_data) {
           app.getApiData(function (res) {

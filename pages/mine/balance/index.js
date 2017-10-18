@@ -14,29 +14,11 @@ Page({
    */
   onLoad: function (options) {
       var that = this;
-     
-      var balance = wx.getStorageSync('balance');
-      if(balance != ''){
+      app.getUserInfo(function (res){
           that.setData({
-              balance: balance
+              balance: res.credit1
           })
-          wx.clearStorageSync();
-      } else{
-          var data = {
-              op: 'credit'
-          }
-          app.getPostData(function (post_data) {
-              app.getApiData(function (res) {
-                  //console.log(res)
-                  var balance = res.data.data.credit1;
-                  wx.setStorageSync('balance', balance)
-                  that.setData({
-                      balance: balance
-                  })
-              }, 'GET', post_data)
-          }, data)
-      }
-     
+      })
   },
 
   /**
