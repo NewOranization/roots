@@ -93,6 +93,10 @@ App({
                             },
                             method: "GET",
                             success: function (res) {
+<<<<<<< HEAD
+=======
+                                //console.log(res);
+>>>>>>> 1c33ce35a7528f086520745e86de0987c794bd2c
                                 wx.setStorageSync('openid', res.data.data.openId);
                                 //console.log(postData);
                                 if(res.data.data.openId == '' || undefined || null){

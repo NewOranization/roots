@@ -160,12 +160,21 @@
 }
 .wrapMinHeight{
   height:65rpx;
+<<<<<<< HEAD
 }
 .wrapMaxHeight{
   height:100rpx;
 }
 .wrapMaxHeight{
   height:100rpx;
+=======
+
+}
+.wrapMaxHeight{
+  height:100rpx;
+
+
+>>>>>>> 1c33ce35a7528f086520745e86de0987c794bd2c
 }
 .box .shop .wrapSort .wrapSort-bottom{
   padding: 10rpx;
