@@ -3,6 +3,7 @@
 var app = getApp();
 Page({
   data: {
+    isLoading: true,
     top1: false,
     top2: false,
     top3: false,
@@ -27,18 +28,13 @@ Page({
     wrapOpen: true
   },
   //封装获取商家信息及筛选请求函数
-  loadMore: function (that,myData) {
-    wx.showToast({
-      title: '正在为您拼命加载。。。',
-      icon: 'loading',
-      duration: 2000,
-      mask: true
-    })
-    var data={};
-    if(myData){
-      data=myData
-    }else{
-      data={
+  loadMore: function (that, myData) {
+   
+    var data = {};
+    if (myData) {
+      data = myData
+    } else {
+      data = {
         ac: 'homepage',
         op: 'store',
         page: that.data.page
@@ -48,22 +44,24 @@ Page({
     app.getPostData(function (post_data) {
       app.getApiData(function (res) {
         console.log(res.data.data)
-        if(myData){
+        if (myData) {
           that.setData({
-            shopInfo:res.data.data,
+            shopInfo: res.data.data,
             datalength: res.data.data.length
           });
-        }else{
+        } else {
           that.setData({
             shopInfo: that.data.shopInfo.concat(res.data.data),
             page: that.data.page + 1,
             datalength: res.data.data.length
           });
         }
-        
+
         if (res.data.code == 0) {
-          wx.hideToast();
-        } else if(res.data.data.length<10){
+            that.setData({
+              isLoading:false
+            })
+        } else if (res.data.data.length < 10) {
           wx.showToast({
             title: '没有更多数据',
             icon: 'loading',
@@ -72,7 +70,7 @@ Page({
           })
         }
       }, 'GET', post_data)
-    },data);
+    }, data);
   },
   onLoad: function (ops) {
     var that = this;
@@ -123,8 +121,6 @@ Page({
           sort: res.data.data.sort,
           discountActive: res.data.data.discount
         });
-        console.log(that.data.industry);
-        console.log(that.data.sort);
       }, 'GET', post_data)
     }, { ac: 'homepage', op: 'get_condition' });
     that.loadMore(that);
@@ -135,63 +131,51 @@ Page({
         op: 'guessLike'
       },
       success:function(res){
-        console.log(res);
       }
     })
   },
 
-  againRequest: function(e){
-    var that=this;
-    var myData={};
+  againRequest: function (e) {
+    var that = this;
+    var myData = {};
     var cid = e.currentTarget.dataset.cid;
     var sort = e.currentTarget.dataset.sort;
     var discount = e.currentTarget.dataset.discount;
-    if(that.data.selNav==1){
+    if (that.data.selNav == 1) {
       myData = {
         ac: 'homepage',
         op: 'store',
         cid: cid,//分类id
       }
-    } else if (that.data.selNav == 2){
+    } else if (that.data.selNav == 2) {
       myData = {
         ac: 'homepage',
         op: 'store',
         sort: sort,//分类id
       }
-    } else if (that.data.selNav==3){
+    } else if (that.data.selNav == 3) {
       myData = {
         ac: 'homepage',
         op: 'store',
         discount: discount,//分类id
       }
     }
-   
-    that.loadMore(that,myData);
+
+    that.loadMore(that, myData);
     that.setData({
-      top1:false,
-      top2:false,
-      top3:false
+      top1: false,
+      top2: false,
+      top3: false
     })
   },
   RequestAll: function () {
     var that = this;
-    that.setData({
+    that.setData({//点击全部的时候，还原请求数据
       shopInfo: [],
       datalength: 0,
-      page: 2
+      page: 1
     })
-    app.getPostData(function (post_data) {
-      app.getApiData(function (res) {
-        console.log(res.data.data)
-        that.setData({
-          shopInfo: res.data.data,
-          page: that.data.page + 1
-        });
-        if (res.data.code == 0) {
-          wx.hideToast();
-        }
-      }, 'GET', post_data)
-    }, { ac: 'homepage', op: 'store' });
+    that.loadMore(that);
     that.setData({
       top1: false,
       top2: false,
@@ -205,7 +189,6 @@ Page({
     var that = this;
     console.log(that.data.datalength)
     if (that.data.datalength = 10) {
-      console.log('aaaaaaaaaaaa');
       that.loadMore(that);
     }
   },
@@ -273,10 +256,6 @@ Page({
     that.setData({
       wrapOpen: !that.data.wrapOpen
     })
-    console.log(that.data.wrapOpen);
-      wrapHeight: !that.data.wrapHeight
-      wrapHeight:!that.data.wrapHeight
-    console.log(that.data.wrapHeight);
   },
   layoutSwith:function(){
    var that=this;
@@ -289,7 +268,6 @@ Page({
     wx.scanCode({
       success: function (res) {
         var url = res.result;
-        console.log(url);
         wx.navigateTo({
           url:url
         })

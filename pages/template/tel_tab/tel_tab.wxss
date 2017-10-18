@@ -161,17 +161,6 @@
 .wrapMinHeight{
   height:65rpx;
 }
-.wrapMaxHeight{
-  height:100rpx;
-}
-.wrapMaxHeight{
-  height:100rpx;
-
-}
-.wrapMaxHeight{
-  height:100rpx;
-
-}
 .box .shop .wrapSort .wrapSort-bottom{
   padding: 10rpx;
   border-top: 1rpx dashed #eee;

@@ -39,11 +39,17 @@ page{
   margin-bottom: 20rpx;
   color:#8c8a8c;
 }
-.content .content-item .right .eyes{
+
+.content .content-item .right .eyes,.sort{
   float: right;
   display: block;
   padding:3rpx 10rpx;
   border: 1rpx solid #eee;
   border-radius: 30rpx;
   color:#42dbff;
+}
+.content .content-item .right .sort{
+  background: #42dbff;
+  color:#fff;
+  float: left;
 }

@@ -16,6 +16,7 @@ Page({
     wrapHeight: true,
     selNav: 1,
     datalength: 0,
+    filterlength:0,
     wrapOpen: null,
   },
   moreWrap: function () {
@@ -50,7 +51,7 @@ Page({
         if (myData) {
           that.setData({
             shopInfo: res.data.data,
-            datalength: res.data.data.length
+            filterlength: res.data.data.length
           });
         } else {
           that.setData({
@@ -127,7 +128,6 @@ Page({
    */
   onReachBottom: function () {
     var that = this;
-    console.log(that.data.datalength)
     if (that.data.datalength = 10) {
       that.loadMore(that);
     }

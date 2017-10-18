@@ -25,7 +25,7 @@
       <text wx:if="{{top1}}" wx:for="{{industry}}" data-cid="{{item.cid}}" bindtap='againRequest'>{{item.title}}</text>
       <!--智能排序  -->
       <view class='item' wx:if="{{top2}}" wx:for="{{sort}}" wx:for-item="sortItem">
-        <text wx:if="{{top2}}" bindtap='againRequest' data-sort='{{sortItem}}'>{{sortItem}}</text>
+        <text wx:if="{{top2}}" bindtap='againRequest' data-sort='{{sortItem}}' >{{sortItem}}</text>
       </view>
       <!--优惠活动  -->
       <view class='item' wx:if="{{top3}}" wx:for="{{discountActive}}" wx:for-item="discountItem">
@@ -65,9 +65,7 @@
         </view>
       </view>
       <view class='wrapSort'>
-        <view class="wrapSort-top {{wrapOpen?'':'wrapMinHeight'}}" wx:if='{{item.activity.length>0}}'>
-          <view class="wrapSort-top {{wrapHeight==true?'wrapMinHeight':'wrapMaxHeight'}}" wx:if='{{item.activity.length>0}}'>
-            <view class="wrapSort-top {{wrapHeight==true?'wrapMinHeight':''}}" wx:if='{{item.activity.length>0}}'>
+        <view class="wrapSort-top" wx:if='{{item.activity.length>0}}'>
               <view class='left'>
                 <block wx:for='{{item.activity}}' wx:for-item="activityItem" wx:key="*this">
                   <view>
@@ -84,6 +82,4 @@
           </view>
         </view>
       </view>
-    </view>
-    </view>
 </template>
