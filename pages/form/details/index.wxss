@@ -7,7 +7,6 @@ page{
 .box{
     width: 100%;
     text-align: center;
-    margin-bottom: 30rpx;
 }
 /* 头部样式*/
 .box .header{
@@ -41,19 +40,8 @@ page{
 }
 
 .box .header text.txt3{
-    display: inline-block;
     color: #fff;
     margin-top: 40rpx;
-    width: 200rpx;
-    height: 60rpx;
-    line-height: 60rpx;
-    background: #ff5500; 
-    border-radius: 8rpx;
-}
-
-.box .header text.cancle{
-    color: #fff;
-    margin-left: 20rpx;
     width: 200rpx;
     height: 60rpx;
     line-height: 60rpx;
@@ -130,15 +118,15 @@ page{
     border-bottom: 1px solid #eee;
 }
 
-/* .box .content .discount image{
+.box .content .discount image{
     float: left;
     width: 40rpx;
     height: 40rpx;
     display: block;
     margin-top: 20rpx;
-} */
+}
 
-.box .content .discount text:first-child{
+.box .content .discount text:nth-child(2){
     float: left;
     margin-left: 5rpx;
 }

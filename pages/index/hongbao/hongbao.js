@@ -1,66 +1,29 @@
+//获取应用实例
+var app = getApp()
 // pages/index/hongbao/hongbao.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    hongbaoData:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function (ops) {
+    var that = this;
+    var push_token = ops.push_token;
+    var oldPrice = wx.getStorageSync('oldPrice');
+    var data = {
+      ac: 'handleorder',
+      op: 'userRedPacket',
+      oldPrice: oldPrice
+    }
+    app.getPostData(function (post_data) {
+      app.getApiData(function (res) {
+        that.setData({
+          hongbaoData:res.data.data
+        })
+      }, 'GET', post_data)
+    }, data)
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

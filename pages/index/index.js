@@ -16,16 +16,16 @@ Page({
     sort:[],//智能排序
     discountActive:[],//优惠活动
     stars:5,
-    shopInfo: [],
-    page: 1,
+    shopInfo:[],
+    page:1,
     wrapHeight:true,
     likeLayout:true,
     likeData: [],
     wrapHeight: true,
     selNav:1,
-    datalength:0
+    datalength: 0,
+    wrapOpen: true
   },
-
   //封装获取商家信息及筛选请求函数
   loadMore: function (that,myData) {
     wx.showToast({
@@ -173,6 +173,31 @@ Page({
       top3:false
     })
   },
+  RequestAll: function () {
+    var that = this;
+    that.setData({
+      shopInfo: [],
+      datalength: 0,
+      page: 2
+    })
+    app.getPostData(function (post_data) {
+      app.getApiData(function (res) {
+        console.log(res.data.data)
+        that.setData({
+          shopInfo: res.data.data,
+          page: that.data.page + 1
+        });
+        if (res.data.code == 0) {
+          wx.hideToast();
+        }
+      }, 'GET', post_data)
+    }, { ac: 'homepage', op: 'store' });
+    that.setData({
+      top1: false,
+      top2: false,
+      top3: false
+    })
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
@@ -243,12 +268,14 @@ Page({
     }
 
   },
-  moreWrap:function(){
-    var that=this;
+  moreWrap: function () {
+    var that = this;
     that.setData({
-      wrapHeight: !that.data.wrapHeight,
-      wrapHeight:!that.data.wrapHeight
+      wrapOpen: !that.data.wrapOpen
     })
+    console.log(that.data.wrapOpen);
+      wrapHeight: !that.data.wrapHeight
+      wrapHeight:!that.data.wrapHeight
     console.log(that.data.wrapHeight);
   },
   layoutSwith:function(){
@@ -277,14 +304,8 @@ Page({
       },
 
       complete: function () {
-
-        // complete
-
       }
 
     })
   }
- 
-
-
 })

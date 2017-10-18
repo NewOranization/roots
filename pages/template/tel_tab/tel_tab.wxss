@@ -160,11 +160,16 @@
 }
 .wrapMinHeight{
   height:65rpx;
-
+}
+.wrapMaxHeight{
+  height:100rpx;
 }
 .wrapMaxHeight{
   height:100rpx;
 
+}
+.wrapMaxHeight{
+  height:100rpx;
 
 }
 .box .shop .wrapSort .wrapSort-bottom{
