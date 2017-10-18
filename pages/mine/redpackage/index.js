@@ -26,12 +26,15 @@ Page({
    * 跳转页面函数
    */
   navTo: function (e) {
-      var click = e.currentTarget.dataset.click;
-      if (click == 'back') {
-          wx.navigateBack({
-              delta: 1
-          })
-      }
+    //   var click = e.currentTarget.dataset.click;
+    //   if (click == 'back') {
+    //       wx.navigateBack({
+    //           delta: 1
+    //       })
+    //   }
+    wx.navigateTo({
+        url: '/pages/mine/index',
+    })
   },
 
   /**
