@@ -12,9 +12,15 @@
         longitude="{{longitude}}" 
         latitude="{{latitude}}" 
         markers="{{markers}}"  
-        scale="18"  
-        style="width: 100%; height: 100%;"
-        bindtap="getMap"> 
+        markers="{{markers}}" 
+        polyline="{{polyline}}"
+        show-location 
+        scale="16"
+        bindcontroltap="controltap"
+        bindmarkertap="markertap"
+        bindregionchange="regionchange"  
+        style="width: 100%; height: 440px;"
+    >      
         
     </map>
     <view class='wrap'>

@@ -17,7 +17,7 @@
                  
                   <view class='item item_dtl'>
                         <text>收货地址</text>
-                        <textarea type='text' disabled="true" name="address" value="{{address}}" placeholder='选择收货详细地址' placeholder-style='color: #999; font-weight: nomal;' bindtap='chooseAddress'></textarea> 
+                        <textarea type='text' name="address" value="{{address}}" placeholder='选择收货详细地址' placeholder-style='color: #999; font-weight: nomal;' bindfocus='chooseAddress'></textarea> 
                   </view>
                   <view class='item item_number'>
                         <text class='item_txt'>门牌号</text>

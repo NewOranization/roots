@@ -14,39 +14,34 @@
         <text class='txt3 cancle' wx:if="{{order.status == '1'}}">取消订单</text>
         <text class='txt3' wx:if="{{order.status == '2' || order.status == '4'}}">确认送达</text>
         <text class='txt3' wx:if="{{order.status == '5' || order.status == '6'}}">再来一单</text>
-        <image src='/imgs/share_box.png'></image>
-        <text class='txt1'>订单已完成</text>
-        <text class='txt2'>期待您下次光临</text>
-        <text class='txt3'>再来一单</text>
     </view>
     <view class='content'>
         <view class="shop">
-            <image src='/imgs/share_box.png'></image>
-            <text>油瓶川菜</text>
+            <image src='{{order.logo}}'></image>
+            <text>{{order.stroeName}}</text>
             <image src='/imgs/arrow_down.png'></image>
         </view>
-        <view class='foods'>
-            <text>麻辣香锅虾+米饭(350克)</text>
-            <text>￥38.8</text>
-            <text>×1</text>
+        <view class='foods' wx:for="{{order.goods}}" wx:for-item='item'>
+            <text>{{item.goodsName}}</text>
+            <text>￥{{item.goodsPrice}}</text>
+            <text>×{{item.goodsNumber}}</text>
         </view>
-        <view class='foods others'>
+        <view class='foods others' wx:if="{{order.boxPrice != '' || order.boxPrice != '0.00'}}">
             <text>餐盒</text>
-            <text>￥2.5</text>
+            <text>￥{{order.boxPrice}}</text>
         </view>
         <view class='foods others'>
             <text>配送费</text>
-            <text>￥2.5</text>
+            <text>￥{{order.deliveryFee}}</text>
         </view>
         <view class='foods discount'>
-            <image src='/imgs/order_down.png'></image>
-            <text>在线支付立减优惠</text>
-            <text>-￥29.9</text>
+            <text>优惠</text>
+            <text>-￥{{order.diecountFee}}</text>
         </view>
         <view class='foods discount contact'>
             <image src='/imgs/callphone.png'></image>
             <text>联系商家</text>
-            <text>实付￥15.8</text>
+            <text>实付￥{{order.finalPrice}}</text>
         </view>
     </view>
     <view class='content'>
@@ -59,7 +54,7 @@
         </view>
         <view class='item address'>
             <text>收货地址</text>
-            <text>西溪花园金舟苑小区春申街26号附近4幢2单元201\n金玉 13033054150</text>
+            <text>{{order.address}}\n{{order.userName}} {{order.mobile}}</text>
         </view>
     </view>
     <view class='content'>
