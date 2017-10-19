@@ -1,9 +1,27 @@
+//获取应用实例
+var app = getApp();
 Page({
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ]
+    imgUrls: [],
+    list:[]
+  },
+  onLoad:function(ops){
+    var that=this;
+    app.getPostData(function (post_data) {//请求轮播图
+      app.getApiData(function (res) {
+        console.log(res.data.data)
+        that.setData({
+          imgUrls: res.data.data.carousel,
+          list:res.data.data.list
+        })
+      }, 'GET', post_data)
+    }, { ac: 'news', op: 'newList' });
+  },
+  toInforDetail:function(e){
+    var nid = e.currentTarget.dataset.nid;
+    console.log(nid);
+    wx.navigateTo({
+      url: './inforDetail/inforDetail?nid=' + nid
+    })
   }
 })
