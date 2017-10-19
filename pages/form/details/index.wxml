@@ -11,12 +11,14 @@
         <text class='txt2' wx:if="{{order.status == '2' || order.status == '4'}}">请稍等</text>
         <text class='txt2' wx:if="{{order.status == '5' || order.status == '6'}}">期待您下次光临</text>
         <text class='txt3' wx:if="{{order.status == '1'}}">立即付款</text>
-        <text class='txt3 cancle' wx:if="{{order.status == '1'}}">取消订单</text>
+        <text class='txt3 cancle' wx:if="{{order.status == '1'}}" bindtap='cancle'>取消订单</text>
         <text class='txt3' wx:if="{{order.status == '2' || order.status == '4'}}">确认送达</text>
-        <text class='txt3' wx:if="{{order.status == '5' || order.status == '6'}}">再来一单</text>
+        <text class='txt3' wx:if="{{order.status == '5' || order.status == '6'}}" bindtap='navTo' data-token='{{order.push_token}}'>再来一单</text>
     </view>
+
+    <!-- 商家信息 -->
     <view class='content'>
-        <view class="shop">
+        <view class="shop" bindtap='navTo' data-click='store' data-token='{{order.push_token}}'>
             <image src='{{order.logo}}'></image>
             <text>{{order.stroeName}}</text>
             <image src='/imgs/arrow_down.png'></image>
@@ -39,11 +41,21 @@
             <text>-￥{{order.discountFee}}</text>
         </view>
         <view class='foods discount contact'>
-            <image src='/imgs/callphone.png'></image>
-            <text>联系商家</text>
+            <image src='/imgs/callphone.png' bindtap='callShopPhone'></image>
+            <text bindtap='callShopPhone'>联系商家</text>
             <text>实付 ￥{{order.finalPrice}}</text>
         </view>
     </view>
+
+    <!-- 评价 -->
+    <view class='content'>
+        <view class="shop assess" bindtap='navTo' data-click='assess'>
+            <text>我的评价</text>
+            <image src='/imgs/arrow_down.png'></image>
+        </view>
+    </view>
+
+    <!-- 配送信息 -->
     <view class='content'>
         <view class='title'>
                 配送信息 
@@ -56,11 +68,13 @@
             <text>收货地址</text>
             <text style='width: 78%;text-align: left;'>{{order.address}}{{order.detailAddress}}</text>
         </view>
-        <view class='item address'>
+        <view class='item address' style='border: none'>
             <text>收货人</text>
             <text style='width: 78%;'>{{order.userName}} {{order.mobile}}</text>
         </view>
     </view>
+
+    <!-- 订单信息 -->
     <view class='content'>
         <view class='title'>
                 订单信息
@@ -75,7 +89,7 @@
             <text wx:if="{{order.payType == 'credit'}}">余额支付</text>
             <text wx:if="{{order.payType == 'delivery'}}">货到付款</text>
         </view>
-        <view class='item'>
+        <view class='item' style='border: none'>
             <text>下单时间</text>
             <text>{{order.createTime}}</text>
         </view>

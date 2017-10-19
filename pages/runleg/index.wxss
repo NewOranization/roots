@@ -65,3 +65,35 @@ page{
     font-size: 28rpx;
     font-weight: bold;
 }
+
+.box .knight{
+    height: 60rpx;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40rpx;
+    position: fixed;
+    z-index: 100;
+    font-weight: bold;
+    font-size: 28rpx;
+    top: 120rpx;
+    left: 30rpx;
+}
+
+.box .knight image{
+    width: 60rpx;
+    height: 60rpx;
+    display: block;
+    float: left;
+}
+
+.box .knight text{
+    display: block;
+    float: right;
+    height: 40rpx;
+    margin-top: 10rpx;
+    margin-left: 5rpx;
+    padding: 0 15rpx;
+    background: #000;
+    opacity: 0.6;
+    color: #fff;
+}

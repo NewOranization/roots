@@ -49,7 +49,12 @@ Page({
     };
     app.getPostData(function (post_data){
         app.getApiData(function (res){
-            console.log(res)
+            if(res.data.code == 0){
+                var data = {
+                    op: 'order'
+                }
+                that.getAll(data)
+            }
         }, 'GET', post_data)
     }, data)
   },

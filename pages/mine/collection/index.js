@@ -9,6 +9,7 @@ Page({
     status: 0,
     isHave: true,
     shopList: [],
+    isLoading: true,
   },
 
   /**
@@ -28,9 +29,10 @@ Page({
     //   that.setData({
     //       status: status
     //   })
-      if(status == 1 || 2){
+      if (status == 1 || status == 2){
           that.setData({
-              isNone: true, 
+              isHave: false, 
+              isLoading: false,
               status: status
           })
       }else{
@@ -54,6 +56,17 @@ Page({
    */
   onPullDownRefresh: function () {
   
+  },
+
+  /**
+   * 页面跳转
+   */
+  navTo: function (e) {
+      var that = this;
+      var token = e.currentTarget.dataset.token;
+      wx.navigateTo({
+          url: '/pages/index/shopMenuList/shopMenuList?token=' + token,
+      })
   },
 
   /**
@@ -101,6 +114,7 @@ Page({
                  }else{
                      that.setData({
                          shopList: shopList,
+                         isLoading: false,
                          isHave: true
                      })
                  }  

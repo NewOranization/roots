@@ -147,6 +147,10 @@ page{
     font-weight: normal;
 }
 
+.box .content .contact{
+    border: none;
+}
+
 .box .content .contact image{
     float: left;
     width: 40rpx;
@@ -213,5 +217,13 @@ page{
     float: right;
     line-height: 40rpx;
     text-align: right;
+}
+
+.box .content .assess{
+    border: none;
+}
+
+.box .content .assess text{
+    margin-left: 0;
 }
 

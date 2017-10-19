@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/form/assess/index",
         "pages/index/index",
         "pages/sort/index",
         "pages/infor/index",
@@ -38,6 +39,7 @@
         "pages/index/fastFood/fastFood",
         "pages/index/search/search",
         "pages/form/details/index"
+        
     ],
     "window": {
         "backgroundTextStyle": "light",

@@ -12,37 +12,42 @@ Page({
   data: {
       latitude: '',
       longitude: '',
+      height: wx.getSystemInfoSync().windowHeight,
       markers: [{
-          iconPath: "/imgs/waimai.png",
+          iconPath: "/imgs/polterform.png",
           id: 0,
-          latitude: 23.099994,
-          longitude: 113.324520,
-          width: 50,
-          height: 50
+          latitude: 30.274085,
+          longitude: 120.15507,
+          width: 30,
+          height: 30
+      },{
+          iconPath: "/imgs/polterform.png",
+          id: 0,
+          latitude: 30.274135,
+          longitude: 120.15567,
+          width: 30,
+          height: 30
+      },{
+          iconPath: "/imgs/polterform.png",
+          id: 0,
+          latitude: 30.274185,
+          longitude: 120.15607,
+          width: 30,
+          height: 30
       }],
       polyline: [{
           points: [{
-              longitude: 113.3245211,
-              latitude: 23.10229
+              longitude: 120.15507,
+              latitude: 23.10329
           }, {
               longitude: 113.324520,
               latitude: 23.21229
           }],
-          color: "#FF0000DD",
-          width: 2,
+          color: "#000000",
+          width: 3,
           dottedLine: true
       }],
-      controls: [{
-          id: 1,
-          iconPath: '/imgs/waimai.png',
-          position: {
-              left: 20,
-              top: 70,
-              width: 50,
-              height: 50
-          },
-          clickable: true
-      }]          
+       
   },
 
   /**
@@ -53,12 +58,18 @@ Page({
       wx.getLocation({
           type: 'gcj02', //返回可以用于wx.openLocation的经纬度
           success: function (res) {
+              console.log(res);
               that.setData({
-                  latitude: res.latitude.toFixed(6),
-                  longitude: res.longitude.toFixed(6),
+                  latitude: 30.274085,
+                  longitude: 120.15507,
               })
           }
-      })
+      });
+  },
+
+  controltap: function (e){
+      var that = this;
+      console.log('mark')
   },
 
   /**

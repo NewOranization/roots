@@ -7,9 +7,13 @@
             <text class="{{status == 2 ? 'active' : ''}}" bindtap='tabSwitch' data-status='2'>内容</text>
         </view>
     </view>
+    
+    <view class='waitLoading' wx:if="{{isLoading}}">
+        <image src='/imgs/isLoading.gif'></image>
+    </view>
 
     <view class='content' wx:if="{{status == 0}}" wx:if="{{isHave}}">
-        <view class='wrap' wx:for="{{shopList}}" wx:for-item="item" data-id='{{item.sid}}'>
+        <view class='wrap' wx:for="{{shopList}}" wx:for-item="item" bindtap='navTo' data-token='{{item.push_token}}'>
             <view class='wrapTop'>
                 <view class='wrap-img'>
                     <image src='{{item.logo}}'></image>
@@ -37,10 +41,10 @@
                     </view>                
                 </view>
             </view>
-            <image class="mark_img" src='/imgs/star.png'></image>
-            <view class='wrap-hot'>
+            <image class="mark_img" src='/imgs/aixin.png'></image>
+            <view class='wrap-hot' wx:if="{{item.selling != ''}}">
                 <image src='/imgs/hot-sale.png'></image>
-                <text>热销： 毛血旺 口水鸡</text>
+                <text>热销： {{item.selling}}</text>
             </view>
         </view>
         
