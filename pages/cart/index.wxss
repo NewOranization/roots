@@ -1,0 +1,96 @@
+.section{
+  background:#fff;
+  margin-bottom: 20rpx;
+}
+.head{
+  display:flex;
+  justify-content: space-between;
+  padding:30rpx;
+  align-items: center;
+}
+.head image{
+  width:40rpx;
+  height:40rpx;
+  vertical-align: middle
+}
+
+/*  */
+.content{
+  border-top:1rpx solid #eee;
+  border-bottom:1rpx solid #eee;
+  padding-left:30rpx;
+}
+.content .conItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:30rpx;
+}
+.content .conItem:not(:last-child){
+  border-bottom: 1rpx solid #eee;
+}
+.content .conItem .left{
+  display: flex
+}
+.content .conItem .left image{
+  width:100rpx;
+  height:100rpx;
+  margin-right:20rpx;
+}
+.content .conItem .left view{
+  line-height: 50rpx;
+}
+.content .conItem .left view text{
+  display: block;
+}
+.content .conItem .left view .name{
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.content .conItem .left view .number{
+  color:#989898;
+}
+.content .conItem .right{
+  color:#ff4d4b;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.content .boxPrice{
+  display: flex;
+  justify-content: space-between;
+  padding:30rpx;
+}
+.content .boxPrice text:nth-child(1){
+  font-size: 34rpx;
+  font-weight: bold
+}
+.content .boxPrice text:nth-child(2){
+  color:#ff4d4b;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+/*  */
+.totalPrice{
+  display: flex;
+  justify-content: space-between;
+  padding:30rpx;
+  color:#636363;
+}
+.totalPrice .right text{
+  color:#ff4d4b;
+  font-weight:bold;
+}
+.totalPrice .left text:nth-child(1){
+  font-size: 32rpx;
+  color:#ff4d4b;
+  font-weight:bold;
+} 
+.totalPrice .left text:nth-child(2){
+  padding:20rpx 30rpx;
+  background: #59d178;
+  color:#fff;
+  border-radius: 10rpx;
+  margin-left:20rpx;
+} 

@@ -6,16 +6,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    stars: [1, 1, 1, 1, 1],
-    isNone: false,
+    inforData:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (ops) {
     var that = this;
-    that.getAll();
+    var nid = ops.nid;
+    app.getPostData(function (post_data) {//请求轮播图
+      app.getApiData(function (res) {
+        that.setData({
+          inforData:res.data.data
+        })
+        console.log(that.data.inforData)
+      }, 'GET', post_data)
+    }, { ac: 'news', op: 'newsDetails', nid: nid});
   },
 
   /**

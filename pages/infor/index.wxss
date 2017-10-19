@@ -1,20 +1,12 @@
 page{
   background:#fff;
 }
-.lunbo{
-  position: relative;
-}
 .lunbo image{
   width:100%;
 }
-.lunbo text{
-  position: absolute;
-  left:20rpx;
-  bottom:20rpx;
-}
 .content .content-item{
   display: flex;
-  align-items: flex-start;
+  align-items:center;
   padding:30rpx 20rpx;
   border-bottom: 1rpx solid #eee;
 }
@@ -27,8 +19,13 @@ page{
   flex: 1;
 }
 .content .content-item .right .title{
-  font-size: 36rpx;
+  font-size: 34rpx;
   font-weight: bold;
+}
+.content .content-item .right .time{
+  color:#ccc;
+  display: block;
+  margin-top:10rpx;
 }
 .content .content-item .right view{
   display: -webkit-box;
@@ -40,7 +37,7 @@ page{
   color:#8c8a8c;
 }
 
-.content .content-item .right .eyes,.sort{
+.content .content-item .right .eyes{
   float: right;
   display: block;
   padding:3rpx 10rpx;
@@ -49,7 +46,6 @@ page{
   color:#42dbff;
 }
 .content .content-item .right .sort{
-  background: #42dbff;
-  color:#fff;
   float: left;
+  color:#42dbff
 }

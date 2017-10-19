@@ -1,9 +1,9 @@
 {
     "pages": [
-        "pages/form/assess/index",
+        "pages/cart/index",
+        "pages/infor/index",
         "pages/index/index",
         "pages/sort/index",
-        "pages/infor/index",
         "pages/runleg/index",
         "pages/form/index",
         "pages/mine/index",
@@ -38,7 +38,8 @@
         "pages/index/shopMap1/shopMap1",
         "pages/index/fastFood/fastFood",
         "pages/index/search/search",
-        "pages/form/details/index"
+        "pages/form/details/index",
+        "pages/form/assess/index",
         
     ],
     "window": {
