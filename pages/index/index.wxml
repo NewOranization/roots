@@ -7,6 +7,10 @@
 <import src="../template/tel_like1/tel_like1.wxml" />
 <import src="../template/tel_like2/tel_like2.wxml" />
 
+
+<view class='waitLoading' wx:if="{{isLoading}}">
+        <image src='/imgs/isLoading.gif'></image>
+    </view>
 <!--搜索-->
 <template is="search" data="{{region}}" />
 <!--图片轮播  -->

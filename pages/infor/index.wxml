@@ -12,6 +12,7 @@
     <view class='right'>
       <text class='title'>木耳是干的好还是鲜的好？</text>
       <view>美食不仅仅是餐桌上的食物。还包括休闲零食、各种饼干、糕点、糖类，蜜饯、干果、肉制食品、茶饮冲泡等制品，各有各的风味，都可称之为美食</view>
+      <text class='sort'>美食</text>
       <text class='eyes'>100次浏览</text>
     </view>
   </view>
