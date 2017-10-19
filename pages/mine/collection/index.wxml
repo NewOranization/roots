@@ -9,7 +9,7 @@
     </view>
 
     <view class='content' wx:if="{{status == 0}}" wx:if="{{isHave}}">
-        <view class='wrap' wx:for="{{shopList}}" wx:for-item="item">
+        <view class='wrap' wx:for="{{shopList}}" wx:for-item="item" data-id='{{item.sid}}'>
             <view class='wrapTop'>
                 <view class='wrap-img'>
                     <image src='{{item.logo}}'></image>
@@ -20,11 +20,13 @@
                         <text>{{item.title}}</text>
                     </view>
                     <view class='wrap-dtl-sale'>
-                        <block wx:for="{{stars}}">
-                            <image src='/imgs/star.png'></image>
+                        <block wx:for="{{item.stars}}" wx:for-item="i">
+                            <image src='/imgs/star.png' wx:if="{{i >= 0}}"></image>
+                            <image src='/imgs/halfstar.png' wx:if="{{i < 0 && i > -1}}"></image>
+                            <image src='/imgs/greystar.png' wx:if="{{i <= -1 }}"></image>
                         </block>
-                        <text>4.6</text>
-                        <text>已售 90 份</text>
+                        <text>{{item.storeStars}}</text>
+                        <text>已售 {{item.sailed}} 份</text>
                     </view>
                     <view class='wrap-dtl-price'>
                         <text>起送￥{{item.send_price}}</text>
