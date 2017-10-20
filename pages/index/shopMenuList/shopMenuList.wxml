@@ -41,7 +41,7 @@
             
             <view class='wrap'>
                 <scroll-view scroll-y="true" class='scroll-r' style='height: {{winHeight}}px' scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" bindscroll='scroll'>
-                <view class='redpackage' wx:if="{{dataList.store.coupon != '' && notCollar}}">
+                <view class='redpackage' wx:if="{{dataList.store.coupon != '' && notCollar}}" style='display:none'>
                     <view class='sum'>
                         ￥<text>{{dataList.store.coupon.discount}}</text>
                     </view>

@@ -1,46 +1,38 @@
-<view class="section">
-  <view class="head">
-    <view>一品香木桶饭
-      <image src="/imgs/more.png"></image>
+<block wx:for="{{cartData}}">
+  <view class="section">
+    <view class="head">
+      <view data-token="{{item.push_token}}" bindtap='toShop'>{{item.title}}
+        <image src="/imgs/more.png"></image>
+      </view>
+      <image src='/imgs/delete.png' bindtap='clear' data-token="{{item.push_token}}"></image>
     </view>
-    <image src='/imgs/delete.png'></image>
-  </view>
-  <view class='content'>
-    <view class='conItem'>
-      <view class='left'>
-        <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3883234327,226669618&fm=200&gp=0.jpg"></image>
-        <view>
-          <text class='name'>回锅肉木桶饭</text>
-          <text class='number'>x3</text>
+    <view class='content'>
+      <block wx:for="{{item.goods}}" wx:for-item="conItem">
+        <view class='conItem'>
+        <view class='left'>
+          <image src="{{conItem.thumb}}"></image>
+          <view>
+            <text class='name'>{{conItem.goodName}}</text>
+            <text class='number'>x{{conItem.num}}</text>
+          </view>
+        </view>
+        <view class='right'>
+          ￥{{conItem.price}}
         </view>
       </view>
-      <view class='right'>
-        X30
+      </block>
+      <view class='boxPrice'>
+        <text>餐盒</text>
+        <text>￥{{item.box_price}}</text>
       </view>
     </view>
-    <view class='conItem'>
-      <view class='left'>
-        <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3883234327,226669618&fm=200&gp=0.jpg"></image>
-        <view>
-          <text class='name'>回锅肉木桶饭</text>
-          <text class='number'>x3</text>
-        </view>
+    <view class='totalPrice'>
+      <view class='right'>已享受满减，优惠
+        <text>{{item.discount}}</text> 元</view>
+      <view class='left'>合计
+        <text>￥{{item.totalPrice}}</text>
+        <text>去结算</text>
       </view>
-      <view class='right'>
-        X30
-      </view>
-    </view>
-    <view class='boxPrice'>
-      <text>餐盒</text>
-      <text>X1</text>
     </view>
   </view>
-  <view class='totalPrice'>
-    <view class='right'>已享受满减，优惠
-      <text>46</text> 元</view>
-    <view class='left'>合计
-      <text>￥100</text>
-      <text>去结算</text>
-    </view>
-  </view>
-</view>
+</block>

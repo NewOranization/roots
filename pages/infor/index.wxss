@@ -9,6 +9,7 @@ page{
   align-items:center;
   padding:30rpx 20rpx;
   border-bottom: 1rpx solid #eee;
+  position: relative;
 }
 .content .content-item image{
   width:250rpx;
@@ -48,4 +49,29 @@ page{
 .content .content-item .right .sort{
   float: left;
   color:#42dbff
+}
+
+.inToptext{
+  position: absolute;
+  top:20rpx;right: 10rpx;
+  z-index: 10;
+  color:#fff;
+  font-size: 28rpx;
+  transform:rotate(45deg);
+  -ms-transform:rotate(45deg); 	/* IE 9 */
+  -moz-transform:rotate(45deg); 	/* Firefox */
+  -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+  -o-transform:rotate(45deg);
+}
+.inTopbox{
+  position: absolute;
+  top:-97rpx;
+  right:-95rpx;
+  border:80rpx solid transparent;
+  border-bottom:80rpx solid #42dbff;
+  transform:rotate(45deg);
+  -ms-transform:rotate(45deg); 	/* IE 9 */
+  -moz-transform:rotate(45deg); 	/* Firefox */
+  -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+  -o-transform:rotate(45deg);
 }

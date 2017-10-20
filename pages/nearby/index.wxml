@@ -7,4 +7,4 @@
       <icon type="search" size="20" color="#fff" bindtap='goSearchPage'/>
   </view>
   <!--标签切换  -->
-<template is="tab" data="{{...item,top1: top1, top2: top2, top3: top3,industry,sort,discountActive,stars,sortIcon,discountIcon,shopInfo,nav}}"/>
+<template is="tab" data="{{...item,top1: top1, top2: top2, top3: top3,nav,shopdata}}"/>

@@ -22,18 +22,18 @@
     <view class='list' wx:if="{{top1 || top2 || top3}}">
       <text bindtap='RequestAll'>全部</text>
       <!--商家分类  -->
-      <text wx:if="{{top1}}" wx:for="{{industry}}" data-cid="{{item.cid}}" bindtap='againRequest'>{{item.title}}</text>
+      <text wx:if="{{top1}}" wx:for="{{shopdata.nav}}" data-cid="{{item.cid}}" bindtap='againRequest'>{{item.title}}</text>
       <!--智能排序  -->
-      <view class='item' wx:if="{{top2}}" wx:for="{{sort}}" wx:for-item="sortItem">
-        <text wx:if="{{top2}}" bindtap='againRequest' data-sort='{{sortItem}}' >{{sortItem}}</text>
+      <view class='item' wx:if="{{top2}}" wx:for="{{shopdata.sort}}">
+        <text wx:if="{{top2}}" bindtap='againRequest' data-soid='{{item.soid}}' >{{item.title}}</text>
       </view>
       <!--优惠活动  -->
-      <view class='item' wx:if="{{top3}}" wx:for="{{discountActive}}" wx:for-item="discountItem">
-        <text wx:if="{{top3}}" bindtap='againRequest' data-discount='{{discountItem}}'>{{discountItem}}</text>
+      <view class='item' wx:if="{{top3}}" wx:for="{{shopdata.discount}}">
+        <text wx:if="{{top3}}" bindtap='againRequest' data-did='{{item.did}}'>{{item.title}}</text>
       </view>
     </view>
     <!--****************************************************  -->
-    <view class='shop' wx:for="{{shopInfo}}" wx:key="*this">
+    <view class='shop' wx:for="{{shopdata.store}}" wx:key="*this">
       <view class='wrap' bindtap='toShopMenuList' data-token="{{item.push_token}}">
         <view class='wrap-left'>
           <image src='{{item.logo}}'></image>

@@ -14,6 +14,8 @@
       <view>{{item.desc}}</view>
       <text class='sort'>{{item.category}}</text>
       <text class='eyes'>{{item.click}}次浏览</text>
+      <text class='inToptext' wx:if="{{item.isTop==1}}">置顶</text>
+      <view class='inTopbox' wx:if="{{item.isTop==1}}"></view>
     </view>
   </view>
 </view>

@@ -1,13 +1,14 @@
 {
     "pages": [
-        "pages/cart/index",
-        "pages/infor/index",
+        
         "pages/index/index",
         "pages/sort/index",
         "pages/runleg/index",
         "pages/form/index",
         "pages/mine/index",
         "pages/nearby/index",
+        "pages/infor/index",
+        "pages/cart/index",
         "pages/index/hongbao/hongbao",
         "pages/index/coupon/coupon",
         "pages/index/nearBus/nearBus",
