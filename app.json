@@ -9,7 +9,6 @@
         "pages/form/index",
         "pages/mine/index",
         "pages/nearby/index",
-        "pages/cart/index",
         "pages/index/hongbao/hongbao",
         "pages/index/coupon/coupon",
         "pages/index/nearBus/nearBus",

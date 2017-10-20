@@ -1,15 +1,16 @@
 .box{
+    width: 100%;
     margin: 20rpx 0;
     font-size: 30rpx;
     position: relative;
 }
 
 .box .nav{
-    height: 90rpx;
-    line-height: 90rpx;
+    height: 80rpx;
+    line-height: 80rpx;
     text-align: center;
     overflow: hidden;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
     background: #fff;
 }
 
@@ -27,43 +28,33 @@
     width: 40rpx;
     height: 40rpx;
     position: absolute;
-    top: 30rpx;
+    top: 20rpx;
 }
 
-.box .list{
+.box .List{
     width: 100%;
     text-align: left;
     line-height: 90rpx;
-    
-    position: absolute;
-    top: 92rpx;
-    z-index: 100;
     background: #fff;
 }
 
-.box .list text,.item{
-    display: block;
-    height: 90rpx;
-    border-bottom: 1px solid #eee;
-    padding-left: 30rpx;
+.box .List .List-item{
     overflow: hidden;
 }
 
-.box .list .item image{
-    width: 50rpx;
-    height: 50rpx;
+.box .List .List-item text{
     display: block;
-    margin-top: 20rpx;
-    float: left;
+    height: 90rpx;
+    padding-left: 50rpx;
+    border-bottom: 1px solid #eee;
 }
 
-.box .list .item text{
-    display: block;
-    margin-left: -5rpx;
-}
+
 .box .shop{
   margin-bottom:20rpx;
 }
+
+
 .box .shop .wrap{
     background: #fff;
     padding:20rpx 20rpx 0 20rpx;

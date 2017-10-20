@@ -1,10 +1,11 @@
 
 <import src="../template/tel_tab/tel_tab.wxml" />
+<import src="../template/title/index.wxml" />
 
- <view class='head'>
-      <image src="../../../imgs/back_white.png"></image>
-      <text>快餐</text>
-      <icon type="search" size="20" color="#fff" bindtap='goSearchPage'/>
-  </view>
+<view class='waitLoading' wx:if="{{isLoading}}" style='margin-top: 181rpx;'>
+    <image src='/imgs/isLoading.gif'></image>
+</view>
+
+<template is="title" data="{{headTitle}}"/>
   <!--标签切换  -->
-<template is="tab" data="{{...item,top1: top1, top2: top2, top3: top3,nav,shopdata}}"/>
+<template is="tab" data="{{shopdata, show1, show2, show3}}"/>
