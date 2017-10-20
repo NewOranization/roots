@@ -1,0 +1,36 @@
+<!--pages/form/assess/index.wxml-->
+<view class='box'>
+    <view class='header'>
+        <image src='/imgs/Taxi.png'></image>
+        <text>肯德基</text>
+    </view>
+
+    <view class='wrap'>
+        <view class='wrapList'>
+            <view class='title'>
+                <text>商品评价</text>
+            </view>
+            <view class='content'>
+                <view class='goods'>
+                    <view class='goods-title'>炸鸡腿</view>
+                    <view class='goods-feel'>
+                        <text>不满意</text>
+                        <text>满意</text>
+                        <text>很满意</text>
+                    </view>
+                </view>
+                <view class='feature'>
+                    <text>干净卫生</text>
+                    <text>食材新鲜</text>
+                    <text>分量足</text>
+                    <text>味道好</text>
+                    <text>包装精美</text>
+                    <text>很实惠</text>
+                </view>
+                <view class='textarea'>
+                    <textarea placeholder='说点什么吧' placeholder-style='color: #b8b8b8; line-height: 50rpx;'></textarea>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

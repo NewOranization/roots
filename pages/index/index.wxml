@@ -9,8 +9,8 @@
 
 
 <view class='waitLoading' wx:if="{{isLoading}}">
-        <image src='/imgs/isLoading.gif'></image>
-    </view>
+    <image src='/imgs/isLoading.gif'></image>
+</view>
 <!--搜索-->
 <template is="search" data="{{region}}" />
 <!--图片轮播  -->

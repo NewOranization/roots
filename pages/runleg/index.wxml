@@ -12,17 +12,20 @@
         longitude="{{longitude}}" 
         latitude="{{latitude}}" 
         markers="{{markers}}"  
-        markers="{{markers}}" 
         polyline="{{polyline}}"
         show-location 
-        scale="16"
+        scale="17"
         bindcontroltap="controltap"
         bindmarkertap="markertap"
         bindregionchange="regionchange"  
-        style="width: 100%; height: 440px;"
+        style="width: 100%; height: {{height}}px"
     >      
         
     </map>
+    <view class='knight'>
+        <image src='/imgs/polterform.png'></image>
+        <text>平台骑士</text>
+    </view>
     <view class='wrap'>
         <text>平台共有0位骑士为您服务</text>
     </view>
