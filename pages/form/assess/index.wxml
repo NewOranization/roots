@@ -8,15 +8,24 @@
     <view class='wrap'>
         <view class='wrapList'>
             <view class='title'>
-                <text>商品评价</text>
+                <text>评价商品</text>
             </view>
             <view class='content'>
                 <view class='goods'>
                     <view class='goods-title'>炸鸡腿</view>
                     <view class='goods-feel'>
-                        <text>不满意</text>
-                        <text>满意</text>
-                        <text>很满意</text>
+                        <block wx:for="{{stars}}" wx:for-item="i">  
+                            <image src='/imgs/star.png' wx:if="{{i == 1}}"></image>
+                            <image src='/imgs/star02.png' wx:if="{{i == 0.2}}"></image>
+                            <image src='/imgs/star04.png' wx:if="{{i == 0.3}}"></image>
+                            <image src='/imgs/star05.png' wx:if="{{i == 0.5}}"></image>
+                            <image src='/imgs/star07.png' wx:if="{{i == 0.7}}"></image>
+                            <image src='/imgs/star08.png' wx:if="{{i == 0.8}}"></image>
+                            <image src='/imgs/greystar.png' wx:if="{{i == -1}}" style='width: 38rpx;height: 38rpx;'></image>
+                        </block>
+                        <view style='width:240rpx; position: absolute;top: -20rpx;opacity: 0'>
+                            <slider max='50' step='1' show-value='true' bindchange='getStars' style='width:240rpx;'></slider>
+                        </view>
                     </view>
                 </view>
                 <view class='feature'>
@@ -28,8 +37,77 @@
                     <text>很实惠</text>
                 </view>
                 <view class='textarea'>
-                    <textarea placeholder='说点什么吧' placeholder-style='color: #b8b8b8; line-height: 50rpx;'></textarea>
+                    <textarea placeholder='说点什么吧' placeholder-style='color: #b8b8b8; line-height: 50rpx;' auto-height='true'></textarea>
                 </view>
+            </view>
+        </view>
+
+        <view class='wrapList'>
+            <view class='content'>
+                <view class='goods' style='padding-top: 30rpx;'>
+                    <view class='goods-title' style='font-size: 32rpx;font-weight: 700;'>评价商家服务</view>
+                    <view class='goods-feel'>
+                        <block wx:for="{{stars}}" wx:for-item="i">  
+                            <image src='/imgs/star.png' wx:if="{{i == 1}}"></image>
+                            <image src='/imgs/star02.png' wx:if="{{i == 0.2}}"></image>
+                            <image src='/imgs/star04.png' wx:if="{{i == 0.3}}"></image>
+                            <image src='/imgs/star05.png' wx:if="{{i == 0.5}}"></image>
+                            <image src='/imgs/star07.png' wx:if="{{i == 0.7}}"></image>
+                            <image src='/imgs/star08.png' wx:if="{{i == 0.8}}"></image>
+                            <image src='/imgs/greystar.png' wx:if="{{i == -1}}" style='width: 38rpx;height: 38rpx;'></image>
+                        </block>
+                    </view>
+                </view>
+                <view class='feature'>
+                    <text>主动联系</text>
+                    <text>态度很好</text>
+                </view>
+                <view class='textarea'>
+                    <textarea placeholder='说点什么吧' placeholder-style='color: #b8b8b8; line-height: 50rpx;' auto-height='true'></textarea>
+                </view>
+            </view>
+        </view>
+
+        <view class='wrapList'>
+            <view class='content'>
+                <view class='goods' style='padding-top: 30rpx;'>
+                    <view class='goods-title' style='font-size: 32rpx;font-weight: 700;'>评价配送服务</view>
+                    <view class='goods-feel'>
+                       <block wx:for="{{stars}}" wx:for-item="i">  
+                            <image src='/imgs/star.png' wx:if="{{i == 1}}"></image>
+                            <image src='/imgs/star02.png' wx:if="{{i == 0.2}}"></image>
+                            <image src='/imgs/star04.png' wx:if="{{i == 0.3}}"></image>
+                            <image src='/imgs/star05.png' wx:if="{{i == 0.5}}"></image>
+                            <image src='/imgs/star07.png' wx:if="{{i == 0.7}}"></image>
+                            <image src='/imgs/star08.png' wx:if="{{i == 0.8}}"></image>
+                            <image src='/imgs/greystar.png' wx:if="{{i == -1}}" style='width: 38rpx;height: 38rpx;'></image>
+                      </block>
+                    </view>
+                </view>
+                <view class='feature'>
+                    <text>衣着整洁</text>
+                    <text>餐品完好</text>
+                    <text>准时送达</text>
+                    <text>服务态度好</text>
+                    <text>送餐快</text>
+                    <text>穿着专业</text>
+                </view>
+                <view class='textarea'>
+                    <textarea placeholder='说点什么吧' placeholder-style='color: #b8b8b8; line-height: 50rpx;' auto-height='true'></textarea>
+                </view>
+            </view>
+        </view>
+        
+
+        <view style='margin-left: 30rpx;'>您的评价将匿名发送给商家</view>
+
+        <view style='height: 150rpx;width: 100%'></view>
+        <view class='submit'>
+            <view class='point'>
+                <text>评价可获得10积分</text>
+            </view>
+            <view class='btn'>
+                <text>提交评价</text>
             </view>
         </view>
     </view>
