@@ -113,12 +113,20 @@ Page({
         //     })
         // }
         if(show){
-            that.setData({
-                nav: nav
-            })
+            if(nav == that.data.nav){
+                show = false;
+                that.setData({
+                    nav: 0
+                })
+                
+            }else{
+                that.setData({
+                    nav: nav
+                })
+            }
         }else{
             if(nav != that.data.nav){
-                show: true;
+                show = true;
                 that.setData({
                     nav: nav
                 })
@@ -126,9 +134,10 @@ Page({
                 that.setData({
                     nav: 0
                 })
-            }
-            
+            }   
         }
+        console.log(show)
+        console.log(nav)
     },
 
     /**
@@ -163,6 +172,24 @@ Page({
             nav: 0,
             selected: params
         })
+    },
+
+    /**
+     * 页面跳转
+     */
+    navTo: function (e){
+        var that = this;
+        var click = e.currentTarget.dataset.click;
+        console.log(click);
+        if(click == 'back'){
+            wx.switchTab({
+                url: '/pages/index/index',
+            })
+        }else{
+            wx.navigateTo({
+                url: '/pages/index/shopMenuList/shopMenuList?push_token=' + click,
+            })
+        }
     },
 
     /**

@@ -9,6 +9,7 @@
 <template is="title" data="{{headTitle}}"/>
 <template is="tab" data="{{shopdata, length, scrollTop, store, nav, selected}}"/>
 
+<!-- 上拉加载时提示数据有无 -->
 <view class='load-notice'>
     <view class='loading' wx:if="{{isLoading}}">
         <text>正在加载，请稍后...</text>
@@ -20,7 +21,9 @@
     </view>
 </view>
 
+<!-- 当该类数据没有时 -->
 <view class='formEmpty' wx:if="{{empty}}">
     <image src='/imgs/empty-img.png'></image>
     <text>很抱歉,暂时没有此类商品</text>
 </view>
+

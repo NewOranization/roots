@@ -40,7 +40,7 @@
         <!--****************************************************  -->
         <view class='shopList' style='width: 100%;'>
             <view class='shop' wx:for="{{store}}" wx:key="item" wx:for-item="item">
-                <view class='wrap' bindtap='toShopMenuList' data-token="{{item.push_token}}">
+                <view class='wrap' bindtap='navTo' data-click="{{item.push_token}}">
                     <view class='wrap-left'>
                         <image src='{{item.logo}}'></image>
                     </view>
