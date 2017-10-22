@@ -2,10 +2,25 @@
 <import src="../template/tel_tab/tel_tab.wxml" />
 <import src="../template/title/index.wxml" />
 
-<view class='waitLoading' wx:if="{{isLoading}}" style='margin-top: 181rpx;'>
+<view class='waitLoading' wx:if="{{onLoading}}" style='margin-top: 181rpx;'>
     <image src='/imgs/isLoading.gif'></image>
 </view>
 
 <template is="title" data="{{headTitle}}"/>
-  <!--标签切换  -->
-<template is="tab" data="{{shopdata, show1, show2, show3}}"/>
+<template is="tab" data="{{shopdata, length, scrollTop, store, nav, selected}}"/>
+
+<view class='load-notice'>
+    <view class='loading' wx:if="{{isLoading}}">
+        <text>正在加载，请稍后...</text>
+    </view>
+    <view class='endding' wx:if="{{isNone}}">
+        <text class='line'></text>
+        <text>已经加载完了哦</text>
+        <text class='line_r'></text>
+    </view>
+</view>
+
+<view class='formEmpty' wx:if="{{empty}}">
+    <image src='/imgs/empty-img.png'></image>
+    <text>很抱歉,暂时没有此类商品</text>
+</view>

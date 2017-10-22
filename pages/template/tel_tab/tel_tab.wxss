@@ -20,9 +20,6 @@
     position: relative;
 }
 
-.box .nav .navbar .active{
-    color: red;
-}
 
 .box .nav .navbar image{
     width: 40rpx;
@@ -36,6 +33,7 @@
     text-align: left;
     line-height: 90rpx;
     background: #fff;
+    z-index: 80;
 }
 
 .box .List .List-item{
@@ -157,3 +155,6 @@
   border-top: 1rpx dashed #eee;
 }
 
+.active{
+    color: #ff2c4a;
+}

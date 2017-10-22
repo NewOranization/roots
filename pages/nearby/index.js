@@ -2,14 +2,36 @@
 //获取应用实例
 var app = getApp();
 var page = 1;
+var show = false;
+function getRect(that) {
+    setTimeout(function () {
+        wx.createSelectorQuery().select('.shopList').boundingClientRect(function (rect) {
+            that.setData({
+                scrollTop: rect.top
+            })
+            getRect(that)
+        }).exec()
+    }, 500)
+
+};
+
 Page({
   data: {
-    isLoading: false,
-    headTitle: '附近商家',
-    shopdata: {},
-    show1: false,
-    show2: false,
-    show3: false,
+        empty: false,
+        isLoading: false,
+        onLoading: true,
+        isNone: false,
+        headTitle: '附近商家',
+        length: 0,
+        scrollTop: 0,  
+        shopdata: {},
+        store: [],
+        nav: 0,
+        selected: {
+            cid: -1,
+            did: -1,
+            soid: -1
+        }
   },
   
     /**
@@ -17,11 +39,15 @@ Page({
      */
     onLoad: function (options) {
         var that = this;
-        var data = {
+        var params = {
             ac: 'homepage',
-            op: 'store'
+            op: 'store',
+            page: page
         }
-        that.getAll(data)
+        that.getAll(params, page);
+        that.setData({
+            params: params
+        })
     },
 
     /**
@@ -33,7 +59,8 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        var that = this;
+        getRect(that);
     },
 
     /**
@@ -47,7 +74,13 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-
+        var that = this;
+        var params = that.data.params;
+        console.log(params)
+        
+        params['page'] += 1;
+        page = params['page'];
+        that.getAll(params, page)
     },
 
     /**
@@ -56,79 +89,145 @@ Page({
     openList: function (e){
         var that = this;
         var nav = e.currentTarget.dataset.nav;
-        console.log(nav)
-        if(nav == 1){
+        show = !show
+        // console.log(nav)
+        // if(nav == 1){
+        //     that.setData({
+        //         show1: !that.data.show1,
+        //         show2: false,
+        //         show3: false
+        //     })
+        // }
+        // if (nav == 2) {
+        //     that.setData({
+        //         show2: !that.data.show2,
+        //         show1: false,
+        //         show3: false
+        //     })
+        // }
+        // if (nav == 3) {
+        //     that.setData({
+        //         show3: !that.data.show3,
+        //         show2: false,
+        //         show1: false
+        //     })
+        // }
+        if(show){
             that.setData({
-                show1: !that.data.show1,
-                show2: false,
-                show3: false
+                nav: nav
             })
+        }else{
+            if(nav != that.data.nav){
+                show: true;
+                that.setData({
+                    nav: nav
+                })
+            }else{
+                that.setData({
+                    nav: 0
+                })
+            }
+            
         }
-        if (nav == 2) {
-            that.setData({
-                show2: !that.data.show2,
-                show1: false,
-                show3: false
-            })
+    },
+
+    /**
+     * 请求分类数据
+     */
+    getSelectData: function (e){
+        var that = this;
+        var params = {
+            ac: 'homepage',
+            op: 'store',
+        };
+        var id = e.currentTarget.dataset.id;
+        if(that.data.nav == 1){
+            params['cid'] = id;
+            params['page'] = 1;
+            that.data.selected.cid = id
         }
-        if (nav == 3) {
-            that.setData({
-                show3: !that.data.show3,
-                show2: false,
-                show1: false
-            })
+        if (that.data.nav == 2){
+            params['soid'] = id;
+            params['page'] = 1;
+            that.data.selected.soid = id
         }
+        if (that.data.nav == 3) {
+            params['did'] = id;
+            params['page'] = 1;
+            that.data.selected.did = id
+        }
+        that.getAll(params);
+        that.setData({
+            selected: id,
+            params: params,
+            nav: 0,
+            selected: params
+        })
     },
 
     /**
      * 获得全部数据
      */
-    getAll: function (data, page) {
+    getAll: function (params, page) {
         var that = this;
         app.getPostData(function (post_data){
             app.getApiData(function (res){
                 if(res.data.code == 0){
                     var shopdata = res.data.data;
-                    var length = shopdata.store.length;
-                    that.setData({
-                        shopdata: shopdata
-                    })
-                //     if (res.data.code == 0) {
-                //         if (page > 1) {
-                //             if (length >= 10) {
-                //                 that.data.shopdata.store.concat(shopdata.store)
-                //                 that.setData({
-                //                     shopdata: shopdata,
-            
-                //                 })
-                //             } else {
-                //                 that.data.shopdata.store.concat(shopdata.store)
-                //                 that.setData({
-                //                     shopdata: shopdata,
-
-                //                 })
-                //             }
-                //         } else {
-                //             if (length == 0) {
-                //                 that.setData({
-                //                     empty: true
-                //                 })
-                //             } else if (length >= 10) {
-                //                 that.setData({
-                //                     shopdata: shopdata,
-                //                     isLoading: false,
-                //                 })
-                //             } else {
-                //                 that.setData({
-                //                     shopdata: shopdata,
-                //                     isLoading: false,
-                //                 })
-                //             }
-                //         }
-                //     }
+                    var store = res.data.data.store;
+                    var length = res.data.data.store.length;
+                    // that.setData({
+                    //     shopdata: shopdata
+                    // })
+                    if (res.data.code == 0) {
+                        if (page > 1) {
+                            
+                            if (length >= 10) { 
+                                that.setData({
+                                    store: that.data.store.concat(store),
+                                    isLoading: true,
+                                    isNone: false,
+                                })
+                            } else {
+                                that.setData({
+                                    store: that.data.store.concat(store),
+                                    isLoading: false,
+                                    isNone: true,
+                                })
+                            }
+                        } else {
+                            if (length == 0) {
+                                that.setData({
+                                    empty: true,
+                                    onLoading: false,
+                                    isLoading: false,
+                                    isNone: false,
+                                    length: length
+                                })
+                            } else if (length >= 10) {
+                                that.setData({
+                                    shopdata: shopdata,
+                                    store: store,
+                                    onLoading: false,
+                                    isLoading: true,
+                                    isNone: false,
+                                    length: length
+                                })
+                            } else {
+                                that.setData({
+                                    shopdata: shopdata,
+                                    store: store,
+                                    onLoading: false,
+                                    isLoading: false,
+                                    isNone: false,
+                                    length: length
+                                })
+                            }
+                        }
+                    }
                 }
             },'GET', post_data)
-        }, data)
+        }, params)
     },
 
 })
