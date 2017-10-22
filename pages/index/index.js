@@ -80,6 +80,7 @@ Page({
     }, {ac: 'homepage',op: 'carousel'});
     app.getPostData(function (post_data) {//请求分类选择图标
       app.getApiData(function (res) {
+        console.log(res.data.data);
         if(res.data.code == 0){
             that.setData({
                 sortSels: res.data.data,
@@ -305,5 +306,21 @@ Page({
       }
 
     })
+  },
+  sortSel:function(e){
+    var that=this;
+    var cid = e.currentTarget.dataset.cid;
+    app.getPostData(function (post_data) {//分类
+      app.getApiData(function (res) {
+        wx.setStorage({
+          key: "selData",
+          data: res.data.data
+        })
+        wx.switchTab({
+          url: '/pages/nearby/index'
+        })
+        console.log(res.data.data);
+      }, 'GET', post_data)
+    }, { ac: 'homepage', op: 'store',cid:cid});
   }
 })

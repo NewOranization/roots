@@ -41,7 +41,6 @@
         "pages/index/search/search",
         "pages/form/details/index",
         "pages/form/assess/index"
-        
     ],
     "window": {
         "backgroundTextStyle": "light",

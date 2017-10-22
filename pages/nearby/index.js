@@ -10,6 +10,14 @@ Page({
     page: 1,
     selNav: 1,
     datalength: 0,
+    wrapOpen:false
+  },
+  moreWrap:function(){
+    var that=this;
+    that.setData({
+      wrapOpen: !that.data.wrapOpen
+    })
+    console.log(that.data.wrapOpen)
   },
   loadMore: function (myData) {
     var that = this;
@@ -28,7 +36,19 @@ Page({
   },
   onLoad: function (ops) {
     var that = this;
-    that.loadMore();
+    wx.getStorage({
+      key: 'selData',
+      success: function (res) {
+        that.setData({
+          shopdata: res.data
+        })
+        wx.removeStorage({ key: 'selData' });//成功获取首页传过来的店铺列表缓存数据后，移除
+      },
+      fail:function(){
+        console.log('失败');
+        that.loadMore()
+      }
+    })
   },
 
   againRequest: function (e) {
@@ -73,7 +93,7 @@ Page({
   // onReachBottom: function () {
   //   var that = this;
   //   if (that.data.datalength = 10) {
-  //     that.loadMore(that);
+  //     that.loadMore();
   //   }
   // },
   /**
@@ -82,7 +102,7 @@ Page({
   onPullDownRefresh: function () {
     var that = this;
     if (that.data.datalength = 10) {
-      that.loadMore(that);
+      that.loadMore();
     }
   },
   RequestAll: function () {
