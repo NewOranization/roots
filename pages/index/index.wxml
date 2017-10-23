@@ -8,9 +8,9 @@
 <import src="../template/tel_like2/tel_like2.wxml" />
 
 
-<view class='waitLoading' wx:if="{{isLoading}}">
+<!-- <view class='waitLoading' wx:if="{{isLoading}}">
     <image src='/imgs/isLoading.gif'></image>
-</view>
+</view> -->
 <!--搜索-->
 <template is="search" data="{{region}}" />
 <!--图片轮播  -->
@@ -23,7 +23,27 @@
 <template is="discount" data="{{discount,leftDiscount:leftDiscount}}" />
 
 <!--标签切换  -->
-<template is="tab" data="{{...item,top1: top1, top2: top2, top3: top3,industry,sort,discountActive,stars,sortIcon,discountIcon,shopInfo,nav}}"/>
+
+<template is="tab" data="{{shopdata, length, scrollTop, store, nav, selected}}"/>
+<!-- 上拉加载时提示数据有无 -->
+<view class='load-notice'>
+    <view class='loading' wx:if="{{isLoading}}">
+        <text>正在加载，请稍后...</text>
+    </view>
+    <view class='endding' wx:if="{{isNone}}">
+        <text class='line'></text>
+        <text>已经加载完了哦</text>
+        <text class='line_r'></text>
+    </view>
+</view>
+
+<!-- 当该类数据没有时 -->
+<view class='formEmpty' wx:if="{{empty}}">
+    <image src='/imgs/empty-img.png'></image>
+    <text>很抱歉,暂时没有此类商品</text>
+</view>
+
+
 
 <!--猜你喜欢  -->
 <template is="like1" data="{{ls}}" />

@@ -3,7 +3,7 @@
     class='sortSel'>
       <swiper-item>
         <view wx:for="{{sortSels}}" wx:key="*this">
-          <image src="{{item.thumb}}"></image>
+          <image src="{{item.thumb}}" bindtap='sortSel' data-cid="{{item.cid}}"></image>
           <text>{{item.title}}</text>
         </view>
       </swiper-item>

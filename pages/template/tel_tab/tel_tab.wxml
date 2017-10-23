@@ -1,7 +1,7 @@
 <template name="tab">
     <!--标签切换  -->
     <view class="box">
-        <view style='position: fixed;width: 100%;'>
+        <view class='box-first-view'>
             <view class='nav' wx:if="{{scrollTop >= 0}}">
                 <view class='navbar' bindtap='openList' data-nav='1'>
                     <text class="{{nav == 1 ? 'active' : ''}}">商家分类</text>
@@ -35,10 +35,9 @@
                 </view>
             </view>
         </view>
-        <view style='width: 100%;height: 82rpx;'></view>
 
         <!--****************************************************  -->
-        <view class='shopList' style='width: 100%;'>
+        <view class='shopList' style='width: 100%;-'>
             <view class='shop' wx:for="{{store}}" wx:key="item" wx:for-item="item">
                 <view class='wrap' bindtap='navTo' data-click="{{item.push_token}}">
                     <view class='wrap-left'>
@@ -88,4 +87,15 @@
             </view>
         </view>
     </view>
+    <!-- 上拉加载时提示数据有无 -->
+<view class='load-notice'>
+    <view class='loading' wx:if="{{isLoading}}">
+        <text>正在加载，请稍后...</text>
+    </view>
+    <view class='endding' wx:if="{{isNone}}">
+        <text class='line'></text>
+        <text>已经加载完了哦</text>
+        <text class='line_r'></text>
+    </view>
+</view>
 </template>
