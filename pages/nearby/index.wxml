@@ -1,10 +1,29 @@
 
 <import src="../template/tel_tab/tel_tab.wxml" />
+<import src="../template/title/index.wxml" />
 
- <view class='head'>
-      <image src="../../../imgs/back_white.png"></image>
-      <text>快餐</text>
-      <icon type="search" size="20" color="#fff" bindtap='goSearchPage'/>
-  </view>
-  <!--标签切换  -->
-<template is="tab" data="{{...item,top1: top1, top2: top2, top3: top3,nav,shopdata}}"/>
+<view class='waitLoading' wx:if="{{onLoading}}" style='margin-top: 181rpx;'>
+    <image src='/imgs/isLoading.gif'></image>
+</view>
+
+<template is="title" data="{{headTitle}}"/>
+<template is="tab" data="{{shopdata, length, scrollTop, store, nav, selected}}"/>
+
+<!-- 上拉加载时提示数据有无 -->
+<view class='load-notice'>
+    <view class='loading' wx:if="{{isLoading}}">
+        <text>正在加载，请稍后...</text>
+    </view>
+    <view class='endding' wx:if="{{isNone}}">
+        <text class='line'></text>
+        <text>已经加载完了哦</text>
+        <text class='line_r'></text>
+    </view>
+</view>
+
+<!-- 当该类数据没有时 -->
+<view class='formEmpty' wx:if="{{empty}}">
+    <image src='/imgs/empty-img.png'></image>
+    <text>很抱歉,暂时没有此类商品</text>
+</view>
+

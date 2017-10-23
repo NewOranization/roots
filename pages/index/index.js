@@ -1,6 +1,18 @@
 //index.js
 //获取应用实例
 var app = getApp();
+var page = 1;
+var show = false;
+// function getRect(that) {
+//   setTimeout(function () {
+//     wx.createSelectorQuery().select('.shopList').boundingClientRect(function (rect) {
+//       that.setData({
+//         scrollTop: rect.top
+//       })
+//       getRect(that)
+//     }).exec()
+//   }, 500)
+// };
 Page({
   data: {
     isLoading: true,
@@ -13,61 +25,24 @@ Page({
     info:[],
     leftDiscount:{},
     discount:[],
-    industry:[],//商家分类
-    sort:[],//智能排序
-    discountActive:[],//优惠活动
-    stars:5,
-    shopInfo:[],
-    page:1,
-    wrapHeight:true,
     likeLayout:true,
     likeData: [],
-    wrapHeight: true,
-    selNav:1,
-    datalength: 0,
-    wrapOpen: true
-  },
-  //封装获取商家信息及筛选请求函数
-  loadMore: function (that,myData) {
-    var data={};
-    if(myData){
-      data=myData
-    }else{
-      data={
-        ac: 'homepage',
-        op: 'store',
-        page: that.data.page
-      }
+    //商家列表数据
+    empty: false,
+    isLoading: false,
+    onLoading: true,
+    isNone: false,
+    headTitle: '附近商家',
+    length: 0,
+    scrollTop: 0,
+    shopdata: {},
+    store: [],
+    nav: 0,
+    selected: {
+      cid: -1,
+      did: -1,
+      soid: -1
     }
-    console.log(data);
-    app.getPostData(function (post_data) {
-      app.getApiData(function (res) {
-        console.log(res.data.data)
-        if(myData){
-          that.setData({
-            shopInfo:res.data.data,
-            datalength: res.data.data.length
-          });
-        }else{
-          that.setData({
-            shopInfo: that.data.shopInfo.concat(res.data.data),
-            page: that.data.page + 1,
-            datalength: res.data.data.length
-          });
-        }
-        
-        if (res.data.code == 0) {
-          wx.hideToast();
-        } else if(res.data.data.length<10){
-          wx.showToast({
-            title: '没有更多数据',
-            icon: 'loading',
-            duration: 500,
-            mask: true
-          })
-        }
-      }, 'GET', post_data)
-    },data);
   },
   onLoad: function (ops) {
     var that = this;
@@ -98,6 +73,7 @@ Page({
     }, { ac: 'homepage', op: 'notice' });
     app.getPostData(function (post_data) {//请求优惠信息
       app.getApiData(function (res) {
+        console.log(res.data.data);
         if(res.data.data.length==3){
           that.setData({
             leftDiscount: res.data.data[0]
@@ -115,19 +91,18 @@ Page({
         
       }, 'GET', post_data)
     }, { ac: 'homepage', op: 'cube' });
-    app.getPostData(function (post_data) {//请求筛选导航列表
-      app.getApiData(function (res) {
-        that.setData({
-          industry: res.data.data.nav,
-          sort: res.data.data.sort,
-          discountActive: res.data.data.discount
-        });
-        console.log(that.data.industry);
-        console.log(that.data.sort);
-      }, 'GET', post_data)
-    }, { ac: 'homepage', op: 'get_condition' });
-    that.loadMore(that);
-    wx.request({
+    // -------
+    var params = {
+      ac: 'homepage',
+      op: 'store',
+      page: page
+    }
+    that.getAll(params, page);
+    that.setData({
+      params: params
+    })
+    // --------
+    wx.request({//请求猜你喜欢
       url: 'https://xcx.szhuanya.cn/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface',
       data: {
         ac: 'homepage',
@@ -138,84 +113,183 @@ Page({
       }
     })
   },
-
-  againRequest: function(e){
-    var that=this;
-    var myData={};
-    var cid = e.currentTarget.dataset.cid;
-    var sort = e.currentTarget.dataset.sort;
-    var discount = e.currentTarget.dataset.discount;
-    if(that.data.selNav==1){
-      myData = {
-        ac: 'homepage',
-        op: 'store',
-        cid: cid,//分类id
-      }
-    } else if (that.data.selNav == 2){
-      myData = {
-        ac: 'homepage',
-        op: 'store',
-        sort: sort,//分类id
-      }
-    } else if (that.data.selNav==3){
-      myData = {
-        ac: 'homepage',
-        op: 'store',
-        discount: discount,//分类id
-      }
-    }
-   
-    that.loadMore(that,myData);
-    that.setData({
-      top1:false,
-      top2:false,
-      top3:false
-    })
-  },
-  RequestAll: function () {
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     var that = this;
-    that.setData({
-      shopInfo: [],
-      datalength: 0,
-      page: 2
-    })
-    app.getPostData(function (post_data) {
-      app.getApiData(function (res) {
-        console.log(res.data.data)
-        that.setData({
-          shopInfo: res.data.data,
-          page: that.data.page + 1
-        });
-        if (res.data.code == 0) {
-          wx.hideToast();
-        }
-      }, 'GET', post_data)
-    }, { ac: 'homepage', op: 'store' });
-    that.setData({
-      top1: false,
-      top2: false,
-      top3: false
-    })
+    // getRect(that);
   },
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
     var that = this;
-    console.log(that.data.datalength)
-    if (that.data.datalength = 10) {
-      console.log('aaaaaaaaaaaa');
-      that.loadMore(that);
+    var params = that.data.params;
+    console.log(params)
+
+    params['page'] += 1;
+    page = params['page'];
+    that.getAll(params, page)
+  },
+
+  /**
+   * 点击展开分类
+   */
+  openList: function (e) {
+    var that = this;
+    var nav = e.currentTarget.dataset.nav;
+    show = !show
+    if (show) {
+      if (nav == that.data.nav) {
+        show = false;
+        that.setData({
+          nav: 0
+        })
+
+      } else {
+        that.setData({
+          nav: nav
+        })
+      }
+    } else {
+      if (nav != that.data.nav) {
+        show = true;
+        that.setData({
+          nav: nav
+        })
+      } else {
+        that.setData({
+          nav: 0
+        })
+      }
+    }
+    console.log(show)
+    console.log(nav)
+  },
+
+  /**
+   * 请求分类数据
+   */
+  getSelectData: function (e) {
+    var that = this;
+    var params = {
+      ac: 'homepage',
+      op: 'store',
+    };
+    var id = e.currentTarget.dataset.id;
+    if (that.data.nav == 1) {
+      params['cid'] = id;
+      params['page'] = 1;
+      that.data.selected.cid = id
+    }
+    if (that.data.nav == 2) {
+      params['soid'] = id;
+      params['page'] = 1;
+      that.data.selected.soid = id
+    }
+    if (that.data.nav == 3) {
+      params['did'] = id;
+      params['page'] = 1;
+      that.data.selected.did = id
+    }
+    that.getAll(params);
+    that.setData({
+      selected: id,
+      params: params,
+      nav: 0,
+      selected: params
+    })
+  },
+
+  /**
+   * 页面跳转
+   */
+  navTo: function (e) {
+    var that = this;
+    var click = e.currentTarget.dataset.click;
+    console.log(click);
+    if (click == 'back') {
+      wx.switchTab({
+        url: '/pages/index/index',
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/index/shopMenuList/shopMenuList?push_token=' + click,
+      })
     }
   },
+
   /**
-  * 页面下拉触顶事件的处理函数
-  */
-  onPullDownRefresh: function () {
+   * 获得全部数据
+   */
+  getAll: function (params, page) {
     var that = this;
-    if (that.data.datalength = 10) {
-      that.loadMore(that);
-    }
+    app.getPostData(function (post_data) {
+      app.getApiData(function (res) {
+        if (res.data.code == 0) {
+          var shopdata = res.data.data;
+          var store = res.data.data.store;
+          var length = res.data.data.store.length;
+          // that.setData({
+          //     shopdata: shopdata
+          // })
+          if (res.data.code == 0) {
+            if (page > 1) {
+
+              if (length >= 10) {
+                that.setData({
+                  store: that.data.store.concat(store),
+                  isLoading: true,
+                  isNone: false,
+                })
+              } else {
+                that.setData({
+                  store: that.data.store.concat(store),
+                  isLoading: false,
+                  isNone: true,
+                })
+              }
+            } else {
+              if (length == 0) {
+                that.setData({
+                  empty: true,
+                  onLoading: false,
+                  isLoading: false,
+                  isNone: false,
+                  length: length
+                })
+              } else if (length >= 10) {
+                that.setData({
+                  shopdata: shopdata,
+                  store: store,
+                  onLoading: false,
+                  isLoading: true,
+                  isNone: false,
+                  length: length
+                })
+              } else {
+                that.setData({
+                  shopdata: shopdata,
+                  store: store,
+                  onLoading: false,
+                  isLoading: false,
+                  isNone: false,
+                  length: length
+                })
+              }
+            }
+          }
+        }
+      }, 'GET', post_data)
+    }, params)
   },
   bindRegionChange: function (e) {
     this.setData({
@@ -266,16 +340,6 @@ Page({
       })
     }
 
-  },
-  moreWrap: function () {
-    var that = this;
-    that.setData({
-      wrapOpen: !that.data.wrapOpen
-    })
-    console.log(that.data.wrapOpen);
-      wrapHeight: !that.data.wrapHeight
-      wrapHeight:!that.data.wrapHeight
-    console.log(that.data.wrapHeight);
   },
   layoutSwith:function(){
    var that=this;

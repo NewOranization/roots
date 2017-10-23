@@ -1,10 +1,10 @@
 //app.js
+import siteInfo from './config.js';
 App({
   /**********************************************
    * 初始化
    *********************************************/
   
-
   /**********************************************
    * 全局变量
    *********************************************/
@@ -75,7 +75,7 @@ App({
             success: function (res){
                 var code = res.code;
                 postData['code'] = res.code;
-                //console.log(postData['code']);
+                //console.log(siteInfo);
                 wx.getUserInfo({
                     success: function (resU) {
                         postData['iv'] = resU.iv;

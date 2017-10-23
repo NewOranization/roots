@@ -4,5 +4,6 @@
             <image class='img_l' src='/imgs/arrow_left_white.png' bindtap='navTo' data-click='back'></image>
             <text>{{headTitle}}</text>
         </view>
+        <view style='width: 100%; height: 100rpx;'></view>
     </view>
 </template>

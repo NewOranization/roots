@@ -24,5 +24,8 @@ page{
     height: 200rpx;
     margin: 300rpx auto;
 }
+.load-notice{
+  margin-left:35%;
+}
 
 
