@@ -1,6 +1,6 @@
 <template name="discount">
   <view class="discount">
-    <view class='num1' wx:if="{{discount.length==1}}">
+    <view class='num1' wx:if="{{discount.length==1}}" bindtap='toShop'>
       <block wx:for="{{discount}}">
          <image src="{{item.thumb}}"></image>
         <view>
@@ -11,7 +11,7 @@
     </view>
     <view class='num2' wx:if="{{discount.length==2}}">
       <block wx:for='{{discount}}'>
-        <view>
+        <view bindtap='toShop'>
           <text class='title'>{{item.title}}</text>
           <text class='discrip'>{{item.tips}}</text>
           <image src="{{item.thumb}}"></image>
@@ -19,14 +19,14 @@
       </block>
     </view>
     <view class='num3' wx:if="{{discount.length==3}}">
-      <view class='left'>
+      <view class='left' bindtap='toShop'>
         <text class='title'>{{leftDiscount.title}}</text>
         <text class='discrip'>{{leftDiscount.tips}}</text>
         <image src="{{leftDiscount.thumb}}"></image>
       </view>
       <view class='right'>
         <block wx:for="{{discount}}">
-          <view>
+          <view bindlongtap='toShop'>
             <image src="{{item.thumb}}"></image>
             <view>
               <text class='title'>{{item.title}}</text>
@@ -38,7 +38,7 @@
     </view>
     <view class='num4' wx:if="{{discount.length==4}}">
       <block wx:for="{{discount}}">
-        <view>
+        <view bindtap='toShop'>
           <text class='title'>{{item.title}}</text>
           <text class='discrip'>{{item.tips}}</text>
           <image src="{{item.thumb}}"></image>

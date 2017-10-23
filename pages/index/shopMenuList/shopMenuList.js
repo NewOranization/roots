@@ -26,6 +26,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     var token = options.token;
+    console.log(options.token)
     that.setData({
         token: token
     });
@@ -158,7 +159,6 @@ Page({
         })
       }
   },
-  
   /**
    * 楼梯点击切换分类
    */

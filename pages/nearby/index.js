@@ -3,17 +3,17 @@
 var app = getApp();
 var page = 1;
 var show = false;
-function getRect(that) {
-  setTimeout(function () {
-    wx.createSelectorQuery().select('.shopList').boundingClientRect(function (rect) {
-      that.setData({
-        scrollTop: rect.top
-      })
-      getRect(that)
-    }).exec()
-  }, 500)
+// function getRect(that) {
+//   setTimeout(function () {
+//     wx.createSelectorQuery().select('.shopList').boundingClientRect(function (rect) {
+//       that.setData({
+//         scrollTop: rect.top
+//       })
+//       getRect(that)
+//     }).exec()
+//   }, 500)
 
-};
+// };
 
 Page({
   data: {
@@ -38,16 +38,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    var params = {
-      ac: 'homepage',
-      op: 'store',
-      page: page
-    }
-    that.getAll(params, page);
-    that.setData({
-      params: params
-    })
+    // var that = this;
+    // var cid = wx.getStorageSync('cid');
+    // if(cid) return
+    // var params = {
+    //   ac: 'homepage',
+    //   op: 'store',
+    //   page: page
+    // }
+    
+    // that.getAll(params, page);
+    // that.setData({
+    //   params: params
+    // })
+    
   },
 
   /**
@@ -60,7 +64,26 @@ Page({
    */
   onShow: function () {
     var that = this;
-    getRect(that);
+    var cid = wx.getStorageSync('cid');
+    var params = {
+      ac: 'homepage',
+      op: 'store',
+      page: 1
+    }
+    if (cid) {
+      params['cid'] = cid;
+      that.setData({
+        store:[]
+      })
+      that.getAll(params, page);
+      wx.clearStorageSync();
+    }else{
+      that.getAll(params, page);
+      that.setData({
+        params: params
+      })
+    }
+    // getRect(that);
   },
 
   /**
@@ -170,6 +193,14 @@ Page({
     }
   },
 
+  toShopMenuList: function (e) {
+    console.log('啊啊啊啊啊啊啊')
+    var that = this;
+    var click = e.currentTarget.dataset.click;
+    wx.navigateTo({
+      url: '/pages/index/shopMenuList/shopMenuList?token=' + click
+    })
+  },
   /**
    * 获得全部数据
    */

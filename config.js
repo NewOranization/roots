@@ -1,6 +1,6 @@
 var siteInfo = {}
  siteInfo = {
- uniacid: '0',
+ uniacid: '303',
  acid: '619',
  multiid: '619',
  siteroot: 'https://xcx.xcwll.cn/app/index.php',

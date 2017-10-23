@@ -25,6 +25,7 @@ Page({
     info:[],
     leftDiscount:{},
     discount:[],
+    discountData:[],
     likeLayout:true,
     likeData: [],
     //商家列表数据
@@ -55,7 +56,6 @@ Page({
     }, {ac: 'homepage',op: 'carousel'});
     app.getPostData(function (post_data) {//请求分类选择图标
       app.getApiData(function (res) {
-        console.log(res.data.data);
         if(res.data.code == 0){
             that.setData({
                 sortSels: res.data.data,
@@ -73,7 +73,9 @@ Page({
     }, { ac: 'homepage', op: 'notice' });
     app.getPostData(function (post_data) {//请求优惠信息
       app.getApiData(function (res) {
-        console.log(res.data.data);
+        that.setData({
+          allDiscountData:res.data.data
+        })
         if(res.data.data.length==3){
           that.setData({
             leftDiscount: res.data.data[0]
@@ -88,7 +90,6 @@ Page({
           });
         }
         console.log(that.data.discount)
-        
       }, 'GET', post_data)
     }, { ac: 'homepage', op: 'cube' });
     // -------
@@ -215,6 +216,7 @@ Page({
   navTo: function (e) {
     var that = this;
     var click = e.currentTarget.dataset.click;
+    console.log(click)
     console.log(click);
     if (click == 'back') {
       wx.switchTab({
@@ -234,6 +236,7 @@ Page({
     var that = this;
     app.getPostData(function (post_data) {
       app.getApiData(function (res) {
+        console.log(res.data.data.store)
         if (res.data.code == 0) {
           var shopdata = res.data.data;
           var store = res.data.data.store;
@@ -304,10 +307,17 @@ Page({
   },
   toShopMenuList: function (e){
     var that=this;
-    var token = e.currentTarget.dataset.token;
+    var click = e.currentTarget.dataset.click;
     wx.navigateTo({
-      url:'shopMenuList/shopMenuList?token='+token
+      url: 'shopMenuList/shopMenuList?token=' + click
     })
+  },
+  toShop:function(){
+    if (allDiscountData.length==3){
+
+    }else{
+
+    }
   },
   /**
    ************************************************* tel_tab分类点击
@@ -374,17 +384,9 @@ Page({
   sortSel:function(e){
     var that=this;
     var cid = e.currentTarget.dataset.cid;
-    app.getPostData(function (post_data) {//分类
-      app.getApiData(function (res) {
-        wx.setStorage({
-          key: "selData",
-          data: res.data.data
-        })
-        wx.switchTab({
-          url: '/pages/nearby/index'
-        })
-        console.log(res.data.data);
-      }, 'GET', post_data)
-    }, { ac: 'homepage', op: 'store',cid:cid});
+    wx.setStorageSync('cid', cid);
+    wx.switchTab({
+      url: '/pages/nearby/index'
+    })
   }
 })
