@@ -81,7 +81,6 @@ page{
     height: 40rpx;
     margin-top: 10rpx;
     float: left;
-    margin-left: 10rpx;
 }
 
 .box .wrap .wrapList .content .feature{

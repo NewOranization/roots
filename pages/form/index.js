@@ -119,7 +119,7 @@ Page({
              }
              
              var length = formList.length;
-             if(res.data.code == 0){
+             if(res.data.code === 0){
                  if(page > 1){
                      if(length >= 10){
                          that.setData({
@@ -135,7 +135,7 @@ Page({
                          })
                      }
                  }else{
-                     if(length == 0){
+                     if(length === 0){
                          that.setData({
                              empty: true
                          })
