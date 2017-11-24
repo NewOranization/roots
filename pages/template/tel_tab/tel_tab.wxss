@@ -68,7 +68,7 @@
 
 .box .shop .wrap .wrap-left image{
     width: 180rpx;
-    height: 180rpx;
+    height: 90rpx;
 }
 
 .box .shop .wrap .wrap-right{

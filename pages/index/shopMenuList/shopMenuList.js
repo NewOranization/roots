@@ -261,9 +261,9 @@ Page({
       var dataList = that.data.dataList;
       var content = that.data.content;
       var price = that.data.price;
-      var id = e.currentTarget.dataset.id;
-      var idx = e.currentTarget.dataset.idx;
-      var click = e.currentTarget.dataset.click;
+      var id = e.currentTarget.dataset.id;//商品id
+      var idx = e.currentTarget.dataset.idx;//类别id
+      var click = e.currentTarget.dataset.click;//当前点击的是plus还是reduce
       var index = parseInt(e.currentTarget.dataset.index);
       var totalNum = that.data.totalNum;
       var totalPrice = that.data.totalPrice;
@@ -368,6 +368,7 @@ Page({
       
       app.getPostData(function (post_data){
           app.getApiData(function (res) {
+            console.log(res.data.data);
             console.log(that.data.store);
               if(res.data.code == 0){
                   if (res.data.data.category){

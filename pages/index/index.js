@@ -43,7 +43,14 @@ Page({
       cid: -1,
       did: -1,
       soid: -1
-    }
+    },
+    WrapOpen:false
+  },
+  moreWrap:function(){
+    var that=this;
+    that.setData({
+      WrapOpen: !this.data.WrapOpen
+    })
   },
   onLoad: function (ops) {
     var that = this;

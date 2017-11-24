@@ -28,6 +28,7 @@ Page({
               userInfo: userInfo,
               login: true
           })
+          console.log(userInfo)
       })
   },
 

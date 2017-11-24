@@ -69,7 +69,7 @@
                     </view>
                 </view>
                 <view class='wrapSort'>
-                    <view class="wrapSort-top" wx:if='{{item.activity.length>0}}'>
+                    <view class="wrapSort-top {{WrapOpen?'':'wrapMinHeight'}}" wx:if='{{item.activity.length>0}}'>
                         <view class='left'>
                             <block wx:for='{{item.activity}}' wx:for-item="activityItem" wx:key="activity">
                                 <view>
