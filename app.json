@@ -1,10 +1,9 @@
 {
     "pages": [
-        
-        "pages/index/index",
-        "pages/cart/index",
+      "pages/index/index",
+      "pages/sort/index",
         "pages/infor/index",
-        "pages/sort/index",
+        "pages/cart/index",
         "pages/runleg/index",
         "pages/form/index",
         "pages/mine/index",

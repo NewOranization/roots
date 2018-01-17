@@ -140,7 +140,32 @@ Page({
     console.log(show)
     console.log(nav)
   },
+  /**
+   * 页面跳转
+   */
+  navTo: function (e) {
+    var that = this;
+    var click = e.currentTarget.dataset.click;
+    console.log(click);
+    if (click == 'back') {
+      wx.switchTab({
+        url: '/pages/index/index',
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/index/shopMenuList/shopMenuList?push_token=' + click,
+      })
+    }
+  },
 
+  toShopMenuList: function (e) {
+    console.log('啊啊啊啊啊啊啊')
+    var that = this;
+    var click = e.currentTarget.dataset.click;
+    wx.navigateTo({
+      url: '/pages/index/shopMenuList/shopMenuList?token=' + click
+    })
+  },
   /**
    * 请求分类数据
    */
@@ -175,32 +200,6 @@ Page({
     })
   },
 
-  /**
-   * 页面跳转
-   */
-  navTo: function (e) {
-    var that = this;
-    var click = e.currentTarget.dataset.click;
-    console.log(click);
-    if (click == 'back') {
-      wx.switchTab({
-        url: '/pages/index/index',
-      })
-    } else {
-      wx.navigateTo({
-        url: '/pages/index/shopMenuList/shopMenuList?push_token=' + click,
-      })
-    }
-  },
-
-  toShopMenuList: function (e) {
-    console.log('啊啊啊啊啊啊啊')
-    var that = this;
-    var click = e.currentTarget.dataset.click;
-    wx.navigateTo({
-      url: '/pages/index/shopMenuList/shopMenuList?token=' + click
-    })
-  },
   /**
    * 获得全部数据
    */
