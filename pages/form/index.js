@@ -35,6 +35,7 @@ Page({
           op: 'order'
       }
       that.getAll(data);
+      console.log('lll')
   },
 
   /**

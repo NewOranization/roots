@@ -17,7 +17,7 @@
           </view>
         </view>
         <view class='right'>
-          ￥{{conItem.price}}
+          ￥{{conItem.price}}实话实说
         </view>
       </view>
       </block>
