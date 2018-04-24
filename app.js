@@ -11,7 +11,8 @@ App({
   globalData: {
     appApiUrl: siteInfo.domain+"/web/index.php?c=site&a=entry&do=web&m=we7_wmall&ctrl=Interface&ac=member_info&i=" + siteInfo.uniacid,
       userInfo: null,
-      shopConfig: null
+      shopConfig: null,
+      type: null
   },
 
  /************************************************
